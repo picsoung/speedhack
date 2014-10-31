@@ -1,0 +1,421 @@
+@import "variables.less";
+@import "mixins.less";
+
+body ***REMOVED***
+	overflow-x: hidden;
+***REMOVED***
+
+p ***REMOVED***
+	font-size: 20px;
+***REMOVED***
+
+p.small ***REMOVED***
+	font-size: 16px;
+***REMOVED***
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active ***REMOVED***
+	color: @brand-success;
+	outline: none;
+***REMOVED***
+
+h1, h2, h3, h4, h5, h6 ***REMOVED***
+	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	font-weight: 700;
+***REMOVED***
+
+hr.star-light,
+hr.star-primary ***REMOVED***
+    padding: 0;
+    border: none;
+    border-top: solid 5px;
+    text-align: center;
+    max-width: 250px;
+    margin: 25px auto 30px;
+***REMOVED***
+
+hr.star-light:after,
+hr.star-primary:after ***REMOVED***
+    content: "\f005";
+    font-family: FontAwesome;
+    display: inline-block;
+    position: relative; 
+    top: -0.8em;  
+    font-size: 2em;
+    padding: 0 0.25em;
+***REMOVED***
+
+hr.star-light ***REMOVED***
+    border-color: white;
+***REMOVED***
+
+hr.star-light:after ***REMOVED***
+    background-color: @brand-success;
+    color: white;
+***REMOVED***
+
+hr.star-primary ***REMOVED***
+    border-color: @brand-primary;
+***REMOVED***
+
+hr.star-primary:after ***REMOVED***
+    background-color: white;
+    color: @brand-primary;
+***REMOVED***
+
+.img-centered ***REMOVED***
+	margin: 0 auto;
+***REMOVED***
+
+header ***REMOVED***
+	text-align: center;
+	background: @brand-success;
+	color: white;
+	.container ***REMOVED***
+		padding-top: 100px;
+		padding-bottom: 50px;
+	***REMOVED***
+	img ***REMOVED***
+		display: block;
+		margin: 0 auto 20px;
+	***REMOVED***
+	.intro-text ***REMOVED***
+		.name ***REMOVED***
+			display: block;
+			font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+			text-transform: uppercase;
+			font-weight: 700;
+			font-size: 2em;
+		***REMOVED***
+		.skills ***REMOVED***
+			font-size: 1.25em;
+			font-weight: 300;
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
+
+@media(min-width:768px) ***REMOVED***
+	header ***REMOVED***
+		.container ***REMOVED***
+			padding-top: 200px;
+			padding-bottom: 100px;
+		***REMOVED***
+		.intro-text ***REMOVED***
+			.name ***REMOVED***
+				font-size: 4.75em;
+			***REMOVED***
+			.skills ***REMOVED***
+				font-size: 1.75em;
+			***REMOVED***
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
+
+@media(min-width:768px) ***REMOVED***
+    .navbar-fixed-top ***REMOVED***
+        padding: 25px 0;
+        -webkit-transition: padding 0.3s;
+        -moz-transition: padding 0.3s;
+        transition: padding 0.3s;
+	    .navbar-brand ***REMOVED***
+	        font-size: 2em;
+	        -webkit-transition: all 0.3s;
+	        -moz-transition: all 0.3s;
+	        transition: all 0.3s;
+	***REMOVED***        
+***REMOVED***
+    .navbar-fixed-top.navbar-shrink ***REMOVED***
+        padding: 10px 0;
+		.navbar-brand ***REMOVED***
+	        font-size: 1.5em;
+	***REMOVED***    
+	***REMOVED***
+***REMOVED***
+
+.navbar ***REMOVED***
+	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	font-weight: 700;
+	a:focus ***REMOVED***
+		outline: none;
+	***REMOVED***
+	.navbar-nav ***REMOVED***
+		letter-spacing: 1px;
+		li ***REMOVED***
+			a:focus ***REMOVED***
+				outline: none;
+			***REMOVED***
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
+
+.navbar-default,
+.navbar-inverse ***REMOVED***
+	border: none;
+***REMOVED***
+
+section ***REMOVED***
+    padding: 100px 0;
+    h2 ***REMOVED***
+    	margin: 0;
+    	font-size: 3em;
+***REMOVED***
+***REMOVED***
+
+section.success ***REMOVED***
+	background: @brand-success;
+	color: white;
+***REMOVED***
+
+@media(max-width:767px) ***REMOVED***
+	section ***REMOVED***
+		padding: 75px 0;
+	***REMOVED***
+	section.first ***REMOVED***
+		padding-top: 75px;
+	***REMOVED***
+***REMOVED***
+
+#portfolio ***REMOVED***
+    .portfolio-item ***REMOVED***
+        margin: 0 0 15px;
+        right: 0;
+        .portfolio-link ***REMOVED***
+            display: block;
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto;
+            .caption ***REMOVED***
+                background: fade(@brand-success, 90%);
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: all ease 0.5s;
+                -webkit-transition: all ease 0.5s;
+                -moz-transition: all ease 0.5s;
+                &:hover ***REMOVED***
+                    opacity: 1;
+        ***REMOVED***
+                .caption-content ***REMOVED***
+                    position: absolute;
+                    width: 100%;
+                    height: 20px;
+                    font-size: 20px;
+                    text-align: center;
+                    top: 50%;
+                    margin-top: -12px;
+                    color: white;
+                    i ***REMOVED***
+                        margin-top: -12px;
+            ***REMOVED***
+                    h3,
+                    h4 ***REMOVED***
+                        margin: 0;
+            ***REMOVED***
+        ***REMOVED***                
+    ***REMOVED***            
+***REMOVED***
+***REMOVED***
+    * ***REMOVED***
+        z-index: 2;
+***REMOVED***
+***REMOVED***
+
+@media(min-width:767px) ***REMOVED***
+    #portfolio ***REMOVED***
+        .portfolio-item ***REMOVED***
+            margin: 0 0 30px;
+***REMOVED***
+***REMOVED***
+***REMOVED***
+
+.btn-outline ***REMOVED***
+	color: white;
+	font-size: 20px;
+	border: solid 2px white;
+	background: transparent;
+	transition: all 0.3s ease-in-out;
+	margin-top: 15px;
+	&:hover,
+	&:focus,
+	&:active,
+	&.active ***REMOVED***
+		color: @brand-success;
+		background: white;
+		border: solid 2px white;
+	***REMOVED***
+***REMOVED***
+
+.floating-label-form-group ***REMOVED***
+    position: relative;
+    margin-bottom: 0;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid @gray-lighter;
+    input,
+    textarea ***REMOVED***
+	    z-index: 1;
+	    position: relative;
+	    padding-right: 0;
+	    padding-left: 0;
+	    border: none;
+	    border-radius: 0;
+	    font-size: 1.5em;
+	    background: none;
+	    box-shadow: none !important;
+	    resize: none;
+***REMOVED***
+    label ***REMOVED***
+	    display: block;
+	    z-index: 0;
+	    position: relative;
+	    top: 2em;
+	    margin: 0;
+	    font-size: 0.85em;
+	    line-height: 1.764705882em;
+	    vertical-align: middle;
+	    vertical-align: baseline;
+	    opacity: 0;
+	    -webkit-transition: top 0.3s ease,opacity 0.3s ease;
+	    -moz-transition: top 0.3s ease,opacity 0.3s ease;
+	    -ms-transition: top 0.3s ease,opacity 0.3s ease;
+	    transition: top 0.3s ease,opacity 0.3s ease;
+***REMOVED***
+    &::not(:first-child) ***REMOVED***
+	    padding-left: 14px;
+	    border-left: 1px solid @gray-lighter;
+***REMOVED***
+***REMOVED***
+
+.floating-label-form-group-with-value ***REMOVED***
+	label ***REMOVED***
+	    top: 0;
+	    opacity: 1;
+	***REMOVED***
+***REMOVED***
+
+.floating-label-form-group-with-focus ***REMOVED***
+	label ***REMOVED***
+	    color: @brand-success;
+	***REMOVED***
+***REMOVED***
+
+form .row:first-child .floating-label-form-group ***REMOVED***
+    border-top: 1px solid @gray-lighter;
+***REMOVED***
+
+footer ***REMOVED***
+	color: white;
+	h3 ***REMOVED***
+		margin-bottom: 30px;
+	***REMOVED***
+	.footer-above ***REMOVED***
+		padding-top: 50px;
+		background-color: @brand-primary;
+	***REMOVED***
+	.footer-col ***REMOVED***
+		margin-bottom: 50px;
+	***REMOVED***
+	.footer-below ***REMOVED***
+		padding: 25px 0;
+		background-color: darken(@brand-primary, 5%);
+	***REMOVED***
+***REMOVED***
+
+.btn-social ***REMOVED***
+	display: inline-block;
+	height: 50px;
+	width: 50px;
+	border: 2px solid white;
+	border-radius: 100%;
+	text-align: center;
+	font-size: 20px;
+	line-height: 45px;
+***REMOVED***
+
+.btn:focus,
+.btn:active,
+.btn.active ***REMOVED***
+	outline: none;
+***REMOVED***
+
+.scroll-top ***REMOVED***
+    position: fixed;
+    right: 2%;
+    bottom: 2%;
+    width: 50px;
+    height: 50px;
+    z-index: 1049;
+    .btn ***REMOVED***
+    	font-size: 20px;
+	    width: 50px;
+	    height: 50px;
+	    border-radius: 100%;
+	    line-height: 28px;
+	    &:focus ***REMOVED***
+	    	outline: none;
+	***REMOVED***
+***REMOVED***
+***REMOVED***
+
+.portfolio-modal ***REMOVED***
+	.modal-content ***REMOVED***
+	    border-radius: 0;
+	    background-clip: border-box;
+	    -webkit-box-shadow: none;
+	    box-shadow: none;
+	    border: none;
+	    min-height: 100%;
+	    padding: 100px 0;
+	    text-align: center;
+		h2 ***REMOVED***
+	    	margin: 0;
+	    	font-size: 3em;
+		***REMOVED***
+		img ***REMOVED***
+			margin-bottom: 30px;
+		***REMOVED***
+		.item-details ***REMOVED***
+			margin: 30px 0;
+		***REMOVED***
+	***REMOVED***
+    .close-modal ***REMOVED***
+        position: absolute;
+        width:75px;
+        height:75px;
+        background-color:transparent;
+        top: 25px;
+        right: 25px;
+        cursor: pointer;
+        &:hover ***REMOVED***
+            opacity: 0.3;
+***REMOVED***
+        .lr ***REMOVED***
+            height:75px;
+            width:1px;
+            margin-left:35px;
+            background-color:@brand-primary;
+            transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            /* IE 9 */
+            -webkit-transform: rotate(45deg);
+            /* Safari and Chrome */
+            z-index:1051;
+            .rl ***REMOVED***
+                height:75px;
+                width:1px;
+                background-color:@brand-primary;
+                transform: rotate(90deg);
+                -ms-transform: rotate(90deg);
+                /* IE 9 */
+                -webkit-transform: rotate(90deg);
+                /* Safari and Chrome */
+                z-index:1052;
+    ***REMOVED***            
+***REMOVED***        
+***REMOVED***
+***REMOVED***
