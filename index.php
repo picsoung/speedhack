@@ -74,11 +74,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-responsive" src="img/profile.png" alt="">
+                    <img class="img-responsive" src="img/speedhack_yellow.png" alt="">
                     <div class="intro-text">
-                        <span class="name">SpeedHack</span>
+                        <!-- <span class="name">SpeedHack</span> -->
                         <hr class="star-light">
-                        <span class="skills">Hackathon on steroids - 3 hours - 8 challenges</span>
+                        <span class="skills">Hackathon on steroids - 3 hours - limited number of challenges</span>
                     </div>
                 </div>
             </div>
@@ -102,7 +102,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/chicago.png" class="img-responsive" alt=""/>
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -112,7 +112,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/cake.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/paris.png" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -122,7 +122,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/circus.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/question.png" class="img-responsive" alt="">
                     </a>
                 </div>
             </div>
@@ -140,15 +140,28 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-2">
-                    <p>Think of the Speed Hack as a “performance enhanced” hackathon. We think it’s a very effective, practical and fun way to promote APIs to developers.</p>
+                    <p>Think of the Speed Hack as a hackathon "on steroids". We think it’s a very effective, practical and fun way to promote APIs to developers.</p>
                 </div>
                 <div class="col-lg-4">
-                    <p>There will be eight API providers you might recognize each having defined a tough, strictly time-limited coding challenge. Teams of three developers will compete to solve the challenges and increase their scores over three hours. The team with the most points wins. In case of equal points, we will have special tie breaking challenges.</p>
+                    <p>There will be a limited number of API providers you might recognize, each having defined a tough, strictly time-limited coding challenge. Teams of 3 developers will compete to solve the challenges and increase their scores over three hours. The team with the most points wins. In case of equal points, we will have special tie breaking challenges.</p>
                 </div>
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="#" class="btn btn-lg btn-outline">
-                        <i class="fa fa-download"></i> Sponsor prospectus
-                    </a>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Ground rules</h2>
+                    <hr class="star-light">
+                </div>
+                <div class="col-lg-4 col-lg-offset-4">
+                    <p>Some of our core values:</p>
+                    <ul style="font-size: 20px;">
+                        <li>free for hackers</li>
+                        <li>open to all levels of hackers</li>
+                        <li>fun <i class="fa fa-smile-o"></i></li>
+                        <li>limited number of sponsors</li>
+                        <li>3 hours long</li>
+                    </ul>
+                    <a style="color:white;" href="http://www.3scale.net/2014/09/new-format-api-promotion-api-speedhack/">More</a>
                 </div>
             </div>
         </div>
@@ -164,14 +177,11 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                    <!-- Change the width and height values to suit you best -->
-<div class="typeform-widget" data-url="https://picsoung.typeform.com/to/EkPqrX" data-text="speedhack_contact" style="width:100%;height:500px;"></div>
-<script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'widget.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>
-<div style="font-family: Sans-Serif;font-size: 12px;color: #999;opacity: 0.5; padding-top: 5px;">Powered by <a href="http://www.typeform.com/?utm_campaign=typeform_EkPqrX&amp;utm_source=website&amp;utm_medium=typeform&amp;utm_content=typeform-embedded&amp;utm_term=English" style="color: #999" target="_blank">Typeform<a/></div>
-
+                <div class="col-lg-2 col-lg-offset-5">
+                    <a class="typeform-share btn btn-lg btn-outline_green" href="https://picsoung.typeform.com/to/EkPqrX" data-mode="2" target="_blank"><i class="fa fa-envelope-o"></i> Tell us more!</a>
+                    <script>
+                    (function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}id=id+'_';if(!gi.call(d,id)){qs=ce.call(d,'link');qs.rel='stylesheet';qs.id=id;qs.href=b+'share-button.css';s=gt.call(d,'head')[0];s.appendChild(qs,s)}})()
+                    </script>
                 </div>
             </div>
         </div>
@@ -182,11 +192,11 @@
         <div class="footer-above">
             <div class="container">
                 <div class="row">
-                    <div class="footer-col col-md-4">
+                    <div class="footer-col col-md-6">
                         <h3>Location</h3>
                         <p>3scale<br>San Francisco, Barcelona</p>
                     </div>
-                    <div class="footer-col col-md-4">
+                    <div class="footer-col col-md-6">
                         <h3>Around the Web</h3>
                         <ul class="list-inline">
                             <li>
@@ -206,10 +216,6 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="footer-col col-md-4">
-                        <h3>About SpeedHack</h3>
-                        <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -217,7 +223,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        Copyright &copy; Your Website 2014
+                        brought to you by <a href="http://3scale.net">3scale &nbsp;<img height="50" src="/img/3scale_logo_white.png" /></a>
                     </div>
                 </div>
             </div>
@@ -246,22 +252,13 @@
                         <div class="modal-body">
                             <h2>Chicago</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
+                            <img src="img/portfolio/chicago.png" class="img-responsive img-centered" alt="">
+                            <p>Our first event happened in Sept. 2014 Chicago during the fourth edition of API Strategy Conference.<br />
+                            You can find a recap of this first edition: <a href="http://www.3scale.net/2014/10/apistrat-speed-hack-wrap/">here</a>.
+
+                            </p>
+                            <iframe width="560" height="315" src="//www.youtube.com/embed/hfoT8hi_ruE" frameborder="0" allowfullscreen></iframe>
+                            <br />
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>
@@ -283,19 +280,19 @@
                         <div class="modal-body">
                             <h2>Paris</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/cake.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <img src="img/portfolio/paris.png" class="img-responsive img-centered" alt="">
+                            <p>During APIdays Paris we will host 2nd edition of SpeedHack.</p>
                             <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
+                                <li>Tickets:
+                                    <strong><a href="http://startbootstrap.com">Register</a>
                                     </strong>
                                 </li>
                                 <li>Date:
                                     <strong><a href="http://startbootstrap.com">April 2014</a>
                                     </strong>
                                 </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
+                                <li>Venue:
+                                    <strong><a href="http://startbootstrap.com">Eiffel Tower</a>
                                     </strong>
                                 </li>
                             </ul>
@@ -320,22 +317,13 @@
                         <div class="modal-body">
                             <h2>Your city?</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/circus.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
+                            <img src="img/portfolio/question.png" class="img-responsive img-centered" alt="">
+                            <p>You want to organize a SpeedHack in your city or for your event?. We can help you with our experience, bringing the concept. Just fill the contact form below and give us details about your project.</p>
+                            <a class="typeform-share btn btn-lg btn-outline_green" href="https://picsoung.typeform.com/to/EkPqrX" data-mode="2" target="_blank"><i class="fa fa-envelope-o"></i> Contact us</a>
+                            <script>
+                            (function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}id=id+'_';if(!gi.call(d,id)){qs=ce.call(d,'link');qs.rel='stylesheet';qs.id=id;qs.href=b+'share-button.css';s=gt.call(d,'head')[0];s.appendChild(qs,s)}})()
+                            </script>
+                            <br />  <br />
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>
@@ -472,6 +460,12 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/freelancer.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(this).scrollTop(0);
+        });
+    </script>
 
 </body>
 

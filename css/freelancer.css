@@ -110,7 +110,7 @@ header .intro-text .skills {
 
 @media(min-width:768px) {
     header .container {
-        padding-top: 200px;
+        /*padding-top: 50px;*/
         padding-bottom: 100px;
     }
 
@@ -125,7 +125,7 @@ header .intro-text .skills {
 
 @media(min-width:768px) {
     .navbar-fixed-top {
-        padding: 25px 0;
+        /*padding: 25px 0;*/
         -webkit-transition: padding .3s;
         -moz-transition: padding .3s;
         transition: padding .3s;
@@ -139,7 +139,7 @@ header .intro-text .skills {
     }
 
     .navbar-fixed-top.navbar-shrink {
-        padding: 10px 0;
+        /*padding: 10px 0;*/
     }
 
     .navbar-fixed-top.navbar-shrink .navbar-brand {
@@ -260,6 +260,15 @@ section.success {
     transition: all .3s ease-in-out;
 }
 
+.btn-outline_green {
+    margin-top: 15px;
+    border: solid 2px #18bc9c;
+    font-size: 20px;
+    color: #18bc9c;
+    background: 0 0;
+    transition: all .3s ease-in-out;
+}
+
 .btn-outline:hover,
 .btn-outline:focus,
 .btn-outline:active,
@@ -267,6 +276,15 @@ section.success {
     border: solid 2px #fff;
     color: #18bc9c;
     background: #fff;
+}
+
+.btn-outline_green:hover,
+.btn-outline_green:focus,
+.btn-outline_green:active,
+.btn-outline_green.active {
+    border: solid 2px #18bc9c;
+    color: #fff;
+    background: #18bc9c;
 }
 
 .floating-label-form-group {
