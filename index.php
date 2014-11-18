@@ -284,15 +284,15 @@
                             <p>During APIdays Paris we will host 2nd edition of SpeedHack.</p>
                             <ul class="list-inline item-details">
                                 <li>Tickets:
-                                    <strong><a href="http://startbootstrap.com">Register</a>
+                                    <strong><a href="http://www.eventbrite.com/e/apidays-speedhack-3-hours-developer-hackaton-tickets-14292418007">Register</a>
                                     </strong>
                                 </li>
                                 <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
+                                    <strong><a href="http://www.apidays.io/">3rd December 2014</a>
                                     </strong>
                                 </li>
                                 <li>Venue:
-                                    <strong><a href="http://startbootstrap.com">Eiffel Tower</a>
+                                    <strong><a href="http://www.tapisrouge.fr/">Les salons du Tapis Rouge</a>
                                     </strong>
                                 </li>
                             </ul>
