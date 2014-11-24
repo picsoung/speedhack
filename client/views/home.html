@@ -1,0 +1,286 @@
+<template name="home">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#page-top">SpeedHack.io</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#portfolio">Where</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-responsive" src="img/speedhack_yellow.png" alt="">
+                    <div class="intro-text">
+                        <!-- <span class="name">SpeedHack</span> -->
+                        <hr class="star-light">
+                        <span class="skills">Hackathon on steroids - 3 hours - limited number of challenges</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Where?</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#chicagoModal" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/chicago.png" class="img-responsive" alt=""/>
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#parisModal" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/paris.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#yourCityModal" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/question.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="success" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>About</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-2">
+                    <p>Think of the Speed Hack as a hackathon "on steroids". We think it’s a very effective, practical and fun way to promote APIs to developers.</p>
+                </div>
+                <div class="col-lg-4">
+                    <p>There will be a limited number of API providers you might recognize, each having defined a tough, strictly time-limited coding challenge. Teams of 3 developers will compete to solve the challenges and increase their scores over three hours. The team with the most points wins. In case of equal points, we will have special tie breaking challenges.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Ground rules</h2>
+                    <hr class="star-light">
+                </div>
+                <div class="col-lg-4 col-lg-offset-4">
+                    <p>Some of our core values:</p>
+                    <ul style="font-size: 20px;">
+                        <li>free for hackers</li>
+                        <li>open to all levels of hackers</li>
+                        <li>fun <i class="fa fa-smile-o"></i></li>
+                        <li>limited number of sponsors</li>
+                        <li>3 hours long</li>
+                    </ul>
+                    <a style="color:white;" href="http://www.3scale.net/2014/09/new-format-api-promotion-api-speedhack/">More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Contact US</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 col-lg-offset-5">
+                    <a class="typeform-share btn btn-lg btn-outline_green" href="https://picsoung.typeform.com/to/EkPqrX" data-mode="2" target="_blank"><i class="fa fa-envelope-o"></i> Tell us more!</a>
+                    <script>
+                    (function()***REMOVED***var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id))***REMOVED***js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)***REMOVED***id=id+'_';if(!gi.call(d,id))***REMOVED***qs=ce.call(d,'link');qs.rel='stylesheet';qs.id=id;qs.href=b+'share-button.css';s=gt.call(d,'head')[0];s.appendChild(qs,s)***REMOVED******REMOVED***)()
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visble-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <!-- Portfolio Modals -->
+
+</template>
+
+<template name="kikiModal">
+  <div class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <p>One fine body&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</template>
+
+<template name="chicagoModal">
+  <div class="portfolio-modal modal fade in" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="false" style="display: block;">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Chicago</h2>
+                            <hr class="star-primary">
+                            <img src="img/portfolio/chicago.png" class="img-responsive img-centered" alt="">
+                            <p>Our first event happened in Sept. 2014 Chicago during the fourth edition of API Strategy Conference.<br>
+                            You can find a recap of this first edition: <a href="http://www.3scale.net/2014/10/apistrat-speed-hack-wrap/">here</a>.
+
+                            </p>
+                            <iframe width="560" height="315" src="//www.youtube.com/embed/hfoT8hi_ruE" frameborder="0" allowfullscreen=""></iframe>
+                            <br>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="parisModal">
+  <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+              <div class="lr">
+                  <div class="rl">
+                  </div>
+              </div>
+          </div>
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-8 col-lg-offset-2">
+                      <div class="modal-body">
+                          <h2>Paris</h2>
+                          <hr class="star-primary">
+                          <img src="img/portfolio/paris.png" class="img-responsive img-centered" alt="">
+                          <p>During APIdays Paris we will host 2nd edition of SpeedHack.</p>
+                          <ul class="list-inline item-details">
+                              <li>Tickets:
+                                  <strong><a href="http://www.eventbrite.com/e/apidays-speedhack-3-hours-developer-hackaton-tickets-14292418007">Register</a>
+                                  </strong>
+                              </li>
+                              <li>Date:
+                                  <strong><a href="http://www.apidays.io/">3rd December 2014</a>
+                                  </strong>
+                              </li>
+                              <li>Venue:
+                                  <strong><a href="http://www.tapisrouge.fr/">Les salons du Tapis Rouge</a>
+                                  </strong>
+                              </li>
+                          </ul>
+                          <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</template>
+
+<template name="yourCityModal">
+  <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+              <div class="lr">
+                  <div class="rl">
+                  </div>
+              </div>
+          </div>
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-8 col-lg-offset-2">
+                      <div class="modal-body">
+                          <h2>Your city?</h2>
+                          <hr class="star-primary">
+                          <img src="img/portfolio/question.png" class="img-responsive img-centered" alt="">
+                          <p>You want to organize a SpeedHack in your city or for your event?. We can help you with our experience, bringing the concept. Just fill the contact form below and give us details about your project.</p>
+                          <a class="typeform-share btn btn-lg btn-outline_green" href="https://picsoung.typeform.com/to/EkPqrX" data-mode="2" target="_blank"><i class="fa fa-envelope-o"></i> Contact us</a>
+                          <script>
+                          (function()***REMOVED***var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id))***REMOVED***js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)***REMOVED***id=id+'_';if(!gi.call(d,id))***REMOVED***qs=ce.call(d,'link');qs.rel='stylesheet';qs.id=id;qs.href=b+'share-button.css';s=gt.call(d,'head')[0];s.appendChild(qs,s)***REMOVED******REMOVED***)()
+                          </script>
+                          <br />  <br />w
+                          <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</template>
