@@ -7,21 +7,29 @@ Schemas.Team = new SimpleSchema(***REMOVED***
         type:String,
         label:"Team name"
 ***REMOVED***
+    event_slug:***REMOVED***
+        type:String,
+        label:"Event"
+***REMOVED***
     table_number:***REMOVED***
         type: Number,
-        label:"Table Number"
+        label:"Table Number",
+        min: 0
 ***REMOVED***
     owner:***REMOVED***
         type:String,
-        label: "Owner"
+        label: "Owner",
+        optional:true
 ***REMOVED***
     teammate_1:***REMOVED***
         type:String,
-        label: "Teammate #1"
+        label: "Teammate #1",
+        optional:true
 ***REMOVED***
     teammate_2:***REMOVED***
         type:String,
-        label: "Teammate #2"
+        label: "Teammate #2",
+        optional:true
 ***REMOVED***
     createdAt: ***REMOVED***
         type: Date,

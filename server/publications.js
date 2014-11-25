@@ -9,3 +9,7 @@ Meteor.publish('event',function(slug)***REMOVED***
 Meteor.publish(null, function ()***REMOVED***
   return Meteor.roles.find(***REMOVED******REMOVED***)
 ***REMOVED***)
+
+Meteor.publish('teams',function()***REMOVED***
+    return Teams.find(***REMOVED******REMOVED***);
+***REMOVED***)
