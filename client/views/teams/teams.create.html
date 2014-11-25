@@ -2,6 +2,7 @@
     {{#autoForm collection="Teams" id="insertTeamForm" type="insert"}}
      <fieldset>
        <legend>Create a Team</legend>
+       {{> afQuickField name="event_slug" options=eventOptions}}
        {{> afQuickField name='name'}}
        {{> afQuickField name='table_number'}}
        {{> afQuickField name='teammate_1'}}

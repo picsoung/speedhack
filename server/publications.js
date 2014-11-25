@@ -9,3 +9,7 @@ Meteor.publish('event',function(slug){
 Meteor.publish(null, function (){
   return Meteor.roles.find({})
 })
+
+Meteor.publish('teams',function(){
+    return Teams.find({});
+})

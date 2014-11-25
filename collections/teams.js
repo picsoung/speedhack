@@ -7,21 +7,29 @@ Schemas.Team = new SimpleSchema({
         type:String,
         label:"Team name"
     },
+    event_slug:{
+        type:String,
+        label:"Event"
+    },
     table_number:{
         type: Number,
-        label:"Table Number"
+        label:"Table Number",
+        min: 0
     },
     owner:{
         type:String,
-        label: "Owner"
+        label: "Owner",
+        optional:true
     },
     teammate_1:{
         type:String,
-        label: "Teammate #1"
+        label: "Teammate #1",
+        optional:true
     },
     teammate_2:{
         type:String,
-        label: "Teammate #2"
+        label: "Teammate #2",
+        optional:true
     },
     createdAt: {
         type: Date,
