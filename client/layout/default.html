@@ -1,13 +1,13 @@
 <head>
-  
+    <link href="css/freelancer.css" rel="stylesheet">
 </head>
 
 <template name="defaultLayout">
-  {{> yield region='navbar'}}
-	<div class="container">
-	  <div clas="row">
-		  {{> yield}}
-	  </div>
-	</div>
-	{{> footer}}
+    {{> navbar}}
+    <div class="container" style="margin-top: 80px;">
+        <div clas="row">
+          {{> yield}}
+        </div>
+    </div>
+    {{> footer}}
 </template>

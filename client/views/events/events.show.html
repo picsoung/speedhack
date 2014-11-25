@@ -1,0 +1,44 @@
+<template name="eventShow">
+    <h1>{{name}}</h1>
+    <img src="{{image}}" alt="{{name}} logo" width="200px"/>
+    <p>
+        {{brief}}
+    </p>
+    <p>
+        Where:
+    </p>
+    <p>
+        When:
+    </p>
+    <p>
+        Tickets:
+    </p>
+    <h2>Sponsors
+        {{#if isInRole 'admin'}}
+           {{> addSponsorMenu}}
+        {{/if}}
+    </h2>
+
+     {{#each sponsors}}
+        <a href="{{url}}" target="_blank"><img src="{{logo}}" alt="{{name}} sponsor logo" width="100px"/></a>
+        {{#if isInRole 'admin'}}
+           {{> removeSponsorMenu}}
+        {{/if}}
+     {{/each}}
+    <h2>Going</h2>
+    <h2>Leaderboard</h2>
+</template>
+
+<template name="addSponsorMenu">
+    <button id="addButton" class="btn btn-primary" name="Add Sponsor">+</button>
+    <div id="addSponsorForm" style="display: none">
+        <input type="text" name="sponsor_name" id="sponsor_name" placeholder="name">
+        <input type="text" name="sponsor_logo" id="sponsor_logo" placeholder="logo">
+        <input type="text" name="sponsor_url" id="sponsor_url" placeholder="URL">
+        <button id="submitSponsorForm" type="submit" class="btn btn-primary" name="Add Sponsor">Add Sponsor</button>
+    </div>
+</template>
+
+<template name="removeSponsorMenu">
+    <button id="removeSponsorButton"  data-eventSlug={{eventSlug ..}} class="btn btn-primary" name="Remove Sponsor">-</button>
+</template>

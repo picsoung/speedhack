@@ -1,0 +1,23 @@
+<template name="eventsList">
+<section style="padding:0 0 100px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>SpeedHack events</h1>
+                <h2>Upcoming:</h2>
+                    {{#each upcomingEvents}}
+                        {{> eventDetail}}
+                    {{/each}}
+                <h2>Past:</h2>
+                {{#each pastEvents}}
+                    {{> eventDetail}}
+                {{/each}}
+           </div>
+       </div>
+    </div>
+</section>
+</template>
+
+<template name="eventDetail">
+    <a href="{{pathFor route='event.show'}}">{{name}}</a>
+</template>

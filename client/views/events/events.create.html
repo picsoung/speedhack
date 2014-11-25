@@ -1,0 +1,15 @@
+<template name="newEvent">
+     <!-- {{> quickForm collection="Events" id="insertEventForm" type="insert"}} -->
+     {{#autoForm collection="Events" id="insertEventForm" type="insert"}}
+      <fieldset>
+        <legend>Add an Event</legend>
+        {{> afQuickField name='name'}}
+        {{> afQuickField name='brief' rows=6}}
+        {{> afQuickField name='image'}}
+        {{> afQuickField name='venue'}}
+        {{> afFormGroup name='startDate' type="datetime-local"}}
+        {{> afFormGroup name='endDate' type="datetime-local"}}
+      </fieldset>
+      <button type="submit" class="btn btn-primary">Insert</button>
+  {{/autoForm}}
+</template>
