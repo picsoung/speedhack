@@ -1,0 +1,44 @@
+<template name="eventShow">
+    <h1>***REMOVED******REMOVED***name***REMOVED******REMOVED***</h1>
+    <img src="***REMOVED******REMOVED***image***REMOVED******REMOVED***" alt="***REMOVED******REMOVED***name***REMOVED******REMOVED*** logo" width="200px"/>
+    <p>
+        ***REMOVED******REMOVED***brief***REMOVED******REMOVED***
+    </p>
+    <p>
+        Where:
+    </p>
+    <p>
+        When:
+    </p>
+    <p>
+        Tickets:
+    </p>
+    <h2>Sponsors
+        ***REMOVED******REMOVED***#if isInRole 'admin'***REMOVED******REMOVED***
+           ***REMOVED******REMOVED***> addSponsorMenu***REMOVED******REMOVED***
+        ***REMOVED******REMOVED***/if***REMOVED******REMOVED***
+    </h2>
+
+     ***REMOVED******REMOVED***#each sponsors***REMOVED******REMOVED***
+        <a href="***REMOVED******REMOVED***url***REMOVED******REMOVED***" target="_blank"><img src="***REMOVED******REMOVED***logo***REMOVED******REMOVED***" alt="***REMOVED******REMOVED***name***REMOVED******REMOVED*** sponsor logo" width="100px"/></a>
+        ***REMOVED******REMOVED***#if isInRole 'admin'***REMOVED******REMOVED***
+           ***REMOVED******REMOVED***> removeSponsorMenu***REMOVED******REMOVED***
+        ***REMOVED******REMOVED***/if***REMOVED******REMOVED***
+     ***REMOVED******REMOVED***/each***REMOVED******REMOVED***
+    <h2>Going</h2>
+    <h2>Leaderboard</h2>
+</template>
+
+<template name="addSponsorMenu">
+    <button id="addButton" class="btn btn-primary" name="Add Sponsor">+</button>
+    <div id="addSponsorForm" style="display: none">
+        <input type="text" name="sponsor_name" id="sponsor_name" placeholder="name">
+        <input type="text" name="sponsor_logo" id="sponsor_logo" placeholder="logo">
+        <input type="text" name="sponsor_url" id="sponsor_url" placeholder="URL">
+        <button id="submitSponsorForm" type="submit" class="btn btn-primary" name="Add Sponsor">Add Sponsor</button>
+    </div>
+</template>
+
+<template name="removeSponsorMenu">
+    <button id="removeSponsorButton"  data-eventSlug=***REMOVED******REMOVED***eventSlug ..***REMOVED******REMOVED*** class="btn btn-primary" name="Remove Sponsor">-</button>
+</template>
