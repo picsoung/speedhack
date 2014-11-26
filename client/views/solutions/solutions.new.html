@@ -1,0 +1,15 @@
+<template name="newSolution">
+    <h1>New Solution</h1>
+    {{> newSolutionForm}}
+</template>
+
+<template name="newSolutionForm">
+    {{#autoForm collection="Solutions" id="insertSolutionForm" type="insert"}}
+     <fieldset>
+       <legend>Submit your solution</legend>
+       {{> afQuickField name="event_slug" id="event_select" options=openEventOptions}}
+       {{> afQuickField name='sponsor' options=sponsorOptions}}
+     </fieldset>
+     <button type="submit" class="btn btn-primary">Submit</button>
+ {{/autoForm}}
+</template>

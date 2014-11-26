@@ -27,6 +27,16 @@
      {{/each}}
     <h2>Going</h2>
     <h2>Leaderboard</h2>
+    <h2>My solutions</h2>
+    {{> mySolutions}}
+</template>
+
+<template name="mySolutions">
+    {{> reactiveTable collection=mySolutions showNavigation='always' rowsPerPage=5 showFilter=false settings=settings}}
+</template>
+
+<template name="sponsorCell">
+    <img src="{{logo}}" alt="" />
 </template>
 
 <template name="addSponsorMenu">

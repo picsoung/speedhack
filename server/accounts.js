@@ -6,6 +6,9 @@ Accounts.onCreateUser(function(options, user) {
         if(options.profile) {
             if(user.services.github.username)
                 options.profile.username = user.services.github.username
+
+            var role = ['hacker'];
+            user.roles = role
             user.profile = options.profile;
         }
     }

@@ -28,6 +28,34 @@ Template.removeSponsorMenu.helpers({
     }
 })
 
+Template.mySolutions.helpers({
+    mySolutions: function () {
+        return Solutions.find({});
+    },
+    settings: function () {
+        return {
+            rowsPerPage: 5,
+            showFilter: false,
+            fields: [
+                {key: 'submitted_by', label: 'Submitted By' },
+                { key: 'sponsor', label: 'Challenge' }, //TODO display logo
+                { key: 'createdAt',  sort: 'descending', label: 'Submitted on' ,fn: function (value, object) { return moment(value).fromNow(); }}
+            ],
+            rowClass: function(item) {
+              var qnt = item.passed;
+              switch (qnt) {
+                case false:
+                    return 'danger';
+                case true:
+                    return 'success';
+                default:
+                  return 'warning';
+              }
+          }
+     }
+ }
+});
+
 AutoForm.hooks({
   insertEventForm: {
     onSubmit: function (doc) {

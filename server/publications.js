@@ -13,3 +13,15 @@ Meteor.publish(null, function (){
 Meteor.publish('teams',function(){
     return Teams.find({});
 })
+
+Meteor.publish('currentUserTeam',function(user){
+    var username = user.profile.username
+    return Teams.find({$or:[{owner:username},{teammate_1:username},{teammate_2:username}]});
+})
+
+
+Meteor.publish('solutionsByUser',function(username,eventSlug){
+    var team = Teams.findOne({$or:[{owner:username},{teammate_1:username},{teammate_2:username}]});
+
+    return Solutions.find({$and:[{team_name:team.name},{event_slug:eventSlug}]})
+});

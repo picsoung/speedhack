@@ -1,7 +1,7 @@
 Router.route('/events', {
     name: "events.list",
     template: 'eventsList',
-     waitOn: function () {
+    waitOn: function () {
         return Meteor.subscribe('events');
     }
 });
@@ -15,11 +15,13 @@ Router.route('/events/:slug',{
     name: "event.show",
     template: 'eventShow',
      waitOn: function () {
-        return Meteor.subscribe('event',this.params.slug);
+         console.log("USER",Meteor.user())
+        return [Meteor.subscribe('event',this.params.slug),Meteor.subscribe('solutionsByUser',Meteor.user().profile.username,this.params.slug)];
     },
     data:function(){
         return Events.findOne({slug:this.params.slug})
-    }
+    },
+    fastRender:true
 });
 
 

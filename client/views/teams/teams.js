@@ -1,14 +1,3 @@
-Template.registerHelper('eventOptions',function(){
-    var events = Events.find({},{fields:{slug:1,name:1}}).fetch();
-    var results = [];
-    _.each(events, function(e) {
-        results.push({label:e.name,value:e.slug})
-    });
-    console.log(results)
-    return results;
-})
-
-
 AutoForm.hooks({
   insertTeamForm: {
       before: {
