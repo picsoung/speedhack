@@ -28,6 +28,34 @@ Template.removeSponsorMenu.helpers(***REMOVED***
 ***REMOVED***
 ***REMOVED***)
 
+Template.mySolutions.helpers(***REMOVED***
+    mySolutions: function () ***REMOVED***
+        return Solutions.find(***REMOVED******REMOVED***);
+***REMOVED***
+    settings: function () ***REMOVED***
+        return ***REMOVED***
+            rowsPerPage: 5,
+            showFilter: false,
+            fields: [
+                ***REMOVED***key: 'submitted_by', label: 'Submitted By' ***REMOVED***,
+                ***REMOVED*** key: 'sponsor', label: 'Challenge' ***REMOVED***, //TODO display logo
+                ***REMOVED*** key: 'createdAt',  sort: 'descending', label: 'Submitted on' ,fn: function (value, object) ***REMOVED*** return moment(value).fromNow(); ***REMOVED******REMOVED***
+            ],
+            rowClass: function(item) ***REMOVED***
+              var qnt = item.passed;
+              switch (qnt) ***REMOVED***
+                case false:
+                    return 'danger';
+                case true:
+                    return 'success';
+                default:
+                  return 'warning';
+      ***REMOVED***
+  ***REMOVED***
+ ***REMOVED***
+ ***REMOVED***
+***REMOVED***);
+
 AutoForm.hooks(***REMOVED***
   insertEventForm: ***REMOVED***
     onSubmit: function (doc) ***REMOVED***

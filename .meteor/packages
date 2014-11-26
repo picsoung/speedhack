@@ -17,4 +17,6 @@ accounts-password
 accounts-github
 alanning:roles
 gfk:notifications
+aslagle:reactive-table
+meteorhacks:fast-render
 

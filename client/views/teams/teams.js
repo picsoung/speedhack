@@ -1,14 +1,3 @@
-Template.registerHelper('eventOptions',function()***REMOVED***
-    var events = Events.find(***REMOVED******REMOVED***,***REMOVED***fields:***REMOVED***slug:1,name:1***REMOVED******REMOVED***).fetch();
-    var results = [];
-    _.each(events, function(e) ***REMOVED***
-        results.push(***REMOVED***label:e.name,value:e.slug***REMOVED***)
-***REMOVED***);
-    console.log(results)
-    return results;
-***REMOVED***)
-
-
 AutoForm.hooks(***REMOVED***
   insertTeamForm: ***REMOVED***
       before: ***REMOVED***
