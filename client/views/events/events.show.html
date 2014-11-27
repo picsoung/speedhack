@@ -1,4 +1,5 @@
 <template name="eventShow">
+    <div class="col-md-6">
     <h1>{{name}}</h1>
     <img src="{{image}}" alt="{{name}} logo" width="200px"/>
     <p>
@@ -25,13 +26,16 @@
            {{> removeSponsorMenu}}
         {{/if}}
      {{/each}}
-    <h2>Going</h2>
-    <h2>My solutions</h2>
-    {{> mySolutions}}
+    <h2>Participants</h2>
+</div>
+    <div class="col-md-6">
+        <h2>My solutions</h2>
+        {{> mySolutions}}
+    </div>
 </template>
 
 <template name="mySolutions">
-    {{> reactiveTable collection=mySolutions showNavigation='always' rowsPerPage=5 showFilter=false settings=settings}}
+    {{> reactiveTable collection=mySolutions showNavigation='never' showFilter=false settings=settings}}
 </template>
 
 <template name="sponsorCell">

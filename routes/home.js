@@ -1,4 +1,5 @@
 Router.route('/', {
   name:'home',
-  layoutTemplate:'homeLayout'
+  layoutTemplate:'homeLayout',
+  fasterRender:true
 });

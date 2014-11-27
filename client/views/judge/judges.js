@@ -10,7 +10,7 @@ Template.submissionsToJudge.helpers({
                 {key: 'team_name', label: 'Team name' },
                 {key: 'submitted_by', label: 'Submitted By' },
                 { key: 'passed', label: 'Challenge passed' , tmpl: Template.passedCell},
-                { key: 'createdAt',  sort: 'descending', label: 'Submitted on' ,fn: function (value, object) { return moment(value).fromNow(); }}
+                { key: 'createdAt',  sort: 'descending',sortByValue:true, label: 'Submitted on' ,fn: function (value, object) { return moment(value).fromNow(); }}
             ]
         }
     }
@@ -29,7 +29,7 @@ Template.submissionsJudged.helpers({
                 {key: 'submitted_by', label: 'Submitted By' },
                 { key: 'passed', label: 'Challenge passed'},
                 { key: 'createdAt', label: 'Submitted on' ,fn: function (value, object) { return moment(value).fromNow(); }},
-                { key: 'judged_on',  sort: 'ascending', label: 'Judged on' ,fn: function (value, object) { return moment(value).fromNow(); }}
+                { key: 'judged_on',  sort: 'descending', sortByValue:true, label: 'Judged on' ,fn: function (value, object) { return moment(value).fromNow(); }}
             ],
             rowClass: function(item) {
               var qnt = item.passed;

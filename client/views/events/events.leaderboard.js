@@ -27,7 +27,7 @@ Template.livestream.helpers({
                 {key: 'sponsor', label: 'Challenge' },
                 {key: 'submitted_by', label: 'Submitted By' },
                 { key: 'passed', label: 'Challenge passed' },
-                { key: 'createdAt',  sort: 'descending', label: 'Submitted on' ,fn: function (value, object) { return moment(value).fromNow(); }},
+                { key: 'createdAt',  sort: 'descending',  sortByValue:true,label: 'Submitted on' ,fn: function (value, object) { return moment(value).fromNow(); }},
                 { key: 'judged_on', label: 'Judged on' ,fn: function (value, object) { if(value) return moment(value).fromNow(); }}
             ],
             rowClass: function(item) {
