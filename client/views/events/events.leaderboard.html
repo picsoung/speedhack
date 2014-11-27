@@ -4,12 +4,12 @@
         {{>leaderboard}}
     </div>
     <div class="col-md-6">
-      <h1>Live Stream</h1>
+        {{> livestream}}
     </div>
 </template>
 
 <template name="leaderboard">
-<!-- {{> reactiveTable collection=myCollection settings=settings}} -->
+    <h1>Leaderboard</h1>
     <table class="table table-striped table-hover">
         <thead>
             <tr>
@@ -33,6 +33,6 @@
 </template>
 
 <template name="livestream">
-    <h1>Leaderboard</h1>
-
+    <h1>Livestream</h1>
+    {{> reactiveTable collection=solutions settings=settings}}
 </template>

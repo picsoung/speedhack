@@ -13,3 +13,34 @@ Template.leaderboard.helpers({
          }).reverse()
     }
 })
+
+Template.livestream.helpers({
+    solutions:function(){
+        return Solutions.find({});
+    },
+    settings:function(){
+        return {
+            showFilter: false,
+            showNavigation:'never',
+            fields: [
+                {key: 'team_name', label: 'Team name' },
+                {key: 'sponsor', label: 'Challenge' },
+                {key: 'submitted_by', label: 'Submitted By' },
+                { key: 'passed', label: 'Challenge passed' },
+                { key: 'createdAt',  sort: 'descending', label: 'Submitted on' ,fn: function (value, object) { return moment(value).fromNow(); }},
+                { key: 'judged_on', label: 'Judged on' ,fn: function (value, object) { if(value) return moment(value).fromNow(); }}
+            ],
+            rowClass: function(item) {
+              var qnt = item.passed;
+              switch (qnt) {
+                case false:
+                    return 'danger';
+                case true:
+                    return 'success';
+                default:
+                  return 'warning';
+              }
+          }
+        }
+    }
+})
