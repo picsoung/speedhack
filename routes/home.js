@@ -1,4 +1,5 @@
 Router.route('/', ***REMOVED***
   name:'home',
-  layoutTemplate:'homeLayout'
+  layoutTemplate:'homeLayout',
+  fasterRender:true
 ***REMOVED***);

@@ -39,7 +39,7 @@ Template.mySolutions.helpers(***REMOVED***
             fields: [
                 ***REMOVED***key: 'submitted_by', label: 'Submitted By' ***REMOVED***,
                 ***REMOVED*** key: 'sponsor', label: 'Challenge' ***REMOVED***, //TODO display logo
-                ***REMOVED*** key: 'createdAt',  sort: 'descending', label: 'Submitted on' ,fn: function (value, object) ***REMOVED*** return moment(value).fromNow(); ***REMOVED******REMOVED***
+                ***REMOVED*** key: 'createdAt',  sort: 'descending', sortByValue:true, label: 'Submitted on' ,fn: function (value, object) ***REMOVED*** return moment(value).fromNow(); ***REMOVED******REMOVED***
             ],
             rowClass: function(item) ***REMOVED***
               var qnt = item.passed;

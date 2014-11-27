@@ -10,7 +10,7 @@ Template.submissionsToJudge.helpers(***REMOVED***
                 ***REMOVED***key: 'team_name', label: 'Team name' ***REMOVED***,
                 ***REMOVED***key: 'submitted_by', label: 'Submitted By' ***REMOVED***,
                 ***REMOVED*** key: 'passed', label: 'Challenge passed' , tmpl: Template.passedCell***REMOVED***,
-                ***REMOVED*** key: 'createdAt',  sort: 'descending', label: 'Submitted on' ,fn: function (value, object) ***REMOVED*** return moment(value).fromNow(); ***REMOVED******REMOVED***
+                ***REMOVED*** key: 'createdAt',  sort: 'descending',sortByValue:true, label: 'Submitted on' ,fn: function (value, object) ***REMOVED*** return moment(value).fromNow(); ***REMOVED******REMOVED***
             ]
 ***REMOVED***
 ***REMOVED***
@@ -29,7 +29,7 @@ Template.submissionsJudged.helpers(***REMOVED***
                 ***REMOVED***key: 'submitted_by', label: 'Submitted By' ***REMOVED***,
                 ***REMOVED*** key: 'passed', label: 'Challenge passed'***REMOVED***,
                 ***REMOVED*** key: 'createdAt', label: 'Submitted on' ,fn: function (value, object) ***REMOVED*** return moment(value).fromNow(); ***REMOVED******REMOVED***,
-                ***REMOVED*** key: 'judged_on',  sort: 'ascending', label: 'Judged on' ,fn: function (value, object) ***REMOVED*** return moment(value).fromNow(); ***REMOVED******REMOVED***
+                ***REMOVED*** key: 'judged_on',  sort: 'descending', sortByValue:true, label: 'Judged on' ,fn: function (value, object) ***REMOVED*** return moment(value).fromNow(); ***REMOVED******REMOVED***
             ],
             rowClass: function(item) ***REMOVED***
               var qnt = item.passed;
