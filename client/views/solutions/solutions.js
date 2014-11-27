@@ -40,6 +40,7 @@ AutoForm.hooks(***REMOVED***
                             ***REMOVED***event_slug:doc.event_slug***REMOVED***
                         ]
             ***REMOVED***)
+                doc.table_number = team.table_number
                 doc.team_name = team.name
                 return doc
     ***REMOVED***

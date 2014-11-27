@@ -15,7 +15,6 @@ Router.route('/events/:slug',***REMOVED***
     name: "event.show",
     template: 'eventShow',
      waitOn: function () ***REMOVED***
-         console.log("USER",Meteor.user())
         return [Meteor.subscribe('event',this.params.slug),Meteor.subscribe('solutionsByUser',Meteor.user().profile.username,this.params.slug)];
 ***REMOVED***
     data:function()***REMOVED***

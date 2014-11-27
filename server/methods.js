@@ -23,7 +23,28 @@ Meteor.methods(***REMOVED***
     ***REMOVED******REMOVED***)
 ***REMOVED***
 ***REMOVED***
+    updateSolutionStatus: function(solutionId, status)***REMOVED***
+        if(isLoggedJudge || isLoggedAdmin())***REMOVED*** //judge role or admin
+            Solutions.update(***REMOVED***_id:solutionId***REMOVED***,***REMOVED***$set:***REMOVED***passed:status***REMOVED******REMOVED***)
+***REMOVED***
+***REMOVED***
+    updateSolutionJudgedStatus:function(solutionId, status)***REMOVED***
+        if(isLoggedJudge || isLoggedAdmin())***REMOVED*** //judge role or admin
+            Solutions.update(***REMOVED***_id:solutionId***REMOVED***,***REMOVED***$set:***REMOVED***judged:status,judged_on:new Date()***REMOVED******REMOVED***)
+***REMOVED***
+***REMOVED***
 ***REMOVED***)
+
+var isLoggedJudge = function()***REMOVED***
+    var loggedInUser = Meteor.user()
+
+    if (!loggedInUser ||
+        !Roles.userIsInRole(loggedInUser,
+                            ['judge'])) ***REMOVED***
+      throw new Meteor.Error(403, "Access denied")
+***REMOVED***
+    return true
+***REMOVED***
 
 var isLoggedAdmin = function()***REMOVED***
     var loggedInUser = Meteor.user()

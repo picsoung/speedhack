@@ -43,6 +43,11 @@ Schemas.Solution = new SimpleSchema(***REMOVED***
         label: "Extra points",
         optional:true
 ***REMOVED***
+    table_number:***REMOVED***
+        type: Number,
+        label: "Table number",
+        optional:true
+***REMOVED***
     createdAt: ***REMOVED***
         type: Date,
           autoValue: function() ***REMOVED***
