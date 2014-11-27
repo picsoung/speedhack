@@ -43,6 +43,11 @@ Schemas.Solution = new SimpleSchema({
         label: "Extra points",
         optional:true
     },
+    table_number:{
+        type: Number,
+        label: "Table number",
+        optional:true
+    },
     createdAt: {
         type: Date,
           autoValue: function() {

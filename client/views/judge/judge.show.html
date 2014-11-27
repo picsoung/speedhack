@@ -1,0 +1,24 @@
+<template name="judgeShow">
+    <h1>Judging - {{slug}}</h1>
+
+    <h2>Submissions to judge</h2>
+    {{> submissionsToJudge}}
+    <h2>Submissions judged</h2>
+    {{> submissionsJudged}}
+</template>
+
+<template name="submissionsToJudge">
+    {{> reactiveTable collection=subsToJudge showNavigation='always' rowsPerPage=5 showFilter=false settings=toJudgeSettings}}
+</template>
+
+<template name="submissionsJudged">
+    {{> reactiveTable collection=subsJudged showNavigation='always' rowsPerPage=5 showFilter=false settings=judgedSettings}}
+</template>
+
+<template name="passedCell">
+    <select>
+    	  <option>Select one</option>
+          <option value=true>Yes</option>
+          <option value=false>No</option>
+	</select>
+</template>

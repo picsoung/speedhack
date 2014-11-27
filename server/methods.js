@@ -22,8 +22,29 @@ Meteor.methods({
                 }
             }})
         }
+    },
+    updateSolutionStatus: function(solutionId, status){
+        if(isLoggedJudge || isLoggedAdmin()){ //judge role or admin
+            Solutions.update({_id:solutionId},{$set:{passed:status}})
+        }
+    },
+    updateSolutionJudgedStatus:function(solutionId, status){
+        if(isLoggedJudge || isLoggedAdmin()){ //judge role or admin
+            Solutions.update({_id:solutionId},{$set:{judged:status,judged_on:new Date()}})
+        }
     }
 })
+
+var isLoggedJudge = function(){
+    var loggedInUser = Meteor.user()
+
+    if (!loggedInUser ||
+        !Roles.userIsInRole(loggedInUser,
+                            ['judge'])) {
+      throw new Meteor.Error(403, "Access denied")
+    }
+    return true
+}
 
 var isLoggedAdmin = function(){
     var loggedInUser = Meteor.user()

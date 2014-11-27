@@ -25,3 +25,7 @@ Meteor.publish('solutionsByUser',function(username,eventSlug){
 
     return Solutions.find({$and:[{team_name:team.name},{event_slug:eventSlug}]})
 });
+
+Meteor.publish('solutionsPerSponsor',function(sponsorSlug){
+    return Solutions.find({sponsor:sponsorSlug});
+})

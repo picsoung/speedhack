@@ -40,6 +40,7 @@ AutoForm.hooks({
                             {event_slug:doc.event_slug}
                         ]
                     })
+                doc.table_number = team.table_number
                 doc.team_name = team.name
                 return doc
             }
