@@ -1,0 +1,38 @@
+<template name="eventLeaderboard">
+    <h1>{{name}}</h1>
+    <div class="col-md-6">
+        {{>leaderboard}}
+    </div>
+    <div class="col-md-6">
+      <h1>Live Stream</h1>
+    </div>
+</template>
+
+<template name="leaderboard">
+<!-- {{> reactiveTable collection=myCollection settings=settings}} -->
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Team</th>
+                <th style="width: 60px">Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each teamScore}}
+                {{> scoreDetail}}
+            {{/each}}
+        </tbody>
+    </table>
+</template>
+
+<template name="scoreDetail">
+    <tr class="player">
+        <td class="name"><h2>{{team_name}}</h2></td>
+        <td class="score"><h2><span>{{score}}</span></h2></td>
+    </tr>
+</template>
+
+<template name="livestream">
+    <h1>Leaderboard</h1>
+
+</template>

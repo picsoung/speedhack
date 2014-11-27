@@ -29,3 +29,7 @@ Meteor.publish('solutionsByUser',function(username,eventSlug){
 Meteor.publish('solutionsPerSponsor',function(sponsorSlug){
     return Solutions.find({sponsor:sponsorSlug});
 })
+
+Meteor.publish('solutionsByEvent',function(eventSlug){
+    return Solutions.find({event_slug:eventSlug});
+})
