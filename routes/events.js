@@ -23,6 +23,19 @@ Router.route('/events/:slug',***REMOVED***
     fastRender:true
 ***REMOVED***);
 
+Router.route('/events/:slug/leaderboard',***REMOVED***
+    //TODO check if slug exists
+    name: "event.leaderboard",
+    template: 'eventLeaderboard',
+    waitOn: function () ***REMOVED***
+        return [Meteor.subscribe('event',this.params.slug),Meteor.subscribe('solutionsByEvent',this.params.slug)];
+***REMOVED***
+    data:function()***REMOVED***
+        return Events.findOne(***REMOVED***slug:this.params.slug***REMOVED***)
+***REMOVED***
+    fastRender:true
+***REMOVED***);
+
 
 Router.route('/events/:slug/edit','editEvent', function () ***REMOVED***
   this.render('editEvent');

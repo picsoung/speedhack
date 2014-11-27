@@ -29,3 +29,7 @@ Meteor.publish('solutionsByUser',function(username,eventSlug)***REMOVED***
 Meteor.publish('solutionsPerSponsor',function(sponsorSlug)***REMOVED***
     return Solutions.find(***REMOVED***sponsor:sponsorSlug***REMOVED***);
 ***REMOVED***)
+
+Meteor.publish('solutionsByEvent',function(eventSlug)***REMOVED***
+    return Solutions.find(***REMOVED***event_slug:eventSlug***REMOVED***);
+***REMOVED***)
