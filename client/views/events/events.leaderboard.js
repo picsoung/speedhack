@@ -13,3 +13,34 @@ Template.leaderboard.helpers(***REMOVED***
  ***REMOVED***).reverse()
 ***REMOVED***
 ***REMOVED***)
+
+Template.livestream.helpers(***REMOVED***
+    solutions:function()***REMOVED***
+        return Solutions.find(***REMOVED******REMOVED***);
+***REMOVED***
+    settings:function()***REMOVED***
+        return ***REMOVED***
+            showFilter: false,
+            showNavigation:'never',
+            fields: [
+                ***REMOVED***key: 'team_name', label: 'Team name' ***REMOVED***,
+                ***REMOVED***key: 'sponsor', label: 'Challenge' ***REMOVED***,
+                ***REMOVED***key: 'submitted_by', label: 'Submitted By' ***REMOVED***,
+                ***REMOVED*** key: 'passed', label: 'Challenge passed' ***REMOVED***,
+                ***REMOVED*** key: 'createdAt',  sort: 'descending', label: 'Submitted on' ,fn: function (value, object) ***REMOVED*** return moment(value).fromNow(); ***REMOVED******REMOVED***,
+                ***REMOVED*** key: 'judged_on', label: 'Judged on' ,fn: function (value, object) ***REMOVED*** if(value) return moment(value).fromNow(); ***REMOVED******REMOVED***
+            ],
+            rowClass: function(item) ***REMOVED***
+              var qnt = item.passed;
+              switch (qnt) ***REMOVED***
+                case false:
+                    return 'danger';
+                case true:
+                    return 'success';
+                default:
+                  return 'warning';
+      ***REMOVED***
+  ***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***)
