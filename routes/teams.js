@@ -1,5 +1,5 @@
 Router.route('/teams/create',***REMOVED***
-    name:'teams.create',
+    name:'team.create',
     template:'newTeam',
     waitOn: function()***REMOVED***
         return [Meteor.subscribe('teams'),Meteor.subscribe('events')];

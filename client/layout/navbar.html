@@ -18,15 +18,11 @@
                   <li class="hidden">
                       <a href="#page-top"></a>
                   </li>
-                  <li class="page-scroll">
-                      <a href="#portfolio">Where</a>
-                  </li>
-                  <li class="page-scroll">
-                      <a href="#about">About</a>
-                  </li>
-                  <li class="page-scroll">
-                      <a href="#contact">Contact</a>
-                  </li>
+                  ***REMOVED******REMOVED***#if currentUser***REMOVED******REMOVED***
+                      ***REMOVED******REMOVED***> userMenu***REMOVED******REMOVED***
+                    ***REMOVED******REMOVED***else***REMOVED******REMOVED***
+                      ***REMOVED******REMOVED***>navMenu***REMOVED******REMOVED***
+                  ***REMOVED******REMOVED***/if***REMOVED******REMOVED***
                   <li>***REMOVED******REMOVED***> loginButtons***REMOVED******REMOVED***</li>
               </ul>
           </div>
@@ -34,4 +30,28 @@
       </div>
       <!-- /.container-fluid -->
   </nav>
+</template>
+
+<template name="navMenu">
+    <li class="page-scroll">
+        <a href="#portfolio">Where</a>
+    </li>
+    <li class="page-scroll">
+        <a href="#about">About</a>
+    </li>
+    <li class="page-scroll">
+        <a href="#contact">Contact</a>
+    </li>
+</template>
+
+<template name="userMenu">
+    <li class="page-scroll">
+        <a href="***REMOVED******REMOVED***pathFor 'team.create'***REMOVED******REMOVED***">Create Team</a>
+    </li>
+    <li class="page-scroll">
+        <a href="***REMOVED******REMOVED***pathFor 'solutions.new'***REMOVED******REMOVED***">New Solution</a>
+    </li>
+    <li class="page-scroll">
+        <a href="#contact">My Profile</a>
+    </li>
 </template>

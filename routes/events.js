@@ -31,11 +31,11 @@ Router.route('/events/:slug/edit',***REMOVED***
     template: 'eventEdit',
     onBeforeAction:function()***REMOVED***
         if (!Meteor.userId())***REMOVED***
-            Router.go('home');
+            Router.go('event.show',***REMOVED***slug:this.params.slug***REMOVED***);
 ***REMOVED***else if(Roles.userIsInRole(Meteor.user(), ["admin"]))***REMOVED***
             this.next();
 ***REMOVED***else***REMOVED***
-            Router.go('home');
+            Router.go('event.show',***REMOVED***slug:this.params.slug***REMOVED***);
 ***REMOVED***
 ***REMOVED***
      waitOn: function () ***REMOVED***

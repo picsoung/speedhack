@@ -25,9 +25,16 @@ Meteor.publish('currentUserTeam',function(user)***REMOVED***
 
 
 Meteor.publish('solutionsByUser',function(username,eventSlug)***REMOVED***
-    var team = Teams.findOne(***REMOVED***$or:[***REMOVED***owner:username***REMOVED***,***REMOVED***teammate_1:username***REMOVED***,***REMOVED***teammate_2:username***REMOVED***]***REMOVED***);
+    var team = Teams.findOne(***REMOVED***
+        $and:[
+            ***REMOVED***$or:[***REMOVED***owner:username***REMOVED***,***REMOVED***teammate_1:username***REMOVED***,***REMOVED***teammate_2:username***REMOVED***]***REMOVED***,
+            ***REMOVED***event_slug:eventSlug***REMOVED***
+        ]
+***REMOVED***);
+    if(team)
+        return Solutions.find(***REMOVED***$and:[***REMOVED***team_name:team.name***REMOVED***,***REMOVED***event_slug:eventSlug***REMOVED***]***REMOVED***)
 
-    return Solutions.find(***REMOVED***$and:[***REMOVED***team_name:team.name***REMOVED***,***REMOVED***event_slug:eventSlug***REMOVED***]***REMOVED***)
+    return []
 ***REMOVED***);
 
 Meteor.publish('solutionsPerSponsor',function(sponsorSlug)***REMOVED***
