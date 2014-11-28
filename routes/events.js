@@ -15,7 +15,31 @@ Router.route('/events/:slug',***REMOVED***
     name: "event.show",
     template: 'eventShow',
      waitOn: function () ***REMOVED***
-        return [Meteor.subscribe('event',this.params.slug),Meteor.subscribe('solutionsByUser',Meteor.user().profile.username,this.params.slug)];
+         if(Meteor.user())
+            return [Meteor.subscribe('event',this.params.slug),Meteor.subscribe('solutionsByUser',Meteor.user().profile.username,this.params.slug)];
+
+        return Meteor.subscribe('event',this.params.slug)
+***REMOVED***
+    data:function()***REMOVED***
+        return Events.findOne(***REMOVED***slug:this.params.slug***REMOVED***)
+***REMOVED***
+    fastRender:true
+***REMOVED***);
+
+Router.route('/events/:slug/edit',***REMOVED***
+    name: "event.edit",
+    template: 'eventEdit',
+    onBeforeAction:function()***REMOVED***
+        if (!Meteor.userId())***REMOVED***
+            Router.go('home');
+***REMOVED***else if(Roles.userIsInRole(Meteor.user(), ["admin"]))***REMOVED***
+            this.next();
+***REMOVED***else***REMOVED***
+            Router.go('home');
+***REMOVED***
+***REMOVED***
+     waitOn: function () ***REMOVED***
+        return [Meteor.subscribe('event',this.params.slug)];
 ***REMOVED***
     data:function()***REMOVED***
         return Events.findOne(***REMOVED***slug:this.params.slug***REMOVED***)
@@ -34,10 +58,4 @@ Router.route('/events/:slug/leaderboard',***REMOVED***
         return Events.findOne(***REMOVED***slug:this.params.slug***REMOVED***)
 ***REMOVED***
     fastRender:true
-***REMOVED***);
-
-
-Router.route('/events/:slug/edit','editEvent', function () ***REMOVED***
-  this.render('editEvent');
-  this.layout('defaultLayout');
 ***REMOVED***);
