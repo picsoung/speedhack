@@ -31,11 +31,11 @@ Router.route('/events/:slug/edit',{
     template: 'eventEdit',
     onBeforeAction:function(){
         if (!Meteor.userId()){
-            Router.go('home');
+            Router.go('event.show',{slug:this.params.slug});
         }else if(Roles.userIsInRole(Meteor.user(), ["admin"])){
             this.next();
         }else{
-            Router.go('home');
+            Router.go('event.show',{slug:this.params.slug});
         }
     },
      waitOn: function () {
