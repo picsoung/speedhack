@@ -15,7 +15,31 @@ Router.route('/events/:slug',{
     name: "event.show",
     template: 'eventShow',
      waitOn: function () {
-        return [Meteor.subscribe('event',this.params.slug),Meteor.subscribe('solutionsByUser',Meteor.user().profile.username,this.params.slug)];
+         if(Meteor.user())
+            return [Meteor.subscribe('event',this.params.slug),Meteor.subscribe('solutionsByUser',Meteor.user().profile.username,this.params.slug)];
+
+        return Meteor.subscribe('event',this.params.slug)
+    },
+    data:function(){
+        return Events.findOne({slug:this.params.slug})
+    },
+    fastRender:true
+});
+
+Router.route('/events/:slug/edit',{
+    name: "event.edit",
+    template: 'eventEdit',
+    onBeforeAction:function(){
+        if (!Meteor.userId()){
+            Router.go('home');
+        }else if(Roles.userIsInRole(Meteor.user(), ["admin"])){
+            this.next();
+        }else{
+            Router.go('home');
+        }
+    },
+     waitOn: function () {
+        return [Meteor.subscribe('event',this.params.slug)];
     },
     data:function(){
         return Events.findOne({slug:this.params.slug})
@@ -34,10 +58,4 @@ Router.route('/events/:slug/leaderboard',{
         return Events.findOne({slug:this.params.slug})
     },
     fastRender:true
-});
-
-
-Router.route('/events/:slug/edit','editEvent', function () {
-  this.render('editEvent');
-  this.layout('defaultLayout');
 });

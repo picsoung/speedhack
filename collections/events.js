@@ -65,6 +65,12 @@ Schemas.Event = new SimpleSchema({
         label: "image URL",
         regEx: SimpleSchema.RegEx.Url
     },
+    tickets_url:{
+        type:String,
+        label: "Ticket URL",
+        regEx: SimpleSchema.RegEx.Url,
+        optional:true
+    },
     createdAt: {
         type: Date,
           autoValue: function() {

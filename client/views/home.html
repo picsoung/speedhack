@@ -25,26 +25,18 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#chicagoModal" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
+                {{#each speedhackEvents}}
+                    <div class="col-sm-4 portfolio-item">
+                        <a href="{{pathFor 'event.show' slug }}" class="portfolio-link" data-toggle="modal">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <i class="fa fa-search-plus fa-3x"></i>
+                                </div>
                             </div>
-                        </div>
-                        <img src="img/portfolio/chicago.png" class="img-responsive" alt=""/>
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#parisModal" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/paris.png" class="img-responsive" alt="">
-                    </a>
-                </div>
+                            <img src="{{image}}" class="img-responsive" alt=""/>
+                        </a>
+                    </div>
+                {{/each}}
                 <div class="col-sm-4 portfolio-item">
                     <a href="#yourCityModal" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
@@ -240,7 +232,7 @@
                           <script>
                           (function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}id=id+'_';if(!gi.call(d,id)){qs=ce.call(d,'link');qs.rel='stylesheet';qs.id=id;qs.href=b+'share-button.css';s=gt.call(d,'head')[0];s.appendChild(qs,s)}})()
                           </script>
-                          <br />  <br />w
+                          <br />  <br />
                           <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                       </div>
                   </div>

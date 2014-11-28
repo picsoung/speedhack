@@ -2,6 +2,10 @@ Meteor.publish('events',function(){
     return Events.find({});
 })
 
+Meteor.publish('eventsLight',function(){
+    return Events.find({},{fields:{slug:1,image:1},sort: {startDate: -1}});
+})
+
 Meteor.publish('event',function(slug){
     return Events.find({slug:slug});
 })

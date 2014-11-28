@@ -1,2 +1,15 @@
-<template name="editEvent">
+<template name="eventEdit">
+    {{#autoForm collection="Events"  doc=this id="updateEventForm" type="update"}}
+     <fieldset>
+       <legend>Add an Event</legend>
+       {{> afQuickField name='name'}}
+       {{> afQuickField name='brief' rows=6}}
+       {{> afQuickField name='image'}}
+       {{> afQuickField name='tickets_url'}}
+       {{> afQuickField name='venue'}}
+       {{> afFormGroup name='startDate' type="datetime-local"}}
+       {{> afFormGroup name='endDate' type="datetime-local"}}
+     </fieldset>
+     <button type="submit" class="btn btn-primary">Update</button>
+ {{/autoForm}}
 </template>

@@ -1,36 +1,57 @@
 <template name="eventShow">
-    <div class="col-md-6">
-    <h1>{{name}}</h1>
-    <img src="{{image}}" alt="{{name}} logo" width="200px"/>
-    <p>
-        {{brief}}
-    </p>
-    <p>
-        Where:
-    </p>
-    <p>
-        When:
-    </p>
-    <p>
-        Tickets:
-    </p>
-    <h2>Sponsors
+    <div class="col-md-8">
         {{#if isInRole 'admin'}}
-           {{> addSponsorMenu}}
+           <a class="btn btn-primary" href="{{pathFor route='event.edit'}}"><i class="fa fa-pencil"></i> edit</a>
         {{/if}}
-    </h2>
-
-     {{#each sponsors}}
-        <a href="{{url}}" target="_blank"><img src="{{logo}}" alt="{{name}} sponsor logo" width="100px"/></a>
-        {{#if isInRole 'admin'}}
-           {{> removeSponsorMenu}}
-        {{/if}}
-     {{/each}}
-    <h2>Participants</h2>
-</div>
-    <div class="col-md-6">
+        <h1>{{name}}</h1>
+        <hr class="star-primary">
+        <img src="{{image}}" alt="{{name}} logo" width="200px"/>
+        <p>
+            {{{brief}}}
+        </p>
+        {{> whereWhen}}
+        {{> sponsorsSection}}
+    </div>
+    <div class="col-md-4">
+        {{#if mySolutions}}
         <h2>My solutions</h2>
         {{> mySolutions}}
+        {{/if}}
+    </div>
+</template>
+
+<template name="sponsorsSection">
+    <div class="row">
+        <h2>Sponsors
+            {{#if isInRole 'admin'}}
+               {{> addSponsorMenu}}
+            {{/if}}
+        </h2>
+
+         {{#each sponsors}}
+            <a href="{{url}}" target="_blank"><img src="{{logo}}" alt="{{name}} sponsor logo" width="100px"/></a>
+            {{#if isInRole 'admin'}}
+               {{> removeSponsorMenu}}
+            {{/if}}
+         {{/each}}
+    </div>
+</template>
+
+<template name="whereWhen">
+    <div class = "row">
+            <div class="col-md-8 well">
+                <p>
+                    <i class="fa fa-map-marker"></i> {{venue.name}} in <b>{{venue.city}}</b> at <i>{{venue.address}}</i> <a href="http://maps.google.com/?q={{venue.name}}+{{venue.city}}"> map <i class="fa fa-external-link"></i></a>
+                </p>
+                <p>
+                    <i class="glyphicon glyphicon-time"></i> On {{displayDay startDate}} from {{displayHours startDate}} to {{displayHours endDate}}
+                </p>
+                {{#if tickets_url}}
+                <p>
+                    <i class="fa fa-ticket"></i> Tickets: <a href="{{tickets_url}}">Register</a>
+                </p>
+                {{/if}}
+            </div>
     </div>
 </template>
 
