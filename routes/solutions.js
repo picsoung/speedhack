@@ -11,8 +11,6 @@ Router.route('/solutions/new',***REMOVED***
             Notifications.error("Need a team","Create a team first");
             Router.go('home')
 ***REMOVED***
-
-
         this.next()
 ***REMOVED***
 ***REMOVED***);

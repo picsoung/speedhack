@@ -1,3 +1,7 @@
+Meteor.publish('users',function()***REMOVED***
+    return Meteor.users.find(***REMOVED******REMOVED***);
+***REMOVED***)
+
 Meteor.publish('events',function()***REMOVED***
     return Events.find(***REMOVED******REMOVED***);
 ***REMOVED***)
@@ -18,11 +22,14 @@ Meteor.publish('teams',function()***REMOVED***
     return Teams.find(***REMOVED******REMOVED***);
 ***REMOVED***)
 
+Meteor.publish('solutions',function()***REMOVED***
+    return Solutions.find(***REMOVED******REMOVED***);
+***REMOVED***)
+
 Meteor.publish('currentUserTeam',function(user)***REMOVED***
     var username = user.profile.username
     return Teams.find(***REMOVED***$or:[***REMOVED***owner:username***REMOVED***,***REMOVED***teammate_1:username***REMOVED***,***REMOVED***teammate_2:username***REMOVED***]***REMOVED***);
 ***REMOVED***)
-
 
 Meteor.publish('solutionsByUser',function(username,eventSlug)***REMOVED***
     var team = Teams.findOne(***REMOVED***
