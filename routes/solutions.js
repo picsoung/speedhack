@@ -11,8 +11,6 @@ Router.route('/solutions/new',{
             Notifications.error("Need a team","Create a team first");
             Router.go('home')
         }
-
-
         this.next()
     }
 });

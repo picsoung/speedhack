@@ -1,0 +1,21 @@
+<template name="adminMain">
+    <h1>Admin</h1>
+    {{> manageUsers}}
+    {{> manageTeams}}
+    {{> manageSolutions}}
+</template>
+
+<template name="manageUsers">
+    <h2>Users</h2>
+    {{> reactiveTable collection=usersCollection settings=settings}}
+</template>
+
+<template name="manageTeams">
+    <h2>Teams</h2>
+    {{> reactiveTable collection=teamsCollection  settings=settings}}
+</template>
+
+<template name="manageSolutions">
+    <h2>Solutions</h2>
+    {{> reactiveTable collection=solutionsCollection settings=settings}}
+</template>

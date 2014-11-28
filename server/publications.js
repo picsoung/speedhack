@@ -1,3 +1,7 @@
+Meteor.publish('users',function(){
+    return Meteor.users.find({});
+})
+
 Meteor.publish('events',function(){
     return Events.find({});
 })
@@ -18,11 +22,14 @@ Meteor.publish('teams',function(){
     return Teams.find({});
 })
 
+Meteor.publish('solutions',function(){
+    return Solutions.find({});
+})
+
 Meteor.publish('currentUserTeam',function(user){
     var username = user.profile.username
     return Teams.find({$or:[{owner:username},{teammate_1:username},{teammate_2:username}]});
 })
-
 
 Meteor.publish('solutionsByUser',function(username,eventSlug){
     var team = Teams.findOne({
