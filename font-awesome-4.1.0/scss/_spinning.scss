@@ -1,0 +1,32 @@
+// Spinning Icons
+// --------------------------
+
+.#***REMOVED***$fa-css-prefix***REMOVED***-spin ***REMOVED***
+  -webkit-animation: spin 2s infinite linear;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+***REMOVED***
+
+@-moz-keyframes spin ***REMOVED***
+  0% ***REMOVED*** -moz-transform: rotate(0deg); ***REMOVED***
+  100% ***REMOVED*** -moz-transform: rotate(359deg); ***REMOVED***
+***REMOVED***
+@-webkit-keyframes spin ***REMOVED***
+  0% ***REMOVED*** -webkit-transform: rotate(0deg); ***REMOVED***
+  100% ***REMOVED*** -webkit-transform: rotate(359deg); ***REMOVED***
+***REMOVED***
+@-o-keyframes spin ***REMOVED***
+  0% ***REMOVED*** -o-transform: rotate(0deg); ***REMOVED***
+  100% ***REMOVED*** -o-transform: rotate(359deg); ***REMOVED***
+***REMOVED***
+@keyframes spin ***REMOVED***
+  0% ***REMOVED***
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  ***REMOVED***
+  100% ***REMOVED***
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  ***REMOVED***
+***REMOVED***
