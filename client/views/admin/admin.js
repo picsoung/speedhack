@@ -41,7 +41,7 @@ var computePointsForTeam = function (teamName, eventSlug)***REMOVED***
     var team = Teams.findOne(***REMOVED***name:teamName***REMOVED***,***REMOVED***fields:***REMOVED***extra_points:1***REMOVED******REMOVED***)
     total += passedSolutions
     if(team.extra_points)
-        total +=team.extra_points
+        total += _.reduce(team.extra_points,function(memo, num)***REMOVED*** return memo + num.value; ***REMOVED***, 0)
     return total
 ***REMOVED***
 
@@ -99,7 +99,7 @@ Template.extraPoints.events(***REMOVED***
     'click button':function(e,t)***REMOVED***
         var teamName = $("#team").val();
         var nbPoints = parseInt($("#extraChallenges").val())
-        Meteor.call('addExtraPointsToTeam', teamName, nbPoints,function(err,res)***REMOVED***
+        Meteor.call('addExtraPointsToTeamName', teamName,'admin', nbPoints,function(err,res)***REMOVED***
             if(err)***REMOVED***
                     Notifications.error(err.error,err.message);
     ***REMOVED***

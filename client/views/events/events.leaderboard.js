@@ -7,7 +7,8 @@ Template.leaderboard.helpers(***REMOVED***
         _.each(solPerTeam,function(key,val)***REMOVED***
             console.log(key,val)
             var team = Teams.findOne(***REMOVED***name:val***REMOVED***,***REMOVED***fields:***REMOVED***extra_points:1***REMOVED******REMOVED***);
-            result.push(***REMOVED***team_name:val,score:solPerTeam[val].length + team.extra_points***REMOVED***)
+            var sumExtraPoints = _.reduce(team.extra_points,function(memo, num)***REMOVED*** return memo + num.value; ***REMOVED***, 0)
+            result.push(***REMOVED***team_name:val,score:solPerTeam[val].length + sumExtraPoints***REMOVED***)
 ***REMOVED***)
         return _.sortBy(result, function (obj) ***REMOVED***
              return obj.score;
