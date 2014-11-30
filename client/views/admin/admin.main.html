@@ -1,13 +1,37 @@
 <template name="adminMain">
     <h1>Admin</h1>
+    ***REMOVED******REMOVED***> addRoleToUserSection***REMOVED******REMOVED***
     ***REMOVED******REMOVED***> manageUsers***REMOVED******REMOVED***
     ***REMOVED******REMOVED***> manageTeams***REMOVED******REMOVED***
     ***REMOVED******REMOVED***> manageSolutions***REMOVED******REMOVED***
 </template>
 
+<template name="addRoleToUserSection">
+    <h2>Add role</h2>
+    username: <input type="text" name="username" id="username">
+    role: <input type="role" name="role" id="role">
+    <button name="button" type="submit" class="btn btn-primary">Add Role</button>
+</template>
+
 <template name="manageUsers">
     <h2>Users</h2>
     ***REMOVED******REMOVED***> reactiveTable collection=usersCollection settings=settings***REMOVED******REMOVED***
+</template>
+
+<template name="roleCell">
+    <style media="screen">
+        .roleName i***REMOVED***
+        visibility:hidden;
+***REMOVED***
+        .roleName:hover i ***REMOVED***
+         visibility:visible;
+***REMOVED***
+    </style>
+    <ul class="roleList">
+        ***REMOVED******REMOVED***#each roles***REMOVED******REMOVED***
+            <li id="***REMOVED******REMOVED***.***REMOVED******REMOVED***" class="roleName">***REMOVED******REMOVED***.***REMOVED******REMOVED***<i data-roleName="***REMOVED******REMOVED***.***REMOVED******REMOVED***" class="glyphicon glyphicon-trash"></i></li>
+        ***REMOVED******REMOVED***/each***REMOVED******REMOVED***
+    </ul>
 </template>
 
 <template name="manageTeams">

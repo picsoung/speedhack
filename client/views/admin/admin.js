@@ -9,7 +9,7 @@ Template.manageUsers.helpers(***REMOVED***
             fields: [
                 ***REMOVED***key: 'profile.name',label:'Name'***REMOVED***,
                 ***REMOVED***key: 'profile.username', label: 'Username' ***REMOVED***,
-                ***REMOVED*** key: 'roles', label: 'Roles'***REMOVED***,
+                ***REMOVED*** key: 'roles', label: 'Roles', tmpl: Template.roleCell***REMOVED***,
                 ***REMOVED*** key: 'createdAt',  sort: 'descending', sortByValue:true, label: 'Submitted on' ,fn: function (value, object) ***REMOVED*** return moment(value).fromNow(); ***REMOVED******REMOVED***
             ]
  ***REMOVED***
@@ -74,4 +74,25 @@ Template.manageSolutions.helpers(***REMOVED***
   ***REMOVED***
  ***REMOVED***
  ***REMOVED***
+***REMOVED***)
+
+Template.addRoleToUserSection.events(***REMOVED***
+    'click button':function(e,t)***REMOVED***
+        Meteor.call('addRoleToUser',$("#username").val(),$("#role").val(),function(err,res)***REMOVED***
+            if(err)***REMOVED***
+                    Notifications.error(err.error,err.message);
+    ***REMOVED***
+            if(res)***REMOVED***
+                Notifications.success("Success","User info updated");
+    ***REMOVED***
+***REMOVED***)
+***REMOVED***
+***REMOVED***)
+
+Template.roleCell.events(***REMOVED***
+    'click .glyphicon-trash':function(e,t)***REMOVED***
+        // console.log(t)
+        // console.log(e.currentTarget.attributes['data-roleName'].value)
+        Meteor.call('removeRoleToUser',t.data._id,t.data.roles,e.currentTarget.attributes['data-roleName'].value)
+***REMOVED***
 ***REMOVED***)
