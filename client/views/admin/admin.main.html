@@ -1,13 +1,37 @@
 <template name="adminMain">
     <h1>Admin</h1>
+    {{> addRoleToUserSection}}
     {{> manageUsers}}
     {{> manageTeams}}
     {{> manageSolutions}}
 </template>
 
+<template name="addRoleToUserSection">
+    <h2>Add role</h2>
+    username: <input type="text" name="username" id="username">
+    role: <input type="role" name="role" id="role">
+    <button name="button" type="submit" class="btn btn-primary">Add Role</button>
+</template>
+
 <template name="manageUsers">
     <h2>Users</h2>
     {{> reactiveTable collection=usersCollection settings=settings}}
+</template>
+
+<template name="roleCell">
+    <style media="screen">
+        .roleName i{
+        visibility:hidden;
+        }
+        .roleName:hover i {
+         visibility:visible;
+        }
+    </style>
+    <ul class="roleList">
+        {{#each roles}}
+            <li id="{{.}}" class="roleName">{{.}}<i data-roleName="{{.}}" class="glyphicon glyphicon-trash"></i></li>
+        {{/each}}
+    </ul>
 </template>
 
 <template name="manageTeams">

@@ -9,7 +9,7 @@ Template.manageUsers.helpers({
             fields: [
                 {key: 'profile.name',label:'Name'},
                 {key: 'profile.username', label: 'Username' },
-                { key: 'roles', label: 'Roles'},
+                { key: 'roles', label: 'Roles', tmpl: Template.roleCell},
                 { key: 'createdAt',  sort: 'descending', sortByValue:true, label: 'Submitted on' ,fn: function (value, object) { return moment(value).fromNow(); }}
             ]
      }
@@ -74,4 +74,25 @@ Template.manageSolutions.helpers({
           }
      }
  }
+})
+
+Template.addRoleToUserSection.events({
+    'click button':function(e,t){
+        Meteor.call('addRoleToUser',$("#username").val(),$("#role").val(),function(err,res){
+            if(err){
+                    Notifications.error(err.error,err.message);
+            }
+            if(res){
+                Notifications.success("Success","User info updated");
+            }
+        })
+    }
+})
+
+Template.roleCell.events({
+    'click .glyphicon-trash':function(e,t){
+        // console.log(t)
+        // console.log(e.currentTarget.attributes['data-roleName'].value)
+        Meteor.call('removeRoleToUser',t.data._id,t.data.roles,e.currentTarget.attributes['data-roleName'].value)
+    }
 })
