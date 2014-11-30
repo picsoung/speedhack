@@ -36,12 +36,12 @@ Template.manageTeams.helpers({
 })
 
 var computePointsForTeam = function (teamName, eventSlug){
-    var total =0;
+    var total = 0;
     var passedSolutions = Solutions.find({$and:[{team_name:teamName},{event_slug:eventSlug},{passed:true}]}).count()
     var team = Teams.findOne({name:teamName},{fields:{extra_points:1}})
     total += passedSolutions
     if(team.extra_points)
-        total += extra_points
+        total +=team.extra_points
     return total
 }
 
@@ -91,8 +91,21 @@ Template.addRoleToUserSection.events({
 
 Template.roleCell.events({
     'click .glyphicon-trash':function(e,t){
-        // console.log(t)
-        // console.log(e.currentTarget.attributes['data-roleName'].value)
         Meteor.call('removeRoleToUser',t.data._id,t.data.roles,e.currentTarget.attributes['data-roleName'].value)
+    }
+})
+
+Template.extraPoints.events({
+    'click button':function(e,t){
+        var teamName = $("#team").val();
+        var nbPoints = parseInt($("#extraChallenges").val())
+        Meteor.call('addExtraPointsToTeam', teamName, nbPoints,function(err,res){
+            if(err){
+                    Notifications.error(err.error,err.message);
+            }
+            if(res){
+                Notifications.success("Success","Points added");
+            }
+        })
     }
 })

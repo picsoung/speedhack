@@ -6,7 +6,8 @@ Template.leaderboard.helpers({
         var result =[];
         _.each(solPerTeam,function(key,val){
             console.log(key,val)
-            result.push({team_name:val,score:solPerTeam[val].length})
+            var team = Teams.findOne({name:val},{fields:{extra_points:1}});
+            result.push({team_name:val,score:solPerTeam[val].length + team.extra_points})
         })
         return _.sortBy(result, function (obj) {
              return obj.score;

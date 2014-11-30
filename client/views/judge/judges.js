@@ -46,6 +46,34 @@ Template.submissionsJudged.helpers({
     }
 })
 
+Template.teamList.helpers({
+    events:function(){
+        return Events.find({});
+    },
+    teams: function(){
+        return Teams.find({});
+    },
+    teamsSettings: function () {
+        return {
+            rowsPerPage: 5,
+            showFilter: false,
+            fields: [
+                {key: 'name', label: 'Team name' },
+                {key: 'extra_points',label: 'Extra points', tmpl:Template.extraPointsCell},
+            ]
+        }
+    }
+})
+
+Template.teamList.events({
+    'change select':function(event,target){
+        console.log("changed")
+        var eventSlug = event.currentTarget.value;
+        Session.set('currentEvent',eventSlug);
+        Meteor.subscribe('teamsPerSponsor',Session.get('currentSponsor'),eventSlug);
+    }
+})
+
 
 Template.submissionsToJudge.events({
   'change select': function (event,target) {
@@ -56,3 +84,46 @@ Template.submissionsToJudge.events({
     Meteor.call('updateSolutionJudgedStatus',solution._id,true)
   }
 });
+
+Template.extraPointsCell.helpers({
+    extraPoints: function(){
+        var self = this;
+        var extraPoints = self.extra_points;
+        var extra = _.find(extraPoints,function(num){return num.sponsor==Session.get('currentSponsor')})
+        if(extra)
+            return  extra.value
+
+        return 0
+    }
+});
+
+Template.extraPointsCell.events({
+    'click #plusExtraPointsButton':function(e,t){
+        var self = this
+        //Check if sponsor has point
+        Meteor.call('getCurrentSponsorInfo',Session.get('currentEvent'),Session.get('currentSponsor'),function(err,data){
+            if(err)
+                console.log(err)
+
+            if(data && data.points>0){
+                Meteor.call('removePointsToSponsors',Session.get('currentEvent'),Session.get('currentSponsor'),1)
+                Meteor.call("addExtraPointsToTeam",self._id,Session.get('currentSponsor'),1)
+            }
+        })
+
+    },
+    'click #minusExtraPointsButton':function(e,t){
+        var self = this
+        //Add points again to sponsor
+        Meteor.call('addPointsToSponsors',Session.get('currentEvent'),Session.get('currentSponsor'),1)
+        Meteor.call("removeExtraPointsToTeam",self._id,Session.get('currentSponsor'),1)
+        // Meteor.call('getCurrentSponsorInfo',Session.get('currentEvent'),Session.get('currentSponsor'),function(err,data){
+        //     if(err)
+        //         console.log(err)
+        //
+        //     if(data && data.points0){
+        //
+        //     }
+        // })
+    }
+})

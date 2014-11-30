@@ -52,7 +52,7 @@ Router.route('/events/:slug/leaderboard',{
     name: "event.leaderboard",
     template: 'eventLeaderboard',
     waitOn: function () {
-        return [Meteor.subscribe('event',this.params.slug),Meteor.subscribe('solutionsByEvent',this.params.slug)];
+        return [Meteor.subscribe('event',this.params.slug),Meteor.subscribe('solutionsByEvent',this.params.slug),Meteor.subscribe('teamsByEvent',this.params.slug)];
     },
     data:function(){
         return Events.findOne({slug:this.params.slug})

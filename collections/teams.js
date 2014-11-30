@@ -1,6 +1,7 @@
 Teams = new Mongo.Collection("teams");
 
 var Schemas = {};
+SimpleSchema.debug = true
 
 Schemas.Team = new SimpleSchema({
     name:{
@@ -29,6 +30,21 @@ Schemas.Team = new SimpleSchema({
     teammate_2:{
         type:String,
         label: "Teammate #2",
+        optional:true
+    },
+    "extra_points.$":{
+        type:[Object],
+        optional:true,
+        blackbox:true
+    },
+    "extra_points.$.sponsor":{
+        type: String,
+        label: "Sponsor",
+        optional:true
+    },
+    "extra_points.$.value":{
+        type: Number,
+        label: "Extra points",
         optional:true
     },
     createdAt: {

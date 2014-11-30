@@ -1,14 +1,12 @@
 Meteor.methods({
-    // addRoleToUser:function(userId, role){
-    //     Roles.addUsersToRoles(userId,role)
-    // }
     addSponsorToEvent:function(eventId,eventName,eventLogo,eventUrl){
         if (isLoggedAdmin()){
             Events.update({_id:eventId},{$push: {
                 sponsors:{
                     name: eventName,
                     logo: eventLogo,
-                    url: eventUrl
+                    url: eventUrl,
+                    points: 5
                 }
             }})
         }

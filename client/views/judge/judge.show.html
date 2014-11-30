@@ -5,6 +5,8 @@
     {{> submissionsToJudge}}
     <h2>Submissions judged</h2>
     {{> submissionsJudged}}
+    <h2>Extra points</h2>
+    {{> teamList}}
 </template>
 
 <template name="submissionsToJudge">
@@ -15,10 +17,28 @@
     {{> reactiveTable collection=subsJudged showNavigation='always' rowsPerPage=5 showFilter=false settings=judgedSettings}}
 </template>
 
+<template name="teamList">
+    <select id="eventSelect" name="eventSelect">
+        <option>Select an event</option>
+        {{#each events}}
+            <option value="{{slug}}">{{name}}</option>
+        {{/each}}
+    </select>
+    {{> reactiveTable collection=teams settings=teamsSettings}}
+</template>
+
 <template name="passedCell">
     <select>
     	  <option>Select one</option>
           <option value=true>Yes</option>
           <option value=false>No</option>
 	</select>
+</template>
+
+<template name="extraPointsCell">
+    <button class="btn" id="plusExtraPointsButton">+</button>
+    {{extraPoints}}
+    {{#if $gt extraPoints 0}}
+        <button class="btn" id="minusExtraPointsButton">-</button>
+    {{/if}}
 </template>
