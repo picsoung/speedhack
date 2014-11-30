@@ -36,12 +36,12 @@ Template.manageTeams.helpers(***REMOVED***
 ***REMOVED***)
 
 var computePointsForTeam = function (teamName, eventSlug)***REMOVED***
-    var total =0;
+    var total = 0;
     var passedSolutions = Solutions.find(***REMOVED***$and:[***REMOVED***team_name:teamName***REMOVED***,***REMOVED***event_slug:eventSlug***REMOVED***,***REMOVED***passed:true***REMOVED***]***REMOVED***).count()
     var team = Teams.findOne(***REMOVED***name:teamName***REMOVED***,***REMOVED***fields:***REMOVED***extra_points:1***REMOVED******REMOVED***)
     total += passedSolutions
     if(team.extra_points)
-        total += extra_points
+        total +=team.extra_points
     return total
 ***REMOVED***
 
@@ -91,8 +91,21 @@ Template.addRoleToUserSection.events(***REMOVED***
 
 Template.roleCell.events(***REMOVED***
     'click .glyphicon-trash':function(e,t)***REMOVED***
-        // console.log(t)
-        // console.log(e.currentTarget.attributes['data-roleName'].value)
         Meteor.call('removeRoleToUser',t.data._id,t.data.roles,e.currentTarget.attributes['data-roleName'].value)
+***REMOVED***
+***REMOVED***)
+
+Template.extraPoints.events(***REMOVED***
+    'click button':function(e,t)***REMOVED***
+        var teamName = $("#team").val();
+        var nbPoints = parseInt($("#extraChallenges").val())
+        Meteor.call('addExtraPointsToTeam', teamName, nbPoints,function(err,res)***REMOVED***
+            if(err)***REMOVED***
+                    Notifications.error(err.error,err.message);
+    ***REMOVED***
+            if(res)***REMOVED***
+                Notifications.success("Success","Points added");
+    ***REMOVED***
+***REMOVED***)
 ***REMOVED***
 ***REMOVED***)

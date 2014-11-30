@@ -1,6 +1,7 @@
 Teams = new Mongo.Collection("teams");
 
 var Schemas = ***REMOVED******REMOVED***;
+SimpleSchema.debug = true
 
 Schemas.Team = new SimpleSchema(***REMOVED***
     name:***REMOVED***
@@ -29,6 +30,21 @@ Schemas.Team = new SimpleSchema(***REMOVED***
     teammate_2:***REMOVED***
         type:String,
         label: "Teammate #2",
+        optional:true
+***REMOVED***
+    "extra_points.$":***REMOVED***
+        type:[Object],
+        optional:true,
+        blackbox:true
+***REMOVED***
+    "extra_points.$.sponsor":***REMOVED***
+        type: String,
+        label: "Sponsor",
+        optional:true
+***REMOVED***
+    "extra_points.$.value":***REMOVED***
+        type: Number,
+        label: "Extra points",
         optional:true
 ***REMOVED***
     createdAt: ***REMOVED***

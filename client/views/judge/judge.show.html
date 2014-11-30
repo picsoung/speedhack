@@ -5,6 +5,8 @@
     ***REMOVED******REMOVED***> submissionsToJudge***REMOVED******REMOVED***
     <h2>Submissions judged</h2>
     ***REMOVED******REMOVED***> submissionsJudged***REMOVED******REMOVED***
+    <h2>Extra points</h2>
+    ***REMOVED******REMOVED***> teamList***REMOVED******REMOVED***
 </template>
 
 <template name="submissionsToJudge">
@@ -15,10 +17,28 @@
     ***REMOVED******REMOVED***> reactiveTable collection=subsJudged showNavigation='always' rowsPerPage=5 showFilter=false settings=judgedSettings***REMOVED******REMOVED***
 </template>
 
+<template name="teamList">
+    <select id="eventSelect" name="eventSelect">
+        <option>Select an event</option>
+        ***REMOVED******REMOVED***#each events***REMOVED******REMOVED***
+            <option value="***REMOVED******REMOVED***slug***REMOVED******REMOVED***">***REMOVED******REMOVED***name***REMOVED******REMOVED***</option>
+        ***REMOVED******REMOVED***/each***REMOVED******REMOVED***
+    </select>
+    ***REMOVED******REMOVED***> reactiveTable collection=teams settings=teamsSettings***REMOVED******REMOVED***
+</template>
+
 <template name="passedCell">
     <select>
     	  <option>Select one</option>
           <option value=true>Yes</option>
           <option value=false>No</option>
 	</select>
+</template>
+
+<template name="extraPointsCell">
+    <button class="btn" id="plusExtraPointsButton">+</button>
+    ***REMOVED******REMOVED***extraPoints***REMOVED******REMOVED***
+    ***REMOVED******REMOVED***#if $gt extraPoints 0***REMOVED******REMOVED***
+        <button class="btn" id="minusExtraPointsButton">-</button>
+    ***REMOVED******REMOVED***/if***REMOVED******REMOVED***
 </template>

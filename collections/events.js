@@ -47,6 +47,10 @@ Schemas.Event = new SimpleSchema(***REMOVED***
         type: String,
         regEx: SimpleSchema.RegEx.Url
 ***REMOVED***
+    "sponsors.$.points": ***REMOVED***
+        type:Number,
+        optional:true
+***REMOVED***
     slug:***REMOVED***
         type: String,
         label: "slug",
