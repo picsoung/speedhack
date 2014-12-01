@@ -1,7 +1,6 @@
 Teams = new Mongo.Collection("teams");
 
 var Schemas = ***REMOVED******REMOVED***;
-SimpleSchema.debug = true
 
 Schemas.Team = new SimpleSchema(***REMOVED***
     name:***REMOVED***
