@@ -1,6 +1,6 @@
 Meteor.methods({
     addRoleToUser: function(username,role) {
-        var user = Meteor.users.findOne({'profile.username':username});
+        var user = Meteor.users.findOne({'username':username});
         if(user){
             Roles.addUsersToRoles(user._id,[role]);
             return user;

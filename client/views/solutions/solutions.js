@@ -31,7 +31,7 @@ AutoForm.hooks({
             insert: function(doc, template) {
                 doc.passed = null
                 doc.judged = null
-                var username = Meteor.user().profile.username
+                var username = Meteor.user().username
                 doc.submitted_by = username
                 var team = Teams.findOne(
                     {

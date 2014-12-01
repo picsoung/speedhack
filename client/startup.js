@@ -3,5 +3,9 @@ if(Meteor.isClient){
         _.extend(Notifications.defaultOptions, {
             timeout: 3000
         });
+
+        Accounts.ui.config({
+           passwordSignupFields: 'USERNAME_ONLY'
+        });
     });
 }

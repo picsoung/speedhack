@@ -16,7 +16,7 @@ Router.route('/events/:slug',{
     template: 'eventShow',
      waitOn: function () {
          if(Meteor.user())
-            return [Meteor.subscribe('event',this.params.slug),Meteor.subscribe('solutionsByUser',Meteor.user().profile.username,this.params.slug)];
+            return [Meteor.subscribe('event',this.params.slug),Meteor.subscribe('solutionsByUser',Meteor.user().username,this.params.slug)];
 
         return Meteor.subscribe('event',this.params.slug)
     },

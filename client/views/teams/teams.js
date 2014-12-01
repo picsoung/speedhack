@@ -2,7 +2,7 @@ AutoForm.hooks({
   insertTeamForm: {
       before: {
       insert: function(doc, template) {
-          doc.owner = Meteor.user().profile.username
+          doc.owner = Meteor.user().username
 
           if(Teams.find({
               $and:[

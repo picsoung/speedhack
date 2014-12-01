@@ -8,7 +8,7 @@ Template.manageUsers.helpers({
             showFilter: false,
             fields: [
                 {key: 'profile.name',label:'Name'},
-                {key: 'profile.username', label: 'Username' },
+                {key: 'username', label: 'Username' },
                 { key: 'roles', label: 'Roles', tmpl: Template.roleCell},
                 { key: 'createdAt',  sort: 'descending', sortByValue:true, label: 'Submitted on' ,fn: function (value, object) { return moment(value).fromNow(); }}
             ]

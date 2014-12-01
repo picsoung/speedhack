@@ -1,4 +1,4 @@
-Router.route('/admin/dashboard', {
+Router.route('/backend/dashboard', {
     name: "admin.main",
     template: 'adminMain',
     waitOn: function () {
