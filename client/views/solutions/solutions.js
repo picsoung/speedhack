@@ -31,7 +31,7 @@ AutoForm.hooks(***REMOVED***
             insert: function(doc, template) ***REMOVED***
                 doc.passed = null
                 doc.judged = null
-                var username = Meteor.user().profile.username
+                var username = Meteor.user().username
                 doc.submitted_by = username
                 var team = Teams.findOne(
                     ***REMOVED***

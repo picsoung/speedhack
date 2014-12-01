@@ -51,7 +51,7 @@ Meteor.publish('solutions',function()***REMOVED***
 ***REMOVED***)
 
 Meteor.publish('currentUserTeam',function(user)***REMOVED***
-    var username = user.profile.username
+    var username = user.username
     return Teams.find(***REMOVED***$or:[***REMOVED***owner:username***REMOVED***,***REMOVED***teammate_1:username***REMOVED***,***REMOVED***teammate_2:username***REMOVED***]***REMOVED***);
 ***REMOVED***)
 

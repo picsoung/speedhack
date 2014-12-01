@@ -2,7 +2,7 @@ AutoForm.hooks(***REMOVED***
   insertTeamForm: ***REMOVED***
       before: ***REMOVED***
       insert: function(doc, template) ***REMOVED***
-          doc.owner = Meteor.user().profile.username
+          doc.owner = Meteor.user().username
 
           if(Teams.find(***REMOVED***
               $and:[

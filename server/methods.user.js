@@ -1,6 +1,6 @@
 Meteor.methods(***REMOVED***
     addRoleToUser: function(username,role) ***REMOVED***
-        var user = Meteor.users.findOne(***REMOVED***'profile.username':username***REMOVED***);
+        var user = Meteor.users.findOne(***REMOVED***'username':username***REMOVED***);
         if(user)***REMOVED***
             Roles.addUsersToRoles(user._id,[role]);
             return user;

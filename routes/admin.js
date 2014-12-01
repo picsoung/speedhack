@@ -1,4 +1,4 @@
-Router.route('/admin/dashboard', ***REMOVED***
+Router.route('/backend/dashboard', ***REMOVED***
     name: "admin.main",
     template: 'adminMain',
     waitOn: function () ***REMOVED***

@@ -8,7 +8,7 @@ Template.manageUsers.helpers(***REMOVED***
             showFilter: false,
             fields: [
                 ***REMOVED***key: 'profile.name',label:'Name'***REMOVED***,
-                ***REMOVED***key: 'profile.username', label: 'Username' ***REMOVED***,
+                ***REMOVED***key: 'username', label: 'Username' ***REMOVED***,
                 ***REMOVED*** key: 'roles', label: 'Roles', tmpl: Template.roleCell***REMOVED***,
                 ***REMOVED*** key: 'createdAt',  sort: 'descending', sortByValue:true, label: 'Submitted on' ,fn: function (value, object) ***REMOVED*** return moment(value).fromNow(); ***REMOVED******REMOVED***
             ]

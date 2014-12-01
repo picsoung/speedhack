@@ -5,7 +5,7 @@ Router.route('/solutions/new',***REMOVED***
         return [Meteor.subscribe('events'),Meteor.subscribe('currentUserTeam',Meteor.user())];
 ***REMOVED***
     onBeforeAction:function()***REMOVED***
-        var username = Meteor.user().profile.username
+        var username = Meteor.user().username
         var team = Teams.findOne(***REMOVED***$or:[***REMOVED***owner:username***REMOVED***,***REMOVED***teammate_1:username***REMOVED***,***REMOVED***teammate_2:username***REMOVED***]***REMOVED***)
         if(!team)***REMOVED***
             Notifications.error("Need a team","Create a team first");
