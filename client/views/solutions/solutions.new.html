@@ -4,12 +4,18 @@
 </template>
 
 <template name="newSolutionForm">
-    {{#autoForm collection="Solutions" id="insertSolutionForm" type="insert"}}
-     <fieldset>
-       <legend>Submit your solution</legend>
-       {{> afQuickField name="event_slug" id="event_select" options=openEventOptions}}
-       {{> afQuickField name='sponsor' options=sponsorOptions}}
-     </fieldset>
-     <button type="submit" class="btn btn-primary">Submit</button>
- {{/autoForm}}
+    {{#if  openEventOptions }}
+        {{#autoForm collection="Solutions" id="insertSolutionForm" type="insert"}}
+            <fieldset>
+            <legend>Submit your solution</legend>
+            {{> afQuickField name="event_slug" id="event_select" options=openEventOptions}}
+            {{> afQuickField name='sponsor' options=sponsorOptions}}
+            </fieldset>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        {{/autoForm}}
+     {{else}}
+        <div class="alert alert-warning" role="alert">
+            No SpeedHack currently running, come back later.
+        </div>
+    {{/if}}
 </template>
