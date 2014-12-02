@@ -1,6 +1,6 @@
 Router.route('/backend/dashboard', {
-    name: "admin.main",
-    template: 'adminMain',
+    name: "backend.main",
+    template: 'backendMain',
     waitOn: function () {
         return [Meteor.subscribe('events'),Meteor.subscribe('users'),Meteor.subscribe('teams'),Meteor.subscribe('solutions')];
     },
