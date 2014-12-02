@@ -17,12 +17,14 @@ Template.newSolutionForm.helpers(***REMOVED***
 ***REMOVED***)
 
 getSponsorsFromEvent = function(eventSlug)***REMOVED***
-    var event = Events.findOne(***REMOVED***slug:eventSlug***REMOVED***,***REMOVED***fields:***REMOVED***sponsors:1***REMOVED******REMOVED***);
-    var sponsors=[]
-    _.each(event.sponsors, function(e) ***REMOVED***
-        sponsors.push(***REMOVED***label:e.name,value:e.name***REMOVED***)
+    if(eventSlug)***REMOVED***
+        var event = Events.findOne(***REMOVED***slug:eventSlug***REMOVED***,***REMOVED***fields:***REMOVED***sponsors:1***REMOVED******REMOVED***);
+        var sponsors=[]
+        _.each(event.sponsors, function(e) ***REMOVED***
+            sponsors.push(***REMOVED***label:e.name,value:e.name***REMOVED***)
 ***REMOVED***);
-    Session.set('currentEventSponsors',sponsors)
+        Session.set('currentEventSponsors',sponsors)
+***REMOVED***
 ***REMOVED***
 
 AutoForm.hooks(***REMOVED***
