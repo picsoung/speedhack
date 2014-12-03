@@ -3,11 +3,14 @@
         {{#if isInRole 'admin'}}
            <a class="btn btn-primary" href="{{pathFor route='event.edit'}}"><i class="fa fa-pencil"></i> edit</a>
         {{/if}}
-        <h1>{{name}}</h1>
+        <h1>{{name}} </h1>
         <hr class="star-primary">
         <img src="{{image}}" alt="{{name}} logo" width="200px"/>
         <p>
             {{{brief}}}
+        </p>
+        <p>
+            <a class="btn btn-primary" href="{{pathFor route='event.leaderboard'}}"><i class="glyphicon glyphicon-tower"></i> Leaderboard</a>
         </p>
         {{> whereWhen}}
         {{> sponsorsSection}}

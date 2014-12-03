@@ -51,7 +51,19 @@
     <li class="page-scroll">
         <a href="{{pathFor 'solutions.new'}}">New Solution</a>
     </li>
-    <li class="page-scroll">
+
+    {{#if isAJudge }}
+       <li class="page-scroll">
+           <a href="{{pathFor route='judge.show' slug=currentJudgeSponsor}}">Judge</a>
+       </li>
+    {{/if}}
+    {{#if isInRole 'admin'}}
+       <li class="page-scroll">
+           <a href="{{pathFor route='backend.main' }}">Admin</a>
+       </li>
+    {{/if}}
+
+    <!-- <li class="page-scroll">
         <a href="#contact">My Profile</a>
-    </li>
+    </li> -->
 </template>

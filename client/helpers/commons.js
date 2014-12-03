@@ -10,6 +10,21 @@ Template.registerHelper('openEventOptions',function(){
     return results;
 })
 
+Template.registerHelper('currentJudgeSponsor',function(){
+   var user = Meteor.user()
+   var roles = user.roles
+   var judge  =_.filter(roles, function(obj){ return obj.match(/judge_/)})[0];
+   if(judge)
+    return judge.replace("judge_","")
+})
+
+Template.registerHelper('isAJudge',function(){
+    var user = Meteor.user()
+    var roles = user.roles
+    var judge  =_.filter(roles, function(obj){ return obj.match(/judge_/)});
+    return !_.isEmpty(judge)
+})
+
 Date.prototype.substractHours= function(h){
     this.setHours(this.getHours()-h);
     return this;
