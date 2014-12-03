@@ -4,7 +4,7 @@ Router.route('/judge/:slug',***REMOVED***
     onBeforeAction:function()***REMOVED***
         if (!Meteor.userId())***REMOVED***
             Router.go('home');
-***REMOVED***else if(Roles.userIsInRole(Meteor.user(), [this.params.slug+"_judge","admin"]))***REMOVED*** //if has the right to judge
+***REMOVED***else if(Roles.userIsInRole(Meteor.user(), ["judge_"+this.params.slug,"admin"]))***REMOVED*** //if has the right to judge
             Session.set('currentSponsor',this.params.slug);
             this.next();
 ***REMOVED***else***REMOVED***

@@ -51,7 +51,19 @@
     <li class="page-scroll">
         <a href="***REMOVED******REMOVED***pathFor 'solutions.new'***REMOVED******REMOVED***">New Solution</a>
     </li>
-    <li class="page-scroll">
+
+    ***REMOVED******REMOVED***#if isAJudge ***REMOVED******REMOVED***
+       <li class="page-scroll">
+           <a href="***REMOVED******REMOVED***pathFor route='judge.show' slug=currentJudgeSponsor***REMOVED******REMOVED***">Judge</a>
+       </li>
+    ***REMOVED******REMOVED***/if***REMOVED******REMOVED***
+    ***REMOVED******REMOVED***#if isInRole 'admin'***REMOVED******REMOVED***
+       <li class="page-scroll">
+           <a href="***REMOVED******REMOVED***pathFor route='backend.main' ***REMOVED******REMOVED***">Admin</a>
+       </li>
+    ***REMOVED******REMOVED***/if***REMOVED******REMOVED***
+
+    <!-- <li class="page-scroll">
         <a href="#contact">My Profile</a>
-    </li>
+    </li> -->
 </template>
