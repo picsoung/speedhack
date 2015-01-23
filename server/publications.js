@@ -7,7 +7,7 @@ Meteor.publish('events',function()***REMOVED***
 ***REMOVED***)
 
 Meteor.publish('eventsLight',function()***REMOVED***
-    return Events.find(***REMOVED******REMOVED***,***REMOVED***fields:***REMOVED***slug:1,image:1***REMOVED***,sort: ***REMOVED***startDate: -1***REMOVED******REMOVED***);
+    return Events.find(***REMOVED******REMOVED***,***REMOVED***fields:***REMOVED***slug:1,image:1,sponsors:1***REMOVED***,sort: ***REMOVED***startDate: -1***REMOVED******REMOVED***);
 ***REMOVED***)
 
 Meteor.publish('event',function(slug)***REMOVED***

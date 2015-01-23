@@ -37,6 +37,7 @@ h6 ***REMOVED***
 ***REMOVED***
 
 hr.star-light,
+hr.star-green,
 hr.star-primary ***REMOVED***
     margin: 25px auto 30px;
     padding: 0;
@@ -47,6 +48,7 @@ hr.star-primary ***REMOVED***
 ***REMOVED***
 
 hr.star-light:after,
+hr.star-green:after,
 hr.star-primary:after ***REMOVED***
     content: "\f005";
     display: inline-block;
@@ -72,6 +74,15 @@ hr.star-primary ***REMOVED***
 
 hr.star-primary:after ***REMOVED***
     color: #2c3e50;
+    background-color: #fff;
+***REMOVED***
+
+hr.star-green ***REMOVED***
+    border-color: #fff;
+***REMOVED***
+
+hr.star-green:after ***REMOVED***
+    color: #18bc9c;
     background-color: #fff;
 ***REMOVED***
 
