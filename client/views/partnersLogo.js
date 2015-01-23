@@ -6,7 +6,7 @@ Template.partnersLogo.helpers(***REMOVED***
         events.forEach(function(e)***REMOVED***
             if(e.sponsors)***REMOVED***
                 e.sponsors.forEach(function(s)***REMOVED***
-                    sponsors[s.name.toLowerCase()]=s
+                    sponsors[URLify2(s.name)]=s
         ***REMOVED***)
     ***REMOVED***
 ***REMOVED***)
