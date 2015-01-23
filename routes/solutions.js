@@ -13,8 +13,8 @@ Router.route('/solutions/new',{
         if(!team){
             Notifications.error("Need a team","Create a team first");
             Router.go('home')
-
         }
-this.next()
+        GAnalytics.pageview();
+        this.next()
     }
 });

@@ -9,5 +9,9 @@ Router.route('/', {
       speedhackEvents: Events.find({}),
     }
   },
-  fasterRender:true
+  fasterRender:true,
+  onBeforeAction:function(){
+      GAnalytics.pageview();
+      this.next();
+  }
 });

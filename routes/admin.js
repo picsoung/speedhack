@@ -8,6 +8,7 @@ Router.route('/backend/dashboard', {
         if (!Meteor.userId()){
             Router.go('home');
         }else if(Roles.userIsInRole(Meteor.user(), ["admin"])){
+            GAnalytics.pageview();
             this.next();
         }else{
             Router.go('home');

@@ -33,6 +33,7 @@ Router.route('/events/:slug/edit',{
         if (!Meteor.userId()){
             Router.go('event.show',{slug:this.params.slug});
         }else if(Roles.userIsInRole(Meteor.user(), ["admin"])){
+            GAnalytics.pageview();
             this.next();
         }else{
             Router.go('event.show',{slug:this.params.slug});
@@ -57,5 +58,9 @@ Router.route('/events/:slug/leaderboard',{
     data:function(){
         return Events.findOne({slug:this.params.slug})
     },
-    fastRender:true
+    fastRender:true,
+    onBeforeAction:function(){
+        GAnalytics.pageview();
+        this.next();
+    }
 });
