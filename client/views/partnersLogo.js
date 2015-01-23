@@ -6,7 +6,7 @@ Template.partnersLogo.helpers({
         events.forEach(function(e){
             if(e.sponsors){
                 e.sponsors.forEach(function(s){
-                    sponsors[s.name]=s
+                    sponsors[s.name.toLowerCase()]=s
                 })
             }
         })
