@@ -9,5 +9,9 @@ Router.route('/', ***REMOVED***
       speedhackEvents: Events.find(***REMOVED******REMOVED***),
 ***REMOVED***
   ***REMOVED***,
-  fasterRender:true
+  fasterRender:true,
+  onBeforeAction:function()***REMOVED***
+      GAnalytics.pageview();
+      this.next();
+  ***REMOVED***
 ***REMOVED***);

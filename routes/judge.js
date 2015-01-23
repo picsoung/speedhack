@@ -6,6 +6,7 @@ Router.route('/judge/:slug',***REMOVED***
             Router.go('home');
 ***REMOVED***else if(Roles.userIsInRole(Meteor.user(), ["judge_"+this.params.slug,"admin"]))***REMOVED*** //if has the right to judge
             Session.set('currentSponsor',this.params.slug);
+            GAnalytics.pageview();
             this.next();
 ***REMOVED***else***REMOVED***
             Router.go('home');

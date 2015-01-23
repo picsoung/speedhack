@@ -8,6 +8,7 @@ Router.route('/backend/dashboard', ***REMOVED***
         if (!Meteor.userId())***REMOVED***
             Router.go('home');
 ***REMOVED***else if(Roles.userIsInRole(Meteor.user(), ["admin"]))***REMOVED***
+            GAnalytics.pageview();
             this.next();
 ***REMOVED***else***REMOVED***
             Router.go('home');

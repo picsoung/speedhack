@@ -13,8 +13,8 @@ Router.route('/solutions/new',***REMOVED***
         if(!team)***REMOVED***
             Notifications.error("Need a team","Create a team first");
             Router.go('home')
-
 ***REMOVED***
-this.next()
+        GAnalytics.pageview();
+        this.next()
 ***REMOVED***
 ***REMOVED***);

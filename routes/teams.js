@@ -8,6 +8,7 @@ Router.route('/teams/create',***REMOVED***
         if (!Meteor.userId())***REMOVED***
             Router.go('home');
 ***REMOVED***else***REMOVED***
+            GAnalytics.pageview();
             this.next();
 ***REMOVED***
 ***REMOVED***

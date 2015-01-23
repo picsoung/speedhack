@@ -33,6 +33,7 @@ Router.route('/events/:slug/edit',***REMOVED***
         if (!Meteor.userId())***REMOVED***
             Router.go('event.show',***REMOVED***slug:this.params.slug***REMOVED***);
 ***REMOVED***else if(Roles.userIsInRole(Meteor.user(), ["admin"]))***REMOVED***
+            GAnalytics.pageview();
             this.next();
 ***REMOVED***else***REMOVED***
             Router.go('event.show',***REMOVED***slug:this.params.slug***REMOVED***);
@@ -57,5 +58,9 @@ Router.route('/events/:slug/leaderboard',***REMOVED***
     data:function()***REMOVED***
         return Events.findOne(***REMOVED***slug:this.params.slug***REMOVED***)
 ***REMOVED***
-    fastRender:true
+    fastRender:true,
+    onBeforeAction:function()***REMOVED***
+        GAnalytics.pageview();
+        this.next();
+***REMOVED***
 ***REMOVED***);
