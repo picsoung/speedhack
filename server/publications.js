@@ -7,7 +7,7 @@ Meteor.publish('events',function(){
 })
 
 Meteor.publish('eventsLight',function(){
-    return Events.find({},{fields:{slug:1,image:1},sort: {startDate: -1}});
+    return Events.find({},{fields:{slug:1,image:1,sponsors:1},sort: {startDate: -1}});
 })
 
 Meteor.publish('event',function(slug){
