@@ -472,3 +472,7 @@ footer .footer-below {
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
 }
+
+.logo-sponsor {
+    margin: 10px;
+}
