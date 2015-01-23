@@ -8,6 +8,7 @@ Router.route('/teams/create',{
         if (!Meteor.userId()){
             Router.go('home');
         }else{
+            GAnalytics.pageview();
             this.next();
         }
     }
