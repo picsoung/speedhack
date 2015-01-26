@@ -11,8 +11,16 @@ Router.route('/', ***REMOVED***
   ***REMOVED***,
   fasterRender:true,
   onBeforeAction:function()***REMOVED***
-      GAnalytics.pageview();
-      this.next();
+      if(Meteor.user())***REMOVED***
+          if(_.isUndefined(Meteor.user().emails) || _.isUndefined(Meteor.user().emails[0].address))***REMOVED***
+              Router.go('users.edit',***REMOVED***'username':Meteor.user().username***REMOVED***);
+              this.next()
+  ***REMOVED***
+  ***REMOVED***else***REMOVED***
+        GAnalytics.pageview();
+        this.next();
+  ***REMOVED***
+      this.next()
   ***REMOVED***
 ***REMOVED***);
 

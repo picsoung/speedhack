@@ -2,6 +2,10 @@ Meteor.publish('users',function()***REMOVED***
     return Meteor.users.find(***REMOVED******REMOVED***);
 ***REMOVED***)
 
+Meteor.publish('user',function(username)***REMOVED***
+    return Meteor.users.find(***REMOVED***username:username***REMOVED***);
+***REMOVED***)
+
 Meteor.publish('events',function()***REMOVED***
     return Events.find(***REMOVED******REMOVED***);
 ***REMOVED***)
