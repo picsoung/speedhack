@@ -1,0 +1,11 @@
+<template name="usersEdit">
+    {{#autoForm collection="Meteor.users"  doc=this id="updateUserForm" type="update"}}
+    <fieldset>
+        <legend>Modify profile</legend>
+        {{> afQuickField name='username'}}
+        {{> afQuickField name='emails.0.address'}}
+        {{> afQuickField name='profile.bio' rows=6}}
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Update</button>
+    {{/autoForm}}
+</template>

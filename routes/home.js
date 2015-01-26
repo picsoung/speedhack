@@ -11,8 +11,16 @@ Router.route('/', {
   },
   fasterRender:true,
   onBeforeAction:function(){
-      GAnalytics.pageview();
-      this.next();
+      if(Meteor.user()){
+          if(_.isUndefined(Meteor.user().emails) || _.isUndefined(Meteor.user().emails[0].address)){
+              Router.go('users.edit',{'username':Meteor.user().username});
+              this.next()
+          }
+      }else{
+        GAnalytics.pageview();
+        this.next();
+      }
+      this.next()
   }
 });
 

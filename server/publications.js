@@ -2,6 +2,10 @@ Meteor.publish('users',function(){
     return Meteor.users.find({});
 })
 
+Meteor.publish('user',function(username){
+    return Meteor.users.find({username:username});
+})
+
 Meteor.publish('events',function(){
     return Events.find({});
 })
