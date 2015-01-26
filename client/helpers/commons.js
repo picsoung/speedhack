@@ -33,3 +33,9 @@ Date.prototype.addHours= function(h)***REMOVED***
     this.setHours(this.getHours()+h);
     return this;
 ***REMOVED***
+
+UI.registerHelper('addIndex', function (all) ***REMOVED***
+    return _.map(all, function(val, index) ***REMOVED***
+        return ***REMOVED***index: index, value: val***REMOVED***;
+***REMOVED***);
+***REMOVED***);

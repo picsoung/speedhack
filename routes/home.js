@@ -15,3 +15,16 @@ Router.route('/', ***REMOVED***
       this.next();
   ***REMOVED***
 ***REMOVED***);
+
+Router.route('/sponsor', ***REMOVED***
+    name:'sponsorshipDetails',
+    layoutTemplate:'defaultLayout',
+    waitOn:function()***REMOVED***
+        return Meteor.subscribe('eventsLight');
+***REMOVED***
+    fasterRender:true,
+    onBeforeAction:function()***REMOVED***
+        GAnalytics.pageview();
+        this.next();
+***REMOVED***
+***REMOVED***);
