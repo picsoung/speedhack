@@ -3,3 +3,13 @@
         <a href="{{url}}" class="logo-sponsor" target="_blank"><img src="{{logo}}" alt="{{name}} sponsor logo" width="200px"/></a>
     {{/each}}
 </template>
+
+<template name="sponsorButton">
+    <div class="row">
+        <div class="col-lg-2 col-lg-offset-5">
+            {{#linkTo route="sponsorshipDetails"}}
+            <span class="typeform-share btn btn-lg btn-outline_green" href="https://picsoung.typeform.com/to/EkPqrX" ><i class="fa fa-wrench"></i> Why sponsor SpeedHack?</span>
+            {{/linkTo}}
+        </div>
+    </div>
+</template>

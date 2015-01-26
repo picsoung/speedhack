@@ -15,3 +15,16 @@ Router.route('/', {
       this.next();
   }
 });
+
+Router.route('/sponsor', {
+    name:'sponsorshipDetails',
+    layoutTemplate:'defaultLayout',
+    waitOn:function(){
+        return Meteor.subscribe('eventsLight');
+    },
+    fasterRender:true,
+    onBeforeAction:function(){
+        GAnalytics.pageview();
+        this.next();
+    }
+});
