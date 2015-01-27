@@ -20,7 +20,6 @@ Router.route('/', {
         GAnalytics.pageview();
         this.next();
       }
-      this.next()
   }
 });
 

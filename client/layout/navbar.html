@@ -1,4 +1,5 @@
 <template name="navbar">
+    <div id="top"></div>
   <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
           <!-- Brand and toggle get grouped for better mobile display -->
@@ -9,7 +10,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="{{pathFor 'home'}}">SpeedHack.io</a>
+              <a class="navbar-brand" href="{{pathFor 'home'}}#top">SpeedHack.io</a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -38,6 +39,12 @@
     </li>
     <li class="page-scroll">
         <a href="#about">About</a>
+    </li>
+    <li class="page-scroll">
+        <a href="#partners">Partners</a>
+    </li>
+    <li class="page-scroll">
+        <a href="#faq">FAQ</a>
     </li>
     <li class="page-scroll">
         <a href="#contact">Contact</a>
