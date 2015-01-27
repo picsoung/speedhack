@@ -1,7 +1,6 @@
 Template.partnersLogo.helpers(***REMOVED***
     sponsors:function()***REMOVED***
         var events = Events.find(***REMOVED******REMOVED***,***REMOVED***fields:***REMOVED***sponsors:1***REMOVED******REMOVED***)
-        console.log(events.fetch())
         var sponsors =[]
         events.forEach(function(e)***REMOVED***
             if(e.sponsors)***REMOVED***
