@@ -55,8 +55,8 @@ Schema.User = new SimpleSchema({
         type: String,
         regEx: SimpleSchema.RegEx.Email,
         label: "Email",
-        index: true,
-        unique: true
+        // index: true,
+        // unique: true
     },
     "emails.$.verified": {
         type: Boolean,
