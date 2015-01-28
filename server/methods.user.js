@@ -11,4 +11,12 @@ Meteor.methods(***REMOVED***
     removeRoleToUser: function(userId,userRoles,role)***REMOVED***
         Roles.setUserRoles(userId, _.without(userRoles,role))
 ***REMOVED***
+    createNewUserFromEmail:function(emailAddress)***REMOVED***
+        var a = Accounts.createUser(***REMOVED***
+            username: emailAddress,
+            email: emailAddress,
+            password: 'bibi'
+***REMOVED***)
+        Accounts.sendEnrollmentEmail(a)
+***REMOVED***
 ***REMOVED***)

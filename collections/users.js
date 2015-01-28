@@ -43,7 +43,7 @@ Schema.UserProfile = new SimpleSchema(***REMOVED***
 Schema.User = new SimpleSchema(***REMOVED***
     username: ***REMOVED***
         type: String,
-        regEx: /^[a-z0-9A-Z_]***REMOVED***3,15***REMOVED***$/
+        regEx: /^[a-z0-9A-Z_@.]***REMOVED***3,30***REMOVED***$/
 ***REMOVED***
     emails: ***REMOVED***
         type: [Object],

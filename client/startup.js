@@ -5,7 +5,7 @@ if(Meteor.isClient)***REMOVED***
 ***REMOVED***);
 
         Accounts.ui.config(***REMOVED***
-           passwordSignupFields: 'USERNAME_ONLY'
+           passwordSignupFields: 'USERNAME_AND_OPTIONAL_EMAIL'
 ***REMOVED***);
 ***REMOVED***);
 ***REMOVED***
