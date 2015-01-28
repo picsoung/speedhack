@@ -55,7 +55,8 @@ Schema.User = new SimpleSchema(***REMOVED***
         type: String,
         regEx: SimpleSchema.RegEx.Email,
         label: "Email",
-        unique: true,
+        index: true,
+        unique: true
 ***REMOVED***
     "emails.$.verified": ***REMOVED***
         type: Boolean,
