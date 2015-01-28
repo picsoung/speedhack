@@ -20,6 +20,7 @@ Router.route('/', ***REMOVED***
         GAnalytics.pageview();
         this.next();
   ***REMOVED***
+      this.next();
   ***REMOVED***
 ***REMOVED***);
 
