@@ -26,3 +26,5 @@ momentjs:moment
 twbs:bootstrap
 zal3wa:bootstrap-flatly
 jparker:gravatar
+email
+cmather:handlebars-server

@@ -19,6 +19,7 @@ boilerplate-generator@1.0.2
 callback-hook@1.0.2
 check@1.0.4
 chuangbo:cookie@1.1.0
+cmather:handlebars-server@2.0.0
 coffeescript@1.0.5
 datariot:ganalytics@0.2.1
 dburles:mongo-collection-instances@0.2.6
@@ -31,6 +32,7 @@ follower-livedata@1.0.3
 geojson-utils@1.0.2
 gfk:notifications@1.1.2
 grokbot:bootstrap-flatly@0.0.4
+handlebars@1.0.2
 houston:admin@2.0.1
 html-tools@1.0.3
 htmljs@1.0.3

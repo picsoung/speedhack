@@ -3,5 +3,9 @@
         "ga": {
             "account":"UA-58897347-1"
         }
+    },
+    "sendgrid":{
+        "login":"nicolas@3scale.net",
+        "pass":"jianguowai1vid17"
     }
 }
