@@ -1,0 +1,25 @@
+<p>Hello {{user.username}},</p>
+<p>
+    We are really happy to see you join
+    <a href="http://speedhack.io/events/{{event.slig}}" style="color: orange;">
+        {{event.name}}
+    </a> happening on {{event.date}}.
+</p>
+<p>
+    We have partnered with many companies for this event. We highly recommend check their APIs prior to the event.
+</p>
+
+<p>
+    During the event we will use <a href="http://speedhack.io">SpeedHack.io</a> platform to run the hackathon.<br/>
+    Your username is <b>{{user.username}}</b>.
+</p>
+
+<h3>Partners</h3>
+{{#each event.sponsors}}
+    <a href="{{url}}"><img src="{{logo}}" width="150px" alt="{{name}}" /></a> <br/>
+{{/each}}
+
+<h4>Questions?</h4>
+<p>
+    Send us an email to contact@speedhack.io and we will answer you shortly.
+</p>
