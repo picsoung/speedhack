@@ -1,25 +1,25 @@
 <template name="eventShow">
     <div class="col-md-8">
-        ***REMOVED******REMOVED***#if isInRole 'admin'***REMOVED******REMOVED***
-           <a class="btn btn-primary" href="***REMOVED******REMOVED***pathFor route='event.edit'***REMOVED******REMOVED***"><i class="fa fa-pencil"></i> edit</a>
-        ***REMOVED******REMOVED***/if***REMOVED******REMOVED***
-        <h1>***REMOVED******REMOVED***name***REMOVED******REMOVED*** </h1>
+        <h1>***REMOVED******REMOVED***name***REMOVED******REMOVED***</h1>
         <hr class="star-primary">
-        <img src="***REMOVED******REMOVED***image***REMOVED******REMOVED***" alt="***REMOVED******REMOVED***name***REMOVED******REMOVED*** logo" width="200px"/>
+        <div class="event_actions">
+            <img src="***REMOVED******REMOVED***image***REMOVED******REMOVED***" alt="***REMOVED******REMOVED***name***REMOVED******REMOVED*** logo" width="200px"/>
+            ***REMOVED******REMOVED***#if isInRole 'admin'***REMOVED******REMOVED***
+               <a class="btn btn-primary" href="***REMOVED******REMOVED***pathFor route='event.edit'***REMOVED******REMOVED***"><i class="fa fa-pencil"></i> Edit</a>
+            ***REMOVED******REMOVED***/if***REMOVED******REMOVED***
+            <a class="btn btn-primary" href="***REMOVED******REMOVED***pathFor route='event.leaderboard'***REMOVED******REMOVED***"><i class="glyphicon glyphicon-tower"></i> Leaderboard</a>
+        </div>
         <p>
+
+        </p>
+
+        <p class="description_speedHack">
             ***REMOVED******REMOVED******REMOVED***brief***REMOVED******REMOVED******REMOVED***
         </p>
-        <p>
-            <a class="btn btn-primary" href="***REMOVED******REMOVED***pathFor route='event.leaderboard'***REMOVED******REMOVED***"><i class="glyphicon glyphicon-tower"></i> Leaderboard</a>
-        </p>
         ***REMOVED******REMOVED***> whereWhen***REMOVED******REMOVED***
-        ***REMOVED******REMOVED***> sponsorsSection***REMOVED******REMOVED***
     </div>
     <div class="col-md-4">
-        ***REMOVED******REMOVED***#if mySolutions***REMOVED******REMOVED***
-        <h2>My solutions</h2>
-        ***REMOVED******REMOVED***> mySolutions***REMOVED******REMOVED***
-        ***REMOVED******REMOVED***/if***REMOVED******REMOVED***
+        ***REMOVED******REMOVED***> sponsorsSection***REMOVED******REMOVED***
     </div>
 </template>
 
@@ -30,13 +30,16 @@
                ***REMOVED******REMOVED***> addSponsorMenu***REMOVED******REMOVED***
             ***REMOVED******REMOVED***/if***REMOVED******REMOVED***
         </h2>
-
+        <ul class="ul_sponsors">
          ***REMOVED******REMOVED***#each sponsors***REMOVED******REMOVED***
-            <a href="***REMOVED******REMOVED***url***REMOVED******REMOVED***" target="_blank"><img src="***REMOVED******REMOVED***logo***REMOVED******REMOVED***" alt="***REMOVED******REMOVED***name***REMOVED******REMOVED*** sponsor logo" width="100px"/></a>
+            <li>
+                <a href="***REMOVED******REMOVED***url***REMOVED******REMOVED***" target="_blank"><img src="***REMOVED******REMOVED***logo***REMOVED******REMOVED***" alt="***REMOVED******REMOVED***name***REMOVED******REMOVED*** sponsor logo" width="100%"/></a>
+            </li>
             ***REMOVED******REMOVED***#if isInRole 'admin'***REMOVED******REMOVED***
                ***REMOVED******REMOVED***> removeSponsorMenu***REMOVED******REMOVED***
             ***REMOVED******REMOVED***/if***REMOVED******REMOVED***
          ***REMOVED******REMOVED***/each***REMOVED******REMOVED***
+     </ul>
     </div>
 </template>
 
