@@ -33,7 +33,7 @@
         <ul class="ul_sponsors">
          {{#each sponsors}}
             <li>
-                <a href="{{url}}" target="_blank"><img src="{{logo}}" alt="{{name}} sponsor logo" width="100%"/></a>
+                <a href="{{url}}" target="_blank"><img src="{{logo}}" class="sponsor_logo" alt="{{name}} sponsor logo"/></a>
             </li>
             {{#if isInRole 'admin'}}
                {{> removeSponsorMenu}}
