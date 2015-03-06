@@ -1,0 +1,11 @@
+{
+    "public" : {
+        "ga": {
+            "account":"YOUR_GOOGLE_ANALYTICS"
+        }
+    },
+    "sendgrid":{
+        "login":"YOUR_SENDGRID_USERNAME",
+        "pass":"YOUR_SENDGRID_PASSWORDgit"
+    }
+}
