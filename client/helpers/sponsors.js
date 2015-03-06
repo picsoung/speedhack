@@ -1,7 +1,7 @@
-UI.registerHelper('sponsorsOfEvents',function(eventSlug)***REMOVED***
-    var e = Events.findOne(***REMOVED***slug:eventSlug***REMOVED***)
-    if(e)***REMOVED***
+UI.registerHelper('sponsorsOfEvents',function(eventSlug){
+    var e = Events.findOne({slug:eventSlug})
+    if(e){
         return e.sponsors
-***REMOVED***
+    }
     return []
-***REMOVED***)
+})

@@ -1,89 +1,89 @@
 Teams = new Mongo.Collection("teams");
 
-var Schemas = ***REMOVED******REMOVED***;
+var Schemas = {};
 
-Schemas.Team = new SimpleSchema(***REMOVED***
-    name:***REMOVED***
+Schemas.Team = new SimpleSchema({
+    name:{
         type:String,
         label:"Team name"
-***REMOVED***
-    event_slug:***REMOVED***
+    },
+    event_slug:{
         type:String,
         label:"Event"
-***REMOVED***
-    table_number:***REMOVED***
+    },
+    table_number:{
         type: Number,
         label:"Table Number",
         min: 0
-***REMOVED***
-    owner:***REMOVED***
+    },
+    owner:{
         type:String,
         label: "Owner",
         optional:true
-***REMOVED***
-    teammate_1:***REMOVED***
+    },
+    teammate_1:{
         type:String,
         label: "Teammate #1",
         optional:true
-***REMOVED***
-    teammate_2:***REMOVED***
+    },
+    teammate_2:{
         type:String,
         label: "Teammate #2",
         optional:true
-***REMOVED***
-    "extra_points.$":***REMOVED***
+    },
+    "extra_points.$":{
         type:[Object],
         optional:true,
         blackbox:true
-***REMOVED***
-    "extra_points.$.sponsor":***REMOVED***
+    },
+    "extra_points.$.sponsor":{
         type: String,
         label: "Sponsor",
         optional:true
-***REMOVED***
-    "extra_points.$.value":***REMOVED***
+    },
+    "extra_points.$.value":{
         type: Number,
         label: "Extra points",
         optional:true
-***REMOVED***
-    createdAt: ***REMOVED***
+    },
+    createdAt: {
         type: Date,
-          autoValue: function() ***REMOVED***
-            if (this.isInsert) ***REMOVED***
+          autoValue: function() {
+            if (this.isInsert) {
               return new Date;
-    ***REMOVED*** else if (this.isUpsert) ***REMOVED***
-              return ***REMOVED***$setOnInsert: new Date***REMOVED***;
-    ***REMOVED*** else ***REMOVED***
+            } else if (this.isUpsert) {
+              return {$setOnInsert: new Date};
+            } else {
               this.unset();
-    ***REMOVED***
-  ***REMOVED***
-  ***REMOVED***
+            }
+          }
+      },
       // Force value to be current date (on server) upon update
       // and don't allow it to be set upon insert.
-      updatedAt: ***REMOVED***
+      updatedAt: {
         type: Date,
-        autoValue: function() ***REMOVED***
-          if (this.isUpdate) ***REMOVED***
+        autoValue: function() {
+          if (this.isUpdate) {
             return new Date();
-  ***REMOVED***
-***REMOVED***,
+          }
+        },
         denyInsert: true,
         optional: true
-  ***REMOVED***
-***REMOVED***)
+      }
+})
 
 Teams.attachSchema(Schemas.Team);
 
-// Events.allow(***REMOVED***
-//   insert: function (userId, doc) ***REMOVED***
+// Events.allow({
+//   insert: function (userId, doc) {
 //     // the user must be logged in, and the document must be owned by the user
 //     var loggedInUser = Meteor.user()
 //     return (loggedInUser &&Roles.userIsInRole(loggedInUser,['admin']));
-//   ***REMOVED***,
-//   update: function (userId, doc, fields, modifier) ***REMOVED***
+//   },
+//   update: function (userId, doc, fields, modifier) {
 //     // can only change your own documents
 //     console.log("update",loggedInUser &&Roles.userIsInRole(loggedInUser,['admin']))
 //     var loggedInUser = Meteor.user()
 //     return (loggedInUser &&Roles.userIsInRole(loggedInUser,['admin']))
-//   ***REMOVED***
-// ***REMOVED***);
+//   }
+// });

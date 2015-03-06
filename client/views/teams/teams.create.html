@@ -1,19 +1,19 @@
 <template name="newTeam">
-    ***REMOVED******REMOVED***#if  openEventOptions ***REMOVED******REMOVED***
-        ***REMOVED******REMOVED***#autoForm collection="Teams" id="insertTeamForm" type="insert"***REMOVED******REMOVED***
+    {{#if  openEventOptions }}
+        {{#autoForm collection="Teams" id="insertTeamForm" type="insert"}}
             <fieldset>
             <legend>Create a Team</legend>
-            ***REMOVED******REMOVED***> afQuickField name="event_slug" options=openEventOptions***REMOVED******REMOVED***
-            ***REMOVED******REMOVED***> afQuickField name='name'***REMOVED******REMOVED***
-            ***REMOVED******REMOVED***> afQuickField name='table_number'***REMOVED******REMOVED***
-            ***REMOVED******REMOVED***> afQuickField name='teammate_1'***REMOVED******REMOVED***
-            ***REMOVED******REMOVED***> afQuickField name='teammate_2'***REMOVED******REMOVED***
+            {{> afQuickField name="event_slug" options=openEventOptions}}
+            {{> afQuickField name='name'}}
+            {{> afQuickField name='table_number'}}
+            {{> afQuickField name='teammate_1'}}
+            {{> afQuickField name='teammate_2'}}
             </fieldset>
             <button type="submit" class="btn btn-primary">Create</button>
-        ***REMOVED******REMOVED***/autoForm***REMOVED******REMOVED***
-     ***REMOVED******REMOVED***else***REMOVED******REMOVED***
+        {{/autoForm}}
+     {{else}}
         <div class="alert alert-warning" role="alert">
             No SpeedHack currently running, come back later.
         </div>
-    ***REMOVED******REMOVED***/if***REMOVED******REMOVED***
+    {{/if}}
 </template>

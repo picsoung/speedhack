@@ -1,24 +1,24 @@
-Router.route('/judge/:slug',***REMOVED***
+Router.route('/judge/:slug',{
     name: "judge.show",
     template: 'judgeShow',
-    onBeforeAction:function()***REMOVED***
-        if (!Meteor.userId())***REMOVED***
+    onBeforeAction:function(){
+        if (!Meteor.userId()){
             Router.go('home');
-***REMOVED***else if(Roles.userIsInRole(Meteor.user(), ["judge_"+this.params.slug,"admin"]))***REMOVED*** //if has the right to judge
+        }else if(Roles.userIsInRole(Meteor.user(), ["judge_"+this.params.slug,"admin"])){ //if has the right to judge
             Session.set('currentSponsor',this.params.slug);
             GAnalytics.pageview();
             this.next();
-***REMOVED***else***REMOVED***
+        }else{
             Router.go('home');
-***REMOVED***
-***REMOVED***
-     waitOn: function () ***REMOVED***
+        }
+    },
+     waitOn: function () {
         return [Meteor.subscribe('solutionsPerSponsor',this.params.slug),Meteor.subscribe('eventPerSponsor',this.params.slug)];
-***REMOVED***
-    data:function()***REMOVED***
-        return ***REMOVED***
+    },
+    data:function(){
+        return {
         slug: this.params.slug,
-  ***REMOVED***
-***REMOVED***
+      }
+    },
     fastRender:true
-***REMOVED***);
+});

@@ -1,10 +1,10 @@
 <template name="eventLeaderboard">
-    <h1>***REMOVED******REMOVED***name***REMOVED******REMOVED***</h1>
+    <h1>{{name}}</h1>
     <div class="col-md-6">
-        ***REMOVED******REMOVED***>leaderboard***REMOVED******REMOVED***
+        {{>leaderboard}}
     </div>
     <div class="col-md-6">
-        ***REMOVED******REMOVED***> livestream***REMOVED******REMOVED***
+        {{> livestream}}
     </div>
 </template>
 
@@ -18,21 +18,21 @@
             </tr>
         </thead>
         <tbody>
-            ***REMOVED******REMOVED***#each teamScore***REMOVED******REMOVED***
-                ***REMOVED******REMOVED***> scoreDetail***REMOVED******REMOVED***
-            ***REMOVED******REMOVED***/each***REMOVED******REMOVED***
+            {{#each teamScore}}
+                {{> scoreDetail}}
+            {{/each}}
         </tbody>
     </table>
 </template>
 
 <template name="scoreDetail">
     <tr class="player">
-        <td class="name"><h2>***REMOVED******REMOVED***team_name***REMOVED******REMOVED***</h2></td>
-        <td class="score"><h2><span>***REMOVED******REMOVED***score***REMOVED******REMOVED***</span></h2></td>
+        <td class="name"><h2>{{team_name}}</h2></td>
+        <td class="score"><h2><span>{{score}}</span></h2></td>
     </tr>
 </template>
 
 <template name="livestream">
     <h1>Livestream</h1>
-    ***REMOVED******REMOVED***> reactiveTable collection=solutions settings=settings***REMOVED******REMOVED***
+    {{> reactiveTable collection=solutions settings=settings}}
 </template>

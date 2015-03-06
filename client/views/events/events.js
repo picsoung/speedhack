@@ -1,71 +1,71 @@
-Template.eventsList.helpers(***REMOVED***
-    'upcomingEvents':function()***REMOVED***
-        return Events.find(***REMOVED***startDate:***REMOVED***$gte:new Date()***REMOVED******REMOVED***) //greater than today
-***REMOVED***
-    'pastEvents':function()***REMOVED***
-        return Events.find(***REMOVED***endDate:***REMOVED***$lte:new Date()***REMOVED******REMOVED***) //enddate < today
-***REMOVED***
-***REMOVED***)
+Template.eventsList.helpers({
+    'upcomingEvents':function(){
+        return Events.find({startDate:{$gte:new Date()}}) //greater than today
+    },
+    'pastEvents':function(){
+        return Events.find({endDate:{$lte:new Date()}}) //enddate < today
+    }
+})
 
-Template.addSponsorMenu.events(***REMOVED***
-    'click #addButton':function(e,t)***REMOVED***
+Template.addSponsorMenu.events({
+    'click #addButton':function(e,t){
         $("#addSponsorForm").toggle();
-***REMOVED***
-    'click #submitSponsorForm':function(e,target)***REMOVED***
+    },
+    'click #submitSponsorForm':function(e,target){
         Meteor.call('addSponsorToEvent',target.data._id,$("#sponsor_name").val(),$("#sponsor_logo").val(),$("#sponsor_url").val())
-***REMOVED***
-***REMOVED***)
+    }
+})
 
-Template.removeSponsorMenu.events(***REMOVED***
-    'click #removeSponsorButton':function(e,target)***REMOVED***
+Template.removeSponsorMenu.events({
+    'click #removeSponsorButton':function(e,target){
         Meteor.call('removeSponsorFromEvent',e.target.getAttribute('data-eventslug'),target.data.name)
-***REMOVED***
-***REMOVED***)
+    }
+})
 
-Template.removeSponsorMenu.helpers(***REMOVED***
-    'eventSlug':function(parentContext)***REMOVED***
+Template.removeSponsorMenu.helpers({
+    'eventSlug':function(parentContext){
         return parentContext.slug;
-***REMOVED***
-***REMOVED***)
+    }
+})
 
-Template.mySolutions.helpers(***REMOVED***
-    mySolutions: function () ***REMOVED***
-        return Solutions.find(***REMOVED******REMOVED***);
-***REMOVED***
-    settings: function () ***REMOVED***
-        return ***REMOVED***
+Template.mySolutions.helpers({
+    mySolutions: function () {
+        return Solutions.find({});
+    },
+    settings: function () {
+        return {
             rowsPerPage: 5,
             showFilter: false,
             fields: [
-                ***REMOVED***key: 'submitted_by', label: 'Submitted By' ***REMOVED***,
-                ***REMOVED*** key: 'sponsor', label: 'Challenge' ***REMOVED***, //TODO display logo
-                ***REMOVED*** key: 'createdAt',  sort: 'descending', sortByValue:true, label: 'Submitted on' ,fn: function (value, object) ***REMOVED*** return moment(value).fromNow(); ***REMOVED******REMOVED***
+                {key: 'submitted_by', label: 'Submitted By' },
+                { key: 'sponsor', label: 'Challenge' }, //TODO display logo
+                { key: 'createdAt',  sort: 'descending', sortByValue:true, label: 'Submitted on' ,fn: function (value, object) { return moment(value).fromNow(); }}
             ],
-            rowClass: function(item) ***REMOVED***
+            rowClass: function(item) {
               var qnt = item.passed;
-              switch (qnt) ***REMOVED***
+              switch (qnt) {
                 case false:
                     return 'danger';
                 case true:
                     return 'success';
                 default:
                   return 'warning';
-      ***REMOVED***
-  ***REMOVED***
- ***REMOVED***
- ***REMOVED***
-***REMOVED***);
+              }
+          }
+     }
+ }
+});
 
-AutoForm.hooks(***REMOVED***
-  insertEventForm: ***REMOVED***
-    onSubmit: function (doc) ***REMOVED***
+AutoForm.hooks({
+  insertEventForm: {
+    onSubmit: function (doc) {
       schemas.Event.clean(doc);
       console.log("People doc with auto values", doc);
       this.done();
       return false;
-***REMOVED***
-    onSuccess:function(operation, result, template)***REMOVED***
+    },
+    onSuccess:function(operation, result, template){
         Router.go('events');
-***REMOVED***
-  ***REMOVED***
-***REMOVED***);
+    }
+  }
+});

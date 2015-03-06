@@ -1,73 +1,73 @@
-Meteor.methods(***REMOVED***
-    addExtraPointsToTeamName:function(teamName,sponsor,nbPoints)***REMOVED*** //FIXME 2 methods does the same thing
-        var team = Teams.findOne(***REMOVED***name:teamName***REMOVED***)
-        if(team)***REMOVED***
+Meteor.methods({
+    addExtraPointsToTeamName:function(teamName,sponsor,nbPoints){ //FIXME 2 methods does the same thing
+        var team = Teams.findOne({name:teamName})
+        if(team){
             //Already got extra points by sponsor?
-            var sponsorExist = Teams.findOne(***REMOVED***$and:[
-                ***REMOVED***_id:team._id***REMOVED***,
-                ***REMOVED***"extra_points.sponsor":sponsor***REMOVED***
-                ]***REMOVED***)
-            if(sponsorExist)***REMOVED***
+            var sponsorExist = Teams.findOne({$and:[
+                {_id:team._id},
+                {"extra_points.sponsor":sponsor}
+                ]})
+            if(sponsorExist){
                 console.log(typeof nbPoints);
-                Teams.update(***REMOVED***_id:sponsorExist._id,"extra_points.sponsor":sponsor***REMOVED***,***REMOVED***$inc : ***REMOVED***"extra_points.$.value" : parseInt(nbPoints)***REMOVED*** ***REMOVED***,function(err,res)***REMOVED***
+                Teams.update({_id:sponsorExist._id,"extra_points.sponsor":sponsor},{$inc : {"extra_points.$.value" : parseInt(nbPoints)} },function(err,res){
                     console.log(err,res);
-        ***REMOVED***)
-    ***REMOVED***else***REMOVED***
-                Teams.update(***REMOVED***_id:team._id***REMOVED***,***REMOVED***$addToSet : ***REMOVED***
-                    "extra_points" :***REMOVED***
+                })
+            }else{
+                Teams.update({_id:team._id},{$addToSet : {
+                    "extra_points" :{
                         sponsor:sponsor,
                         value:nbPoints
-                ***REMOVED***
-            ***REMOVED***
-        ***REMOVED***)
-    ***REMOVED***
+                        }
+                    }
+                })
+            }
             return team;
-***REMOVED***else***REMOVED***
+        }else{
             throw new Meteor.Error("team-not-found","Team does not exist");
-***REMOVED***
-***REMOVED***
-    addExtraPointsToTeam:function(teamId,sponsor,nbPoints)***REMOVED***
-        var team = Teams.findOne(***REMOVED***_id:teamId***REMOVED***)
-        if(team)***REMOVED***
+        }
+    },
+    addExtraPointsToTeam:function(teamId,sponsor,nbPoints){
+        var team = Teams.findOne({_id:teamId})
+        if(team){
             console.log(teamId,sponsor,nbPoints)
             //Already got extra points by sponsor?
-            var sponsorExist = Teams.findOne(***REMOVED***$and:[
-                ***REMOVED***_id:team._id***REMOVED***,
-                ***REMOVED***"extra_points.sponsor":sponsor***REMOVED***
-                ]***REMOVED***)
-            if(sponsorExist)***REMOVED***
+            var sponsorExist = Teams.findOne({$and:[
+                {_id:team._id},
+                {"extra_points.sponsor":sponsor}
+                ]})
+            if(sponsorExist){
                 console.log(typeof nbPoints);
-                Teams.update(***REMOVED***_id:sponsorExist._id,"extra_points.sponsor":sponsor***REMOVED***,***REMOVED***$inc : ***REMOVED***"extra_points.$.value" : parseInt(nbPoints)***REMOVED*** ***REMOVED***,function(err,res)***REMOVED***
+                Teams.update({_id:sponsorExist._id,"extra_points.sponsor":sponsor},{$inc : {"extra_points.$.value" : parseInt(nbPoints)} },function(err,res){
                     console.log(err,res);
-        ***REMOVED***)
-    ***REMOVED***else***REMOVED***
-                Teams.update(***REMOVED***_id:team._id***REMOVED***,***REMOVED***$addToSet : ***REMOVED***
-                    "extra_points" :***REMOVED***
+                })
+            }else{
+                Teams.update({_id:team._id},{$addToSet : {
+                    "extra_points" :{
                         sponsor:sponsor,
                         value:nbPoints
-                ***REMOVED***
-            ***REMOVED***
-        ***REMOVED***)
-    ***REMOVED***
+                        }
+                    }
+                })
+            }
             return team;
-***REMOVED***else***REMOVED***
+        }else{
             throw new Meteor.Error("team-not-found","Team does not exist");
-***REMOVED***
-***REMOVED***
-    removeExtraPointsToTeam:function(teamId,sponsor,nbPoints)***REMOVED***
-        var team = Teams.findOne(***REMOVED***_id:teamId***REMOVED***)
-        if(team)***REMOVED***
+        }
+    },
+    removeExtraPointsToTeam:function(teamId,sponsor,nbPoints){
+        var team = Teams.findOne({_id:teamId})
+        if(team){
             //Already got extra points by sponsor?
-            var sponsorExist = Teams.findOne(***REMOVED***$and:[
-                ***REMOVED***_id:team._id***REMOVED***,
-                ***REMOVED***"extra_points.sponsor":sponsor***REMOVED***
-                ]***REMOVED***)
-            if(sponsorExist)***REMOVED***
-                Teams.update(***REMOVED***_id:sponsorExist._id,"extra_points.sponsor":sponsor***REMOVED***,***REMOVED***$inc : ***REMOVED***"extra_points.$.value" : -nbPoints***REMOVED*** ***REMOVED***)
-    ***REMOVED***
+            var sponsorExist = Teams.findOne({$and:[
+                {_id:team._id},
+                {"extra_points.sponsor":sponsor}
+                ]})
+            if(sponsorExist){
+                Teams.update({_id:sponsorExist._id,"extra_points.sponsor":sponsor},{$inc : {"extra_points.$.value" : -nbPoints} })
+            }
             return team;
-***REMOVED***else***REMOVED***
+        }else{
             throw new Meteor.Error("team-not-found","Team does not exist");
-***REMOVED***
-***REMOVED***
-***REMOVED***)
+        }
+    }
+})

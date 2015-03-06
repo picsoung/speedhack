@@ -1,15 +1,15 @@
 <template name="partnersLogo">
-    ***REMOVED******REMOVED***#each sponsors***REMOVED******REMOVED***
-        <a href="***REMOVED******REMOVED***url***REMOVED******REMOVED***" class="logo-sponsor" target="_blank"><img src="***REMOVED******REMOVED***logo***REMOVED******REMOVED***" alt="***REMOVED******REMOVED***name***REMOVED******REMOVED*** sponsor logo" width="200px"/></a>
-    ***REMOVED******REMOVED***/each***REMOVED******REMOVED***
+    {{#each sponsors}}
+        <a href="{{url}}" class="logo-sponsor" target="_blank"><img src="{{logo}}" alt="{{name}} sponsor logo" width="200px"/></a>
+    {{/each}}
 </template>
 
 <template name="sponsorButton">
     <div class="row">
         <div>
-            ***REMOVED******REMOVED***#linkTo route="sponsorshipDetails"***REMOVED******REMOVED***
+            {{#linkTo route="sponsorshipDetails"}}
             <span class="typeform-share btn btn-lg btn-outline_green" href="https://picsoung.typeform.com/to/EkPqrX" ><i class="fa fa-wrench"></i> Why sponsor SpeedHack?</span>
-            ***REMOVED******REMOVED***/linkTo***REMOVED******REMOVED***
+            {{/linkTo}}
         </div>
     </div>
 </template>

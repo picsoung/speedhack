@@ -1,122 +1,122 @@
 Events = new Mongo.Collection("events");
 
-var Schemas = ***REMOVED******REMOVED***;
+var Schemas = {};
 
-Schemas.Event = new SimpleSchema(***REMOVED***
-    name:***REMOVED***
+Schemas.Event = new SimpleSchema({
+    name:{
         type:String,
         label:"Name of the event"
-***REMOVED***
-    brief:***REMOVED***
+    },
+    brief:{
         type: String,
         label: "Brief about the event"
-***REMOVED***
-    startDate:***REMOVED***
+    },
+    startDate:{
         type:Date,
         label: "Start date"
-***REMOVED***
-    endDate:***REMOVED***
+    },
+    endDate:{
         type:Date,
         label: "End date"
-***REMOVED***
-    "venue.name":***REMOVED***
+    },
+    "venue.name":{
         type: String,
         label: "Venue name"
-***REMOVED***
-    "venue.city":***REMOVED***
+    },
+    "venue.city":{
         type: String,
         label: "Venue city"
-***REMOVED***
-    "venue.address":***REMOVED***
+    },
+    "venue.address":{
         type: String,
         label: "Venue Address"
-***REMOVED***
-    sponsors:***REMOVED***
+    },
+    sponsors:{
         type:[Object],
         label:"Sponsors",
         optional:true
-***REMOVED***
-    "sponsors.$.name": ***REMOVED***
+    },
+    "sponsors.$.name": {
         type: String
-***REMOVED***
-    "sponsors.$.logo": ***REMOVED***
+    },
+    "sponsors.$.logo": {
         type: String,
         regEx: SimpleSchema.RegEx.Url
-***REMOVED***
-    "sponsors.$.url": ***REMOVED***
+    },
+    "sponsors.$.url": {
         type: String,
         regEx: SimpleSchema.RegEx.Url
-***REMOVED***
-    "sponsors.$.points": ***REMOVED***
+    },
+    "sponsors.$.points": {
         type:Number,
         optional:true
-***REMOVED***
-    slug:***REMOVED***
+    },
+    slug:{
         type: String,
         label: "slug",
         optional: true,
-        autoValue: function() ***REMOVED***
+        autoValue: function() {
             var name = this.field("name");
-            if(name.isSet)***REMOVED***
+            if(name.isSet){
                 return URLify2(name.value)
-    ***REMOVED***else***REMOVED***
+            }else{
                 this.unset();
-    ***REMOVED***
-***REMOVED***
-***REMOVED***
-    image:***REMOVED***
+            }
+        }
+    },
+    image:{
         type:String,
         label: "image URL",
         regEx: SimpleSchema.RegEx.Url
-***REMOVED***
-    tickets_url:***REMOVED***
+    },
+    tickets_url:{
         type:String,
         label: "Ticket URL",
         regEx: SimpleSchema.RegEx.Url,
         optional:true
-***REMOVED***
-    createdAt: ***REMOVED***
+    },
+    createdAt: {
         type: Date,
-          autoValue: function() ***REMOVED***
-            if (this.isInsert) ***REMOVED***
+          autoValue: function() {
+            if (this.isInsert) {
               return new Date;
-    ***REMOVED*** else if (this.isUpsert) ***REMOVED***
-              return ***REMOVED***$setOnInsert: new Date***REMOVED***;
-    ***REMOVED*** else ***REMOVED***
+            } else if (this.isUpsert) {
+              return {$setOnInsert: new Date};
+            } else {
               this.unset();
-    ***REMOVED***
-  ***REMOVED***
-  ***REMOVED***
+            }
+          }
+      },
       // Force value to be current date (on server) upon update
       // and don't allow it to be set upon insert.
-      updatedAt: ***REMOVED***
+      updatedAt: {
         type: Date,
-        autoValue: function() ***REMOVED***
-          if (this.isUpdate) ***REMOVED***
+        autoValue: function() {
+          if (this.isUpdate) {
             return new Date();
-  ***REMOVED***
-***REMOVED***,
+          }
+        },
         denyInsert: true,
         optional: true
-***REMOVED***
-    eventbrite_id:***REMOVED***
+    },
+    eventbrite_id:{
         type:Number,
         optional:true
-***REMOVED***
-***REMOVED***)
+    }
+})
 
 Events.attachSchema(Schemas.Event);
 
-// Events.allow(***REMOVED***
-//   insert: function (userId, doc) ***REMOVED***
+// Events.allow({
+//   insert: function (userId, doc) {
 //     // the user must be logged in, and the document must be owned by the user
 //     var loggedInUser = Meteor.user()
 //     return (loggedInUser &&Roles.userIsInRole(loggedInUser,['admin']));
-//   ***REMOVED***,
-//   update: function (userId, doc, fields, modifier) ***REMOVED***
+//   },
+//   update: function (userId, doc, fields, modifier) {
 //     // can only change your own documents
 //     console.log("update",loggedInUser &&Roles.userIsInRole(loggedInUser,['admin']))
 //     var loggedInUser = Meteor.user()
 //     return (loggedInUser &&Roles.userIsInRole(loggedInUser,['admin']))
-//   ***REMOVED***
-// ***REMOVED***);
+//   }
+// });

@@ -1,111 +1,111 @@
-Template.manageUsers.helpers(***REMOVED***
-    usersCollection:function(date)***REMOVED***
-        return Meteor.users.find(***REMOVED******REMOVED***);
-***REMOVED***
-    settings: function () ***REMOVED***
-        return ***REMOVED***
+Template.manageUsers.helpers({
+    usersCollection:function(date){
+        return Meteor.users.find({});
+    },
+    settings: function () {
+        return {
             rowsPerPage: 5,
             showFilter: false,
             fields: [
-                ***REMOVED***key: 'profile.name',label:'Name'***REMOVED***,
-                ***REMOVED***key: 'username', label: 'Username' ***REMOVED***,
-                ***REMOVED*** key: 'roles', label: 'Roles', tmpl: Template.roleCell***REMOVED***,
-                ***REMOVED*** key: 'createdAt',  sort: 'descending', sortByValue:true, label: 'Submitted on' ,fn: function (value, object) ***REMOVED*** return moment(value).fromNow(); ***REMOVED******REMOVED***
+                {key: 'profile.name',label:'Name'},
+                {key: 'username', label: 'Username' },
+                { key: 'roles', label: 'Roles', tmpl: Template.roleCell},
+                { key: 'createdAt',  sort: 'descending', sortByValue:true, label: 'Submitted on' ,fn: function (value, object) { return moment(value).fromNow(); }}
             ]
- ***REMOVED***
- ***REMOVED***
-***REMOVED***)
+     }
+ }
+})
 
-Template.manageTeams.helpers(***REMOVED***
-    teamsCollection:function(date)***REMOVED***
-        return Teams.find(***REMOVED******REMOVED***);
-***REMOVED***
-    settings: function () ***REMOVED***
-        return ***REMOVED***
+Template.manageTeams.helpers({
+    teamsCollection:function(date){
+        return Teams.find({});
+    },
+    settings: function () {
+        return {
             rowsPerPage: 5,
             showFilter: false,
             fields: [
-                ***REMOVED***key: 'name',label:'Name'***REMOVED***,
-                ***REMOVED***key: 'table_number', label: 'Table number' ***REMOVED***,
-                ***REMOVED*** key: 'event_slug', label: 'Event'***REMOVED***,
-                ***REMOVED*** key: 'createdAt',  sort: 'descending', sortByValue:true, label: 'Submitted on' ,fn: function (value, object) ***REMOVED*** return moment(value).fromNow(); ***REMOVED******REMOVED***,
-                ***REMOVED***key:'extra_points',label:"Points", fn: function (value,object) ***REMOVED*** return computePointsForTeam(object.name,object.event_slug) ***REMOVED******REMOVED***
+                {key: 'name',label:'Name'},
+                {key: 'table_number', label: 'Table number' },
+                { key: 'event_slug', label: 'Event'},
+                { key: 'createdAt',  sort: 'descending', sortByValue:true, label: 'Submitted on' ,fn: function (value, object) { return moment(value).fromNow(); }},
+                {key:'extra_points',label:"Points", fn: function (value,object) { return computePointsForTeam(object.name,object.event_slug) }}
             ]
- ***REMOVED***
- ***REMOVED***
-***REMOVED***)
+     }
+ }
+})
 
-var computePointsForTeam = function (teamName, eventSlug)***REMOVED***
+var computePointsForTeam = function (teamName, eventSlug){
     var total = 0;
-    var passedSolutions = Solutions.find(***REMOVED***$and:[***REMOVED***team_name:teamName***REMOVED***,***REMOVED***event_slug:eventSlug***REMOVED***,***REMOVED***passed:true***REMOVED***]***REMOVED***).count()
-    var team = Teams.findOne(***REMOVED***name:teamName***REMOVED***,***REMOVED***fields:***REMOVED***extra_points:1***REMOVED******REMOVED***)
+    var passedSolutions = Solutions.find({$and:[{team_name:teamName},{event_slug:eventSlug},{passed:true}]}).count()
+    var team = Teams.findOne({name:teamName},{fields:{extra_points:1}})
     total += passedSolutions
     if(team.extra_points)
-        total += _.reduce(team.extra_points,function(memo, num)***REMOVED*** return memo + num.value; ***REMOVED***, 0)
+        total += _.reduce(team.extra_points,function(memo, num){ return memo + num.value; }, 0)
     return total
-***REMOVED***
+}
 
-Template.manageSolutions.helpers(***REMOVED***
-    solutionsCollection:function(date)***REMOVED***
-        return Solutions.find(***REMOVED******REMOVED***);
-***REMOVED***
-    settings: function () ***REMOVED***
-        return ***REMOVED***
+Template.manageSolutions.helpers({
+    solutionsCollection:function(date){
+        return Solutions.find({});
+    },
+    settings: function () {
+        return {
             rowsPerPage: 5,
             showFilter: false,
             fields: [
-                ***REMOVED*** key: 'event_slug', label: 'Event'***REMOVED***,
-                ***REMOVED***key: 'sponsor',label:'Sponsor'***REMOVED***,
-                ***REMOVED***key: 'team_name',label:'Team name'***REMOVED***,
-                ***REMOVED***key: 'submitted_by', label: 'Submitted By' ***REMOVED***,
-                ***REMOVED***key: 'judged_on', label: 'Judged on' ,fn: function (value, object) ***REMOVED*** return moment(value).fromNow(); ***REMOVED******REMOVED***,
-                ***REMOVED*** key: 'createdAt',  label:"Submitted on",sort: 'descending', sortByValue:true, label: 'Submitted on' ,fn: function (value, object) ***REMOVED*** return moment(value).fromNow(); ***REMOVED******REMOVED***
+                { key: 'event_slug', label: 'Event'},
+                {key: 'sponsor',label:'Sponsor'},
+                {key: 'team_name',label:'Team name'},
+                {key: 'submitted_by', label: 'Submitted By' },
+                {key: 'judged_on', label: 'Judged on' ,fn: function (value, object) { return moment(value).fromNow(); }},
+                { key: 'createdAt',  label:"Submitted on",sort: 'descending', sortByValue:true, label: 'Submitted on' ,fn: function (value, object) { return moment(value).fromNow(); }}
             ],
-            rowClass: function(item) ***REMOVED***
+            rowClass: function(item) {
               var qnt = item.passed;
-              switch (qnt) ***REMOVED***
+              switch (qnt) {
                 case false:
                     return 'danger';
                 case true:
                     return 'success';
                 default:
                   return 'warning';
-      ***REMOVED***
-  ***REMOVED***
- ***REMOVED***
- ***REMOVED***
-***REMOVED***)
+              }
+          }
+     }
+ }
+})
 
-Template.addRoleToUserSection.events(***REMOVED***
-    'click button':function(e,t)***REMOVED***
-        Meteor.call('addRoleToUser',$("#username").val(),$("#role").val(),function(err,res)***REMOVED***
-            if(err)***REMOVED***
+Template.addRoleToUserSection.events({
+    'click button':function(e,t){
+        Meteor.call('addRoleToUser',$("#username").val(),$("#role").val(),function(err,res){
+            if(err){
                     Notifications.error(err.error,err.message);
-    ***REMOVED***
-            if(res)***REMOVED***
+            }
+            if(res){
                 Notifications.success("Success","User info updated");
-    ***REMOVED***
-***REMOVED***)
-***REMOVED***
-***REMOVED***)
+            }
+        })
+    }
+})
 
-Template.roleCell.events(***REMOVED***
-    'click .glyphicon-trash':function(e,t)***REMOVED***
+Template.roleCell.events({
+    'click .glyphicon-trash':function(e,t){
         Meteor.call('removeRoleToUser',t.data._id,t.data.roles,e.currentTarget.attributes['data-roleName'].value)
-***REMOVED***
-***REMOVED***)
+    }
+})
 
-Template.extraPoints.events(***REMOVED***
-    'click button':function(e,t)***REMOVED***
+Template.extraPoints.events({
+    'click button':function(e,t){
         var teamName = $("#team").val();
         var nbPoints = parseInt($("#extraChallenges").val())
-        Meteor.call('addExtraPointsToTeamName', teamName,'admin', nbPoints,function(err,res)***REMOVED***
-            if(err)***REMOVED***
+        Meteor.call('addExtraPointsToTeamName', teamName,'admin', nbPoints,function(err,res){
+            if(err){
                     Notifications.error(err.error,err.message);
-    ***REMOVED***
-            if(res)***REMOVED***
+            }
+            if(res){
                 Notifications.success("Success","Points added");
-    ***REMOVED***
-***REMOVED***)
-***REMOVED***
-***REMOVED***)
+            }
+        })
+    }
+})

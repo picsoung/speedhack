@@ -1,41 +1,41 @@
 // Event that are currently running
 // startDate <= currentDate <= endDate
 // one hour before
-Template.registerHelper('openEventOptions',function()***REMOVED***
-    var events = Events.find(***REMOVED***$and:[***REMOVED***startDate:***REMOVED***$lte:new Date()***REMOVED******REMOVED***,***REMOVED***endDate:***REMOVED***$gte:new Date()***REMOVED******REMOVED***]***REMOVED***,***REMOVED***fields:***REMOVED***slug:1,name:1***REMOVED******REMOVED***).fetch();
+Template.registerHelper('openEventOptions',function(){
+    var events = Events.find({$and:[{startDate:{$lte:new Date()}},{endDate:{$gte:new Date()}}]},{fields:{slug:1,name:1}}).fetch();
     var results = [];
-    _.each(events, function(e) ***REMOVED***
-        results.push(***REMOVED***label:e.name,value:e.slug***REMOVED***)
-***REMOVED***);
+    _.each(events, function(e) {
+        results.push({label:e.name,value:e.slug})
+    });
     return results;
-***REMOVED***)
+})
 
-Template.registerHelper('currentJudgeSponsor',function()***REMOVED***
+Template.registerHelper('currentJudgeSponsor',function(){
    var user = Meteor.user()
    var roles = user.roles
-   var judge  =_.filter(roles, function(obj)***REMOVED*** return obj.match(/judge_/)***REMOVED***)[0];
+   var judge  =_.filter(roles, function(obj){ return obj.match(/judge_/)})[0];
    if(judge)
     return judge.replace("judge_","")
-***REMOVED***)
+})
 
-Template.registerHelper('isAJudge',function()***REMOVED***
+Template.registerHelper('isAJudge',function(){
     var user = Meteor.user()
     var roles = user.roles
-    var judge  =_.filter(roles, function(obj)***REMOVED*** return obj.match(/judge_/)***REMOVED***);
+    var judge  =_.filter(roles, function(obj){ return obj.match(/judge_/)});
     return !_.isEmpty(judge)
-***REMOVED***)
+})
 
-Date.prototype.substractHours= function(h)***REMOVED***
+Date.prototype.substractHours= function(h){
     this.setHours(this.getHours()-h);
     return this;
-***REMOVED***
-Date.prototype.addHours= function(h)***REMOVED***
+}
+Date.prototype.addHours= function(h){
     this.setHours(this.getHours()+h);
     return this;
-***REMOVED***
+}
 
-UI.registerHelper('addIndex', function (all) ***REMOVED***
-    return _.map(all, function(val, index) ***REMOVED***
-        return ***REMOVED***index: index, value: val***REMOVED***;
-***REMOVED***);
-***REMOVED***);
+UI.registerHelper('addIndex', function (all) {
+    return _.map(all, function(val, index) {
+        return {index: index, value: val};
+    });
+});

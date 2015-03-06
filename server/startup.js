@@ -1,8 +1,8 @@
-if(Meteor.isServer)***REMOVED***
+if(Meteor.isServer){
 
     Houston.add_collection(Meteor.users);
     Houston.add_collection(Houston._admins);
 
-    Accounts.config(***REMOVED***    sendVerificationEmail: true***REMOVED***
+    Accounts.config({    sendVerificationEmail: true}
     )
-***REMOVED***
+}

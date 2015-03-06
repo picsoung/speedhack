@@ -11,51 +11,51 @@
 /*jshint browser: true, strict: true, undef: true */
 /*global define: false */
 
-( function( window ) ***REMOVED***
+( function( window ) {
 
 'use strict';
 
 // class helper functions from bonzo https://github.com/ded/bonzo
 
-function classReg( className ) ***REMOVED***
+function classReg( className ) {
   return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
-***REMOVED***
+}
 
 // classList support for class management
 // altho to be fair, the api sucks because it won't accept multiple classes at once
 var hasClass, addClass, removeClass;
 
-if ( 'classList' in document.documentElement ) ***REMOVED***
-  hasClass = function( elem, c ) ***REMOVED***
+if ( 'classList' in document.documentElement ) {
+  hasClass = function( elem, c ) {
     return elem.classList.contains( c );
-  ***REMOVED***;
-  addClass = function( elem, c ) ***REMOVED***
+  };
+  addClass = function( elem, c ) {
     elem.classList.add( c );
-  ***REMOVED***;
-  removeClass = function( elem, c ) ***REMOVED***
+  };
+  removeClass = function( elem, c ) {
     elem.classList.remove( c );
-  ***REMOVED***;
-***REMOVED***
-else ***REMOVED***
-  hasClass = function( elem, c ) ***REMOVED***
+  };
+}
+else {
+  hasClass = function( elem, c ) {
     return classReg( c ).test( elem.className );
-  ***REMOVED***;
-  addClass = function( elem, c ) ***REMOVED***
-    if ( !hasClass( elem, c ) ) ***REMOVED***
+  };
+  addClass = function( elem, c ) {
+    if ( !hasClass( elem, c ) ) {
       elem.className = elem.className + ' ' + c;
-***REMOVED***
-  ***REMOVED***;
-  removeClass = function( elem, c ) ***REMOVED***
+    }
+  };
+  removeClass = function( elem, c ) {
     elem.className = elem.className.replace( classReg( c ), ' ' );
-  ***REMOVED***;
-***REMOVED***
+  };
+}
 
-function toggleClass( elem, c ) ***REMOVED***
+function toggleClass( elem, c ) {
   var fn = hasClass( elem, c ) ? removeClass : addClass;
   fn( elem, c );
-***REMOVED***
+}
 
-var classie = ***REMOVED***
+var classie = {
   // full names
   hasClass: hasClass,
   addClass: addClass,
@@ -66,15 +66,15 @@ var classie = ***REMOVED***
   add: addClass,
   remove: removeClass,
   toggle: toggleClass
-***REMOVED***;
+};
 
 // transport
-if ( typeof define === 'function' && define.amd ) ***REMOVED***
+if ( typeof define === 'function' && define.amd ) {
   // AMD
   define( classie );
-***REMOVED*** else ***REMOVED***
+} else {
   // browser global
   window.classie = classie;
-***REMOVED***
+}
 
-***REMOVED***)( window );
+})( window );

@@ -1,81 +1,81 @@
-Meteor.publish('users',function()***REMOVED***
-    return Meteor.users.find(***REMOVED******REMOVED***);
-***REMOVED***)
+Meteor.publish('users',function(){
+    return Meteor.users.find({});
+})
 
-Meteor.publish('user',function(username)***REMOVED***
-    return Meteor.users.find(***REMOVED***username:username***REMOVED***);
-***REMOVED***)
+Meteor.publish('user',function(username){
+    return Meteor.users.find({username:username});
+})
 
-Meteor.publish('events',function()***REMOVED***
-    return Events.find(***REMOVED******REMOVED***);
-***REMOVED***)
+Meteor.publish('events',function(){
+    return Events.find({});
+})
 
-Meteor.publish('eventsLight',function()***REMOVED***
-    return Events.find(***REMOVED******REMOVED***,***REMOVED***fields:***REMOVED***slug:1,image:1,sponsors:1***REMOVED***,sort: ***REMOVED***startDate: -1***REMOVED******REMOVED***);
-***REMOVED***)
+Meteor.publish('eventsLight',function(){
+    return Events.find({},{fields:{slug:1,image:1,sponsors:1},sort: {startDate: -1}});
+})
 
-Meteor.publish('event',function(slug)***REMOVED***
-    return Events.find(***REMOVED***slug:slug***REMOVED***);
-***REMOVED***)
+Meteor.publish('event',function(slug){
+    return Events.find({slug:slug});
+})
 
-Meteor.publish('eventPerSponsor',function(sponsorSlug)***REMOVED***
-    return Events.find(***REMOVED***'sponsors.name':sponsorSlug***REMOVED***)
-***REMOVED***)
+Meteor.publish('eventPerSponsor',function(sponsorSlug){
+    return Events.find({'sponsors.name':sponsorSlug})
+})
 
-Meteor.publish(null, function ()***REMOVED***
-  return Meteor.roles.find(***REMOVED******REMOVED***)
-***REMOVED***)
+Meteor.publish(null, function (){
+  return Meteor.roles.find({})
+})
 
-Meteor.publish('teams',function()***REMOVED***
-    return Teams.find(***REMOVED******REMOVED***);
-***REMOVED***)
-Meteor.publish('teamsByEvent',function(eventSlug)***REMOVED***
-        return Teams.find(***REMOVED***event_slug:eventSlug***REMOVED***);
-***REMOVED***);
-Meteor.publish("teamsPerSponsor", function(sponsorSlug,eventSlug)***REMOVED***
-    var solutions = Solutions.find(***REMOVED***$and:[
-        ***REMOVED***event_slug:eventSlug***REMOVED***,
-        ***REMOVED***sponsor:sponsorSlug***REMOVED***,
-        ***REMOVED***passed:true***REMOVED***,
-        ***REMOVED***judged:true***REMOVED***
-        ]***REMOVED***,***REMOVED***fields:***REMOVED***team_name:1***REMOVED******REMOVED***).fetch();
+Meteor.publish('teams',function(){
+    return Teams.find({});
+})
+Meteor.publish('teamsByEvent',function(eventSlug){
+        return Teams.find({event_slug:eventSlug});
+});
+Meteor.publish("teamsPerSponsor", function(sponsorSlug,eventSlug){
+    var solutions = Solutions.find({$and:[
+        {event_slug:eventSlug},
+        {sponsor:sponsorSlug},
+        {passed:true},
+        {judged:true}
+        ]},{fields:{team_name:1}}).fetch();
 
-    var solutionsByTeam = _.groupBy(solutions,function(num)***REMOVED***return num.team_name***REMOVED***)
+    var solutionsByTeam = _.groupBy(solutions,function(num){return num.team_name})
 
     var teamsNames = []
-    _.each(solutionsByTeam,function(key,val)***REMOVED***
+    _.each(solutionsByTeam,function(key,val){
         teamsNames.push(val)
-***REMOVED***)
+    })
 
-    return Teams.find(***REMOVED***name:***REMOVED***$in:teamsNames***REMOVED******REMOVED***);
-***REMOVED***);
+    return Teams.find({name:{$in:teamsNames}});
+});
 
-Meteor.publish('solutions',function()***REMOVED***
-    return Solutions.find(***REMOVED******REMOVED***);
-***REMOVED***)
+Meteor.publish('solutions',function(){
+    return Solutions.find({});
+})
 
-Meteor.publish('currentUserTeam',function(user)***REMOVED***
+Meteor.publish('currentUserTeam',function(user){
     var username = user.username
-    return Teams.find(***REMOVED***$or:[***REMOVED***owner:username***REMOVED***,***REMOVED***teammate_1:username***REMOVED***,***REMOVED***teammate_2:username***REMOVED***]***REMOVED***);
-***REMOVED***)
+    return Teams.find({$or:[{owner:username},{teammate_1:username},{teammate_2:username}]});
+})
 
-Meteor.publish('solutionsByUser',function(username,eventSlug)***REMOVED***
-    var team = Teams.findOne(***REMOVED***
+Meteor.publish('solutionsByUser',function(username,eventSlug){
+    var team = Teams.findOne({
         $and:[
-            ***REMOVED***$or:[***REMOVED***owner:username***REMOVED***,***REMOVED***teammate_1:username***REMOVED***,***REMOVED***teammate_2:username***REMOVED***]***REMOVED***,
-            ***REMOVED***event_slug:eventSlug***REMOVED***
+            {$or:[{owner:username},{teammate_1:username},{teammate_2:username}]},
+            {event_slug:eventSlug}
         ]
-***REMOVED***);
+    });
     if(team)
-        return Solutions.find(***REMOVED***$and:[***REMOVED***team_name:team.name***REMOVED***,***REMOVED***event_slug:eventSlug***REMOVED***]***REMOVED***)
+        return Solutions.find({$and:[{team_name:team.name},{event_slug:eventSlug}]})
 
     return []
-***REMOVED***);
+});
 
-Meteor.publish('solutionsPerSponsor',function(sponsorSlug)***REMOVED***
-    return Solutions.find(***REMOVED***sponsor:sponsorSlug***REMOVED***);
-***REMOVED***)
+Meteor.publish('solutionsPerSponsor',function(sponsorSlug){
+    return Solutions.find({sponsor:sponsorSlug});
+})
 
-Meteor.publish('solutionsByEvent',function(eventSlug)***REMOVED***
-    return Solutions.find(***REMOVED***event_slug:eventSlug***REMOVED***);
-***REMOVED***)
+Meteor.publish('solutionsByEvent',function(eventSlug){
+    return Solutions.find({event_slug:eventSlug});
+})

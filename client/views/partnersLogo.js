@@ -1,21 +1,21 @@
-Template.partnersLogo.helpers(***REMOVED***
-    sponsors:function()***REMOVED***
-        var events = Events.find(***REMOVED******REMOVED***,***REMOVED***fields:***REMOVED***sponsors:1***REMOVED******REMOVED***)
+Template.partnersLogo.helpers({
+    sponsors:function(){
+        var events = Events.find({},{fields:{sponsors:1}})
         var sponsors =[]
-        events.forEach(function(e)***REMOVED***
-            if(e.sponsors)***REMOVED***
-                e.sponsors.forEach(function(s)***REMOVED***
+        events.forEach(function(e){
+            if(e.sponsors){
+                e.sponsors.forEach(function(s){
                     sponsors[URLify2(s.name)]=s
-        ***REMOVED***)
-    ***REMOVED***
-***REMOVED***)
+                })
+            }
+        })
 
         // turn object into array
         var sponsors_=[]
-        for(var index in sponsors) ***REMOVED***
+        for(var index in sponsors) {
             var attr = sponsors[index];
             sponsors_.push(attr)
-***REMOVED***
+        }
         return sponsors_
-***REMOVED***
-***REMOVED***)
+    }
+})

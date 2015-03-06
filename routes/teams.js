@@ -1,15 +1,15 @@
-Router.route('/teams/create',***REMOVED***
+Router.route('/teams/create',{
     name:'team.create',
     template:'newTeam',
-    waitOn: function()***REMOVED***
+    waitOn: function(){
         return [Meteor.subscribe('teams'),Meteor.subscribe('events')];
-***REMOVED***
-    onBeforeAction:function()***REMOVED***
-        if (!Meteor.userId())***REMOVED***
+    },
+    onBeforeAction:function(){
+        if (!Meteor.userId()){
             Router.go('home');
-***REMOVED***else***REMOVED***
+        }else{
             GAnalytics.pageview();
             this.next();
-***REMOVED***
-***REMOVED***
-***REMOVED***);
+        }
+    }
+});

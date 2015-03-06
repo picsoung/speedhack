@@ -1,11 +1,11 @@
-if(Meteor.isClient)***REMOVED***
-    Meteor.startup(function () ***REMOVED***
-        _.extend(Notifications.defaultOptions, ***REMOVED***
+if(Meteor.isClient){
+    Meteor.startup(function () {
+        _.extend(Notifications.defaultOptions, {
             timeout: 3000
-***REMOVED***);
+        });
 
-        Accounts.ui.config(***REMOVED***
+        Accounts.ui.config({
            passwordSignupFields: 'USERNAME_AND_OPTIONAL_EMAIL'
-***REMOVED***);
-***REMOVED***);
-***REMOVED***
+        });
+    });
+}

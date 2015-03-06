@@ -1,30 +1,30 @@
 <template name="judgeShow">
-    <h1>Judging - ***REMOVED******REMOVED***slug***REMOVED******REMOVED***</h1>
+    <h1>Judging - {{slug}}</h1>
 
     <h2>Submissions to judge</h2>
-    ***REMOVED******REMOVED***> submissionsToJudge***REMOVED******REMOVED***
+    {{> submissionsToJudge}}
     <h2>Submissions judged</h2>
-    ***REMOVED******REMOVED***> submissionsJudged***REMOVED******REMOVED***
+    {{> submissionsJudged}}
     <h2>Extra points</h2>
-    ***REMOVED******REMOVED***> teamList***REMOVED******REMOVED***
+    {{> teamList}}
 </template>
 
 <template name="submissionsToJudge">
-    ***REMOVED******REMOVED***> reactiveTable collection=subsToJudge showNavigation='always' rowsPerPage=5 showFilter=false settings=toJudgeSettings***REMOVED******REMOVED***
+    {{> reactiveTable collection=subsToJudge showNavigation='always' rowsPerPage=5 showFilter=false settings=toJudgeSettings}}
 </template>
 
 <template name="submissionsJudged">
-    ***REMOVED******REMOVED***> reactiveTable collection=subsJudged showNavigation='always' rowsPerPage=5 showFilter=false settings=judgedSettings***REMOVED******REMOVED***
+    {{> reactiveTable collection=subsJudged showNavigation='always' rowsPerPage=5 showFilter=false settings=judgedSettings}}
 </template>
 
 <template name="teamList">
     <select id="eventSelect" name="eventSelect">
         <option>Select an event</option>
-        ***REMOVED******REMOVED***#each events***REMOVED******REMOVED***
-            <option value="***REMOVED******REMOVED***slug***REMOVED******REMOVED***">***REMOVED******REMOVED***name***REMOVED******REMOVED***</option>
-        ***REMOVED******REMOVED***/each***REMOVED******REMOVED***
+        {{#each events}}
+            <option value="{{slug}}">{{name}}</option>
+        {{/each}}
     </select>
-    ***REMOVED******REMOVED***> reactiveTable collection=teams settings=teamsSettings***REMOVED******REMOVED***
+    {{> reactiveTable collection=teams settings=teamsSettings}}
 </template>
 
 <template name="passedCell">
@@ -37,8 +37,8 @@
 
 <template name="extraPointsCell">
     <button class="btn" id="plusExtraPointsButton">+</button>
-    ***REMOVED******REMOVED***extraPoints***REMOVED******REMOVED***
-    ***REMOVED******REMOVED***#if $gt extraPoints 0***REMOVED******REMOVED***
+    {{extraPoints}}
+    {{#if $gt extraPoints 0}}
         <button class="btn" id="minusExtraPointsButton">-</button>
-    ***REMOVED******REMOVED***/if***REMOVED******REMOVED***
+    {{/if}}
 </template>

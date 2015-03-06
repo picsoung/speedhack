@@ -1,23 +1,23 @@
 <template name="faqDetails">
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-        ***REMOVED******REMOVED***#each addIndex questions***REMOVED******REMOVED***
-            ***REMOVED******REMOVED***>faqQuestion***REMOVED******REMOVED***
-        ***REMOVED******REMOVED***/each***REMOVED******REMOVED***
+        {{#each addIndex questions}}
+            {{>faqQuestion}}
+        {{/each}}
     </div>
 </template>
 
 <template name="faqQuestion">
     <div class="panel panel-default" style="text-align:left;">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-***REMOVED******REMOVED***index***REMOVED******REMOVED***" aria-expanded="false" aria-controls="collapse-***REMOVED******REMOVED***index***REMOVED******REMOVED***">
-            <div class="panel-heading" role="tab" id="heading-***REMOVED******REMOVED***index***REMOVED******REMOVED***">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-{{index}}" aria-expanded="false" aria-controls="collapse-{{index}}">
+            <div class="panel-heading" role="tab" id="heading-{{index}}">
                 <h4 class="panel-title" style="color:rgb(44, 62, 80);" >
-                        ***REMOVED******REMOVED***value.title***REMOVED******REMOVED***
+                        {{value.title}}
                 </h4>
             </div>
         </a>
-        <div id="collapse-***REMOVED******REMOVED***index***REMOVED******REMOVED***" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-***REMOVED******REMOVED***index***REMOVED******REMOVED***">
+        <div id="collapse-{{index}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-{{index}}">
             <div class="panel-body" style="color:rgb(44, 62, 80);">
-                ***REMOVED******REMOVED***value.answer***REMOVED******REMOVED***
+                {{value.answer}}
             </div>
         </div>
     </div>

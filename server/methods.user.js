@@ -1,42 +1,42 @@
-Meteor.methods(***REMOVED***
-    addRoleToUser: function(username,role) ***REMOVED***
-        var user = Meteor.users.findOne(***REMOVED***'username':username***REMOVED***);
-        if(user)***REMOVED***
+Meteor.methods({
+    addRoleToUser: function(username,role) {
+        var user = Meteor.users.findOne({'username':username});
+        if(user){
             Roles.addUsersToRoles(user._id,[role]);
             return user;
-***REMOVED***else***REMOVED***
+        }else{
             throw new Meteor.Error("user-not-found","User does not exist");
-***REMOVED***
-***REMOVED***
-    removeRoleToUser: function(userId,userRoles,role)***REMOVED***
+        }
+    },
+    removeRoleToUser: function(userId,userRoles,role){
         Roles.setUserRoles(userId, _.without(userRoles,role))
-***REMOVED***
-    createUpdateUserFromEmail:function(emailAddress,eventOptions)***REMOVED***
-        var existing_user = Meteor.users.findOne(***REMOVED***"emails.address":emailAddress***REMOVED***)
-        if(existing_user)***REMOVED***
+    },
+    createUpdateUserFromEmail:function(emailAddress,eventOptions){
+        var existing_user = Meteor.users.findOne({"emails.address":emailAddress})
+        if(existing_user){
             // send email Thank you for signing up for #### , remember your username, login here
             console.log(existing_user.emails[0].address)
-            var e = Events.findOne(***REMOVED***slug:eventOptions.slug***REMOVED***)
+            var e = Events.findOne({slug:eventOptions.slug})
             e.date = moment(e.startDate).format('DD/MM/YYYY')
             
-            Email.send(***REMOVED***
+            Email.send({
                 from:"SpeedHack.io <no-reply@speedhack.io>",
                 to: existing_user.emails[0].address,
                 subject: "Thank you for register to "+eventOptions.name,
-                html: Handlebars.templates['emails.thankYouSigningUpExistingUser'](***REMOVED*** user:existing_user,event:e ***REMOVED***)
-    ***REMOVED***);
-***REMOVED***else***REMOVED***
-            var new_user = Accounts.createUser(***REMOVED***
+                html: Handlebars.templates['emails.thankYouSigningUpExistingUser']({ user:existing_user,event:e })
+            });
+        }else{
+            var new_user = Accounts.createUser({
                 username: emailAddress,
                 email: emailAddress,
                 password: 'bibi'
-    ***REMOVED***)
+            })
             Accounts.sendEnrollmentEmail(new_user)
-***REMOVED***
-***REMOVED***
-    sendResetEmail:function(userId)***REMOVED***
+        }
+    },
+    sendResetEmail:function(userId){
         // Accounts.sendResetPasswordEmail(userId)
         Accounts.sendEnrollmentEmail(userId)
         // Accounts.sendVerificationEmail(userId)
-***REMOVED***
-***REMOVED***)
+    }
+})

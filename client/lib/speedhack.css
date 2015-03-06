@@ -2,20 +2,20 @@
 * Event Show
 */
 
-.description_speedHack***REMOVED***
+.description_speedHack{
     margin-top:20px;
     margin-bottom:20px;
-***REMOVED***
+}
 
-.ul_sponsors***REMOVED***
+.ul_sponsors{
     padding: 0;
-***REMOVED***
+}
 
-.ul_sponsors li ***REMOVED***
+.ul_sponsors li {
     list-style-type:none;
     margin-bottom:15px;
-***REMOVED***
+}
 
-.sponsor_logo***REMOVED***
+.sponsor_logo{
     width: 100%;
-***REMOVED***
+}

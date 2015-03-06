@@ -1,56 +1,56 @@
-Meteor.methods(***REMOVED***
-    addSponsorToEvent:function(eventId,eventName,eventLogo,eventUrl)***REMOVED***
-        if (isLoggedAdmin())***REMOVED***
-            Events.update(***REMOVED***_id:eventId***REMOVED***,***REMOVED***$push: ***REMOVED***
-                sponsors:***REMOVED***
+Meteor.methods({
+    addSponsorToEvent:function(eventId,eventName,eventLogo,eventUrl){
+        if (isLoggedAdmin()){
+            Events.update({_id:eventId},{$push: {
+                sponsors:{
                     name: eventName,
                     logo: eventLogo,
                     url: eventUrl,
                     points: 5
-        ***REMOVED***
-    ***REMOVED******REMOVED***)
-***REMOVED***
-***REMOVED***
-    removeSponsorFromEvent:function(eventSlug,sponsorName)***REMOVED***
+                }
+            }})
+        }
+    },
+    removeSponsorFromEvent:function(eventSlug,sponsorName){
         console.log(eventSlug,sponsorName)
-        if (isLoggedAdmin())***REMOVED***
-            Events.update(***REMOVED***slug:eventSlug***REMOVED***,***REMOVED***$pull: ***REMOVED***
-                sponsors:***REMOVED***
+        if (isLoggedAdmin()){
+            Events.update({slug:eventSlug},{$pull: {
+                sponsors:{
                     name: sponsorName
-        ***REMOVED***
-    ***REMOVED******REMOVED***)
-***REMOVED***
-***REMOVED***
-    updateSolutionStatus: function(solutionId, status)***REMOVED***
-        if(isLoggedJudge || isLoggedAdmin())***REMOVED*** //judge role or admin
-            Solutions.update(***REMOVED***_id:solutionId***REMOVED***,***REMOVED***$set:***REMOVED***passed:status***REMOVED******REMOVED***)
-***REMOVED***
-***REMOVED***
-    updateSolutionJudgedStatus:function(solutionId, status)***REMOVED***
-        if(isLoggedJudge || isLoggedAdmin())***REMOVED*** //judge role or admin
-            Solutions.update(***REMOVED***_id:solutionId***REMOVED***,***REMOVED***$set:***REMOVED***judged:status,judged_on:new Date()***REMOVED******REMOVED***)
-***REMOVED***
-***REMOVED***
-***REMOVED***)
+                }
+            }})
+        }
+    },
+    updateSolutionStatus: function(solutionId, status){
+        if(isLoggedJudge || isLoggedAdmin()){ //judge role or admin
+            Solutions.update({_id:solutionId},{$set:{passed:status}})
+        }
+    },
+    updateSolutionJudgedStatus:function(solutionId, status){
+        if(isLoggedJudge || isLoggedAdmin()){ //judge role or admin
+            Solutions.update({_id:solutionId},{$set:{judged:status,judged_on:new Date()}})
+        }
+    }
+})
 
-var isLoggedJudge = function()***REMOVED***
+var isLoggedJudge = function(){
     var loggedInUser = Meteor.user()
 
     if (!loggedInUser ||
         !Roles.userIsInRole(loggedInUser,
-                            ['judge'])) ***REMOVED***
+                            ['judge'])) {
       throw new Meteor.Error(403, "Access denied")
-***REMOVED***
+    }
     return true
-***REMOVED***
+}
 
-var isLoggedAdmin = function()***REMOVED***
+var isLoggedAdmin = function(){
     var loggedInUser = Meteor.user()
 
     if (!loggedInUser ||
         !Roles.userIsInRole(loggedInUser,
-                            ['admin'])) ***REMOVED***
+                            ['admin'])) {
       throw new Meteor.Error(403, "Access denied")
-***REMOVED***
+    }
     return true
-***REMOVED***
+}

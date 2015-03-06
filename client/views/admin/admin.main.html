@@ -1,10 +1,10 @@
 <template name="backendMain">
     <h1>Admin</h1>
-    ***REMOVED******REMOVED***> addRoleToUserSection***REMOVED******REMOVED***
-    ***REMOVED******REMOVED***> extraPoints***REMOVED******REMOVED***
-    ***REMOVED******REMOVED***> manageUsers***REMOVED******REMOVED***
-    ***REMOVED******REMOVED***> manageTeams***REMOVED******REMOVED***
-    ***REMOVED******REMOVED***> manageSolutions***REMOVED******REMOVED***
+    {{> addRoleToUserSection}}
+    {{> extraPoints}}
+    {{> manageUsers}}
+    {{> manageTeams}}
+    {{> manageSolutions}}
 </template>
 
 <template name="extraPoints">
@@ -32,31 +32,31 @@
 
 <template name="manageUsers">
     <h2>Users</h2>
-    ***REMOVED******REMOVED***> reactiveTable collection=usersCollection settings=settings***REMOVED******REMOVED***
+    {{> reactiveTable collection=usersCollection settings=settings}}
 </template>
 
 <template name="roleCell">
     <style media="screen">
-        .roleName i***REMOVED***
+        .roleName i{
         visibility:hidden;
-***REMOVED***
-        .roleName:hover i ***REMOVED***
+        }
+        .roleName:hover i {
          visibility:visible;
-***REMOVED***
+        }
     </style>
     <ul class="roleList">
-        ***REMOVED******REMOVED***#each roles***REMOVED******REMOVED***
-            <li id="***REMOVED******REMOVED***.***REMOVED******REMOVED***" class="roleName">***REMOVED******REMOVED***.***REMOVED******REMOVED***<i data-roleName="***REMOVED******REMOVED***.***REMOVED******REMOVED***" class="glyphicon glyphicon-trash"></i></li>
-        ***REMOVED******REMOVED***/each***REMOVED******REMOVED***
+        {{#each roles}}
+            <li id="{{.}}" class="roleName">{{.}}<i data-roleName="{{.}}" class="glyphicon glyphicon-trash"></i></li>
+        {{/each}}
     </ul>
 </template>
 
 <template name="manageTeams">
     <h2>Teams</h2>
-    ***REMOVED******REMOVED***> reactiveTable collection=teamsCollection  settings=settings***REMOVED******REMOVED***
+    {{> reactiveTable collection=teamsCollection  settings=settings}}
 </template>
 
 <template name="manageSolutions">
     <h2>Solutions</h2>
-    ***REMOVED******REMOVED***> reactiveTable collection=solutionsCollection settings=settings***REMOVED******REMOVED***
+    {{> reactiveTable collection=solutionsCollection settings=settings}}
 </template>

@@ -1,36 +1,36 @@
-Router.route('/users/:username',***REMOVED***
+Router.route('/users/:username',{
     name: "users.show",
     template: 'usersShow',
-    waitOn: function () ***REMOVED***
+    waitOn: function () {
             return Meteor.subscribe('user',this.params.username)
-***REMOVED***
-    data:function()***REMOVED***
-        return Meteor.users.findOne(***REMOVED***username:this.params.username***REMOVED***)
-***REMOVED***
+    },
+    data:function(){
+        return Meteor.users.findOne({username:this.params.username})
+    },
     fastRender:true
-***REMOVED***);
+});
 
-Router.route('/users/:username/edit',***REMOVED***
+Router.route('/users/:username/edit',{
     name: "users.edit",
     template: 'usersEdit',
-    waitOn: function () ***REMOVED***
+    waitOn: function () {
         return Meteor.subscribe('user',this.params.username)
-***REMOVED***
-    onBeforeAction:function()***REMOVED***
-        if(Meteor.user())***REMOVED***
-            if(Meteor.user().username == this.params.username)***REMOVED***
+    },
+    onBeforeAction:function(){
+        if(Meteor.user()){
+            if(Meteor.user().username == this.params.username){
                 this.next()
-    ***REMOVED***else***REMOVED***
+            }else{
                 Router.go('home')
                 this.next()
-    ***REMOVED***
-***REMOVED***else***REMOVED***
+            }
+        }else{
             Router.go('home')
             this.next()
-***REMOVED***
-***REMOVED***
-    data:function()***REMOVED***
-        return Meteor.users.findOne(***REMOVED***username:this.params.username***REMOVED***)
-***REMOVED***
+        }
+    },
+    data:function(){
+        return Meteor.users.findOne({username:this.params.username})
+    },
     fastRender:true
-***REMOVED***);
+});

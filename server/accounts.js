@@ -1,21 +1,21 @@
 
-Accounts.onCreateUser(function(options, user) ***REMOVED***
+Accounts.onCreateUser(function(options, user) {
     console.log(options)
     console.log(user)
-       if(!options || !user) ***REMOVED***
+       if(!options || !user) {
         console.log('error creating user');
         return;
-***REMOVED*** else ***REMOVED***
-        if(options.profile) ***REMOVED***
-            // if(user.services.github.username)***REMOVED***
+    } else {
+        if(options.profile) {
+            // if(user.services.github.username){
             //     options.profile.username = user.services.github.username
-            // // ***REMOVED***
+            // // }
             // var role = ['hacker'];
             // console.log(typeof role)
             // user.roles = role
             user.profile = options.profile;
             // user.username = user.services.github.username
-***REMOVED***
-***REMOVED***
+        }
+    }
     return user;
-***REMOVED***);
+});

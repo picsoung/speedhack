@@ -1,21 +1,21 @@
 <template name="newSolution">
     <h1>New Solution</h1>
-    ***REMOVED******REMOVED***> newSolutionForm***REMOVED******REMOVED***
+    {{> newSolutionForm}}
 </template>
 
 <template name="newSolutionForm">
-    ***REMOVED******REMOVED***#if  openEventOptions ***REMOVED******REMOVED***
-        ***REMOVED******REMOVED***#autoForm collection="Solutions" id="insertSolutionForm" type="insert"***REMOVED******REMOVED***
+    {{#if  openEventOptions }}
+        {{#autoForm collection="Solutions" id="insertSolutionForm" type="insert"}}
             <fieldset>
             <legend>Submit your solution</legend>
-            ***REMOVED******REMOVED***> afQuickField name="event_slug" id="event_select" options=openEventOptions***REMOVED******REMOVED***
-            ***REMOVED******REMOVED***> afQuickField name='sponsor' options=sponsorOptions***REMOVED******REMOVED***
+            {{> afQuickField name="event_slug" id="event_select" options=openEventOptions}}
+            {{> afQuickField name='sponsor' options=sponsorOptions}}
             </fieldset>
             <button type="submit" class="btn btn-primary">Submit</button>
-        ***REMOVED******REMOVED***/autoForm***REMOVED******REMOVED***
-     ***REMOVED******REMOVED***else***REMOVED******REMOVED***
+        {{/autoForm}}
+     {{else}}
         <div class="alert alert-warning" role="alert">
             No SpeedHack currently running, come back later.
         </div>
-    ***REMOVED******REMOVED***/if***REMOVED******REMOVED***
+    {{/if}}
 </template>

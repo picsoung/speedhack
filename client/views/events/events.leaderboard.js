@@ -1,48 +1,48 @@
-Template.leaderboard.helpers(***REMOVED***
-    teamScore:function()***REMOVED***
-        var solutions = Solutions.find(***REMOVED******REMOVED***).fetch() //all solutions for this event
-        var passedSolutions = _.filter(solutions, function(num)***REMOVED*** return num.passed==true; ***REMOVED***)
-        var solPerTeam = _.groupBy(passedSolutions,function(num)***REMOVED***return num.team_name***REMOVED***);
+Template.leaderboard.helpers({
+    teamScore:function(){
+        var solutions = Solutions.find({}).fetch() //all solutions for this event
+        var passedSolutions = _.filter(solutions, function(num){ return num.passed==true; })
+        var solPerTeam = _.groupBy(passedSolutions,function(num){return num.team_name});
         var result =[];
-        _.each(solPerTeam,function(key,val)***REMOVED***
+        _.each(solPerTeam,function(key,val){
             console.log(key,val)
-            var team = Teams.findOne(***REMOVED***name:val***REMOVED***,***REMOVED***fields:***REMOVED***extra_points:1***REMOVED******REMOVED***);
-            var sumExtraPoints = _.reduce(team.extra_points,function(memo, num)***REMOVED*** return memo + num.value; ***REMOVED***, 0)
-            result.push(***REMOVED***team_name:val,score:solPerTeam[val].length + sumExtraPoints***REMOVED***)
-***REMOVED***)
-        return _.sortBy(result, function (obj) ***REMOVED***
+            var team = Teams.findOne({name:val},{fields:{extra_points:1}});
+            var sumExtraPoints = _.reduce(team.extra_points,function(memo, num){ return memo + num.value; }, 0)
+            result.push({team_name:val,score:solPerTeam[val].length + sumExtraPoints})
+        })
+        return _.sortBy(result, function (obj) {
              return obj.score;
- ***REMOVED***).reverse()
-***REMOVED***
-***REMOVED***)
+         }).reverse()
+    }
+})
 
-Template.livestream.helpers(***REMOVED***
-    solutions:function()***REMOVED***
-        return Solutions.find(***REMOVED******REMOVED***);
-***REMOVED***
-    settings:function()***REMOVED***
-        return ***REMOVED***
+Template.livestream.helpers({
+    solutions:function(){
+        return Solutions.find({});
+    },
+    settings:function(){
+        return {
             showFilter: false,
             showNavigation:'never',
             fields: [
-                ***REMOVED***key: 'team_name', label: 'Team name' ***REMOVED***,
-                ***REMOVED***key: 'sponsor', label: 'Challenge' ***REMOVED***,
-                ***REMOVED***key: 'submitted_by', label: 'Submitted By' ***REMOVED***,
-                ***REMOVED*** key: 'passed', label: 'Challenge passed' ***REMOVED***,
-                ***REMOVED*** key: 'createdAt',  sort: 'descending',  sortByValue:true,label: 'Submitted on' ,fn: function (value, object) ***REMOVED*** return moment(value).fromNow(); ***REMOVED******REMOVED***,
-                ***REMOVED*** key: 'judged_on', label: 'Judged on' ,fn: function (value, object) ***REMOVED*** if(value) return moment(value).fromNow(); ***REMOVED******REMOVED***
+                {key: 'team_name', label: 'Team name' },
+                {key: 'sponsor', label: 'Challenge' },
+                {key: 'submitted_by', label: 'Submitted By' },
+                { key: 'passed', label: 'Challenge passed' },
+                { key: 'createdAt',  sort: 'descending',  sortByValue:true,label: 'Submitted on' ,fn: function (value, object) { return moment(value).fromNow(); }},
+                { key: 'judged_on', label: 'Judged on' ,fn: function (value, object) { if(value) return moment(value).fromNow(); }}
             ],
-            rowClass: function(item) ***REMOVED***
+            rowClass: function(item) {
               var qnt = item.passed;
-              switch (qnt) ***REMOVED***
+              switch (qnt) {
                 case false:
                     return 'danger';
                 case true:
                     return 'success';
                 default:
                   return 'warning';
-      ***REMOVED***
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***)
+              }
+          }
+        }
+    }
+})

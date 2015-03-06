@@ -4,52 +4,52 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-body ***REMOVED***
+body {
     overflow-x: hidden;
-***REMOVED***
+}
 
-p ***REMOVED***
+p {
     font-size: 20px;
-***REMOVED***
+}
 
-p.small ***REMOVED***
+p.small {
     font-size: 16px;
-***REMOVED***
+}
 
 a,
 a:hover,
 a:focus,
 a:active,
-a.active ***REMOVED***
+a.active {
     outline: 0;
     color: #18bc9c;
-***REMOVED***
+}
 
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 ***REMOVED***
+h6 {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
-***REMOVED***
+}
 
 hr.star-light,
 hr.star-green,
-hr.star-primary ***REMOVED***
+hr.star-primary {
     margin: 25px auto 30px;
     padding: 0;
     max-width: 250px;
     border: 0;
     border-top: solid 5px;
     text-align: center;
-***REMOVED***
+}
 
 hr.star-light:after,
 hr.star-green:after,
-hr.star-primary:after ***REMOVED***
+hr.star-primary:after {
     content: "\f005";
     display: inline-block;
     position: relative;
@@ -57,168 +57,168 @@ hr.star-primary:after ***REMOVED***
     padding: 0 .25em;
     font-family: FontAwesome;
     font-size: 2em;
-***REMOVED***
+}
 
-hr.star-light ***REMOVED***
+hr.star-light {
     border-color: #fff;
-***REMOVED***
+}
 
-hr.star-light:after ***REMOVED***
+hr.star-light:after {
     color: #fff;
     background-color: #18bc9c;
-***REMOVED***
+}
 
-hr.star-primary ***REMOVED***
+hr.star-primary {
     border-color: #2c3e50;
-***REMOVED***
+}
 
-hr.star-primary:after ***REMOVED***
+hr.star-primary:after {
     color: #2c3e50;
     background-color: #fff;
-***REMOVED***
+}
 
-hr.star-green ***REMOVED***
+hr.star-green {
     border-color: #fff;
-***REMOVED***
+}
 
-hr.star-green:after ***REMOVED***
+hr.star-green:after {
     color: #18bc9c;
     background-color: #fff;
-***REMOVED***
+}
 
-.img-centered ***REMOVED***
+.img-centered {
     margin: 0 auto;
-***REMOVED***
+}
 
-header ***REMOVED***
+header {
     text-align: center;
     color: #fff;
     background: #18bc9c;
     height: 550px;
-***REMOVED***
+}
 
-header .container ***REMOVED***
+header .container {
     padding-top: 100px;
     padding-bottom: 50px;
-***REMOVED***
+}
 
-header img ***REMOVED***
+header img {
     display: block;
     margin: 0 auto 20px;
-***REMOVED***
+}
 
-header .intro-text .name ***REMOVED***
+header .intro-text .name {
     display: block;
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 2em;
     font-weight: 700;
-***REMOVED***
+}
 
-header .intro-text .skills ***REMOVED***
+header .intro-text .skills {
     font-size: 1.25em;
     font-weight: 300;
-***REMOVED***
+}
 
-@media(min-width:768px) ***REMOVED***
-    header .container ***REMOVED***
+@media(min-width:768px) {
+    header .container {
         /*padding-top: 50px;*/
         padding-bottom: 100px;
-***REMOVED***
+    }
 
-    header .intro-text .name ***REMOVED***
+    header .intro-text .name {
         font-size: 4.75em;
-***REMOVED***
+    }
 
-    header .intro-text .skills ***REMOVED***
+    header .intro-text .skills {
         font-size: 1.75em;
-***REMOVED***
-***REMOVED***
+    }
+}
 
-@media(min-width:768px) ***REMOVED***
-    .navbar-fixed-top ***REMOVED***
+@media(min-width:768px) {
+    .navbar-fixed-top {
         /*padding: 25px 0;*/
         -webkit-transition: padding .3s;
         -moz-transition: padding .3s;
         transition: padding .3s;
-***REMOVED***
+    }
 
-    .navbar-fixed-top .navbar-brand ***REMOVED***
+    .navbar-fixed-top .navbar-brand {
         font-size: 2em;
         -webkit-transition: all .3s;
         -moz-transition: all .3s;
         transition: all .3s;
-***REMOVED***
+    }
 
-    .navbar-fixed-top.navbar-shrink ***REMOVED***
+    .navbar-fixed-top.navbar-shrink {
         /*padding: 10px 0;*/
-***REMOVED***
+    }
 
-    .navbar-fixed-top.navbar-shrink .navbar-brand ***REMOVED***
+    .navbar-fixed-top.navbar-shrink .navbar-brand {
         font-size: 1.5em;
-***REMOVED***
-***REMOVED***
+    }
+}
 
-.navbar ***REMOVED***
+.navbar {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
-***REMOVED***
+}
 
-.navbar a:focus ***REMOVED***
+.navbar a:focus {
     outline: 0;
-***REMOVED***
+}
 
-.navbar .navbar-nav ***REMOVED***
+.navbar .navbar-nav {
     letter-spacing: 1px;
-***REMOVED***
+}
 
-.navbar .navbar-nav li a:focus ***REMOVED***
+.navbar .navbar-nav li a:focus {
     outline: 0;
-***REMOVED***
+}
 
 .navbar-default,
-.navbar-inverse ***REMOVED***
+.navbar-inverse {
     border: 0;
-***REMOVED***
+}
 
-section ***REMOVED***
+section {
     padding: 100px 0;
-***REMOVED***
+}
 
-section h2 ***REMOVED***
+section h2 {
     margin: 0;
     font-size: 3em;
-***REMOVED***
+}
 
-section.success ***REMOVED***
+section.success {
     color: #fff;
     background: #18bc9c;
-***REMOVED***
+}
 
-@media(max-width:767px) ***REMOVED***
-    section ***REMOVED***
+@media(max-width:767px) {
+    section {
         padding: 75px 0;
-***REMOVED***
+    }
 
-    section.first ***REMOVED***
+    section.first {
         padding-top: 75px;
-***REMOVED***
-***REMOVED***
+    }
+}
 
-#portfolio .portfolio-item ***REMOVED***
+#portfolio .portfolio-item {
     right: 0;
     margin: 0 0 15px;
-***REMOVED***
+}
 
-#portfolio .portfolio-item .portfolio-link ***REMOVED***
+#portfolio .portfolio-item .portfolio-link {
     display: block;
     position: relative;
     margin: 0 auto;
     max-width: 400px;
-***REMOVED***
+}
 
-#portfolio .portfolio-item .portfolio-link .caption ***REMOVED***
+#portfolio .portfolio-item .portfolio-link .caption {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -227,13 +227,13 @@ section.success ***REMOVED***
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
     transition: all ease .5s;
-***REMOVED***
+}
 
-#portfolio .portfolio-item .portfolio-link .caption:hover ***REMOVED***
+#portfolio .portfolio-item .portfolio-link .caption:hover {
     opacity: 1;
-***REMOVED***
+}
 
-#portfolio .portfolio-item .portfolio-link .caption .caption-content ***REMOVED***
+#portfolio .portfolio-item .portfolio-link .caption .caption-content {
     position: absolute;
     top: 50%;
     width: 100%;
@@ -242,72 +242,72 @@ section.success ***REMOVED***
     text-align: center;
     font-size: 20px;
     color: #fff;
-***REMOVED***
+}
 
-#portfolio .portfolio-item .portfolio-link .caption .caption-content i ***REMOVED***
+#portfolio .portfolio-item .portfolio-link .caption .caption-content i {
     margin-top: -12px;
-***REMOVED***
+}
 
 #portfolio .portfolio-item .portfolio-link .caption .caption-content h3,
-#portfolio .portfolio-item .portfolio-link .caption .caption-content h4 ***REMOVED***
+#portfolio .portfolio-item .portfolio-link .caption .caption-content h4 {
     margin: 0;
-***REMOVED***
+}
 
-#portfolio * ***REMOVED***
+#portfolio * {
     z-index: 2;
-***REMOVED***
+}
 
-@media(min-width:767px) ***REMOVED***
-    #portfolio .portfolio-item ***REMOVED***
+@media(min-width:767px) {
+    #portfolio .portfolio-item {
         margin: 0 0 30px;
-***REMOVED***
-***REMOVED***
+    }
+}
 
-.btn-outline ***REMOVED***
+.btn-outline {
     margin-top: 15px;
     border: solid 2px #fff;
     font-size: 20px;
     color: #fff;
     background: 0 0;
     transition: all .3s ease-in-out;
-***REMOVED***
+}
 
-.btn-outline_green ***REMOVED***
+.btn-outline_green {
     margin-top: 15px;
     border: solid 2px #18bc9c;
     font-size: 20px;
     color: #18bc9c;
     background: 0 0;
     transition: all .3s ease-in-out;
-***REMOVED***
+}
 
 .btn-outline:hover,
 .btn-outline:focus,
 .btn-outline:active,
-.btn-outline.active ***REMOVED***
+.btn-outline.active {
     border: solid 2px #fff;
     color: #18bc9c;
     background: #fff;
-***REMOVED***
+}
 
 .btn-outline_green:hover,
 .btn-outline_green:focus,
 .btn-outline_green:active,
-.btn-outline_green.active ***REMOVED***
+.btn-outline_green.active {
     border: solid 2px #18bc9c;
     color: #fff;
     background: #18bc9c;
-***REMOVED***
+}
 
-.floating-label-form-group ***REMOVED***
+.floating-label-form-group {
     position: relative;
     margin-bottom: 0;
     padding-bottom: .5em;
     border-bottom: 1px solid #eee;
-***REMOVED***
+}
 
 .floating-label-form-group input,
-.floating-label-form-group textarea ***REMOVED***
+.floating-label-form-group textarea {
     z-index: 1;
     position: relative;
     padding-right: 0;
@@ -318,9 +318,9 @@ section.success ***REMOVED***
     background: 0 0;
     box-shadow: none!important;
     resize: none;
-***REMOVED***
+}
 
-.floating-label-form-group label ***REMOVED***
+.floating-label-form-group label {
     display: block;
     z-index: 0;
     position: relative;
@@ -335,49 +335,49 @@ section.success ***REMOVED***
     -moz-transition: top .3s ease,opacity .3s ease;
     -ms-transition: top .3s ease,opacity .3s ease;
     transition: top .3s ease,opacity .3s ease;
-***REMOVED***
+}
 
-.floating-label-form-group::not(:first-child) ***REMOVED***
+.floating-label-form-group::not(:first-child) {
     padding-left: 14px;
     border-left: 1px solid #eee;
-***REMOVED***
+}
 
-.floating-label-form-group-with-value label ***REMOVED***
+.floating-label-form-group-with-value label {
     top: 0;
     opacity: 1;
-***REMOVED***
+}
 
-.floating-label-form-group-with-focus label ***REMOVED***
+.floating-label-form-group-with-focus label {
     color: #18bc9c;
-***REMOVED***
+}
 
-form .row:first-child .floating-label-form-group ***REMOVED***
+form .row:first-child .floating-label-form-group {
     border-top: 1px solid #eee;
-***REMOVED***
+}
 
-footer ***REMOVED***
+footer {
     color: #fff;
-***REMOVED***
+}
 
-footer h3 ***REMOVED***
+footer h3 {
     margin-bottom: 30px;
-***REMOVED***
+}
 
-footer .footer-above ***REMOVED***
+footer .footer-above {
     padding-top: 50px;
     background-color: #2c3e50;
-***REMOVED***
+}
 
-footer .footer-col ***REMOVED***
+footer .footer-col {
     margin-bottom: 50px;
-***REMOVED***
+}
 
-footer .footer-below ***REMOVED***
+footer .footer-below {
     padding: 25px 0;
     background-color: #233140;
-***REMOVED***
+}
 
-.btn-social ***REMOVED***
+.btn-social {
     display: inline-block;
     width: 50px;
     height: 50px;
@@ -386,36 +386,36 @@ footer .footer-below ***REMOVED***
     text-align: center;
     font-size: 20px;
     line-height: 45px;
-***REMOVED***
+}
 
 .btn:focus,
 .btn:active,
-.btn.active ***REMOVED***
+.btn.active {
     outline: 0;
-***REMOVED***
+}
 
-.scroll-top ***REMOVED***
+.scroll-top {
     z-index: 1049;
     position: fixed;
     right: 2%;
     bottom: 2%;
     width: 50px;
     height: 50px;
-***REMOVED***
+}
 
-.scroll-top .btn ***REMOVED***
+.scroll-top .btn {
     width: 50px;
     height: 50px;
     border-radius: 100%;
     font-size: 20px;
     line-height: 28px;
-***REMOVED***
+}
 
-.scroll-top .btn:focus ***REMOVED***
+.scroll-top .btn:focus {
     outline: 0;
-***REMOVED***
+}
 
-.portfolio-modal .modal-content ***REMOVED***
+.portfolio-modal .modal-content {
     padding: 100px 0;
     min-height: 100%;
     border: 0;
@@ -424,22 +424,22 @@ footer .footer-below ***REMOVED***
     background-clip: border-box;
     -webkit-box-shadow: none;
     box-shadow: none;
-***REMOVED***
+}
 
-.portfolio-modal .modal-content h2 ***REMOVED***
+.portfolio-modal .modal-content h2 {
     margin: 0;
     font-size: 3em;
-***REMOVED***
+}
 
-.portfolio-modal .modal-content img ***REMOVED***
+.portfolio-modal .modal-content img {
     margin-bottom: 30px;
-***REMOVED***
+}
 
-.portfolio-modal .modal-content .item-details ***REMOVED***
+.portfolio-modal .modal-content .item-details {
     margin: 30px 0;
-***REMOVED***
+}
 
-.portfolio-modal .close-modal ***REMOVED***
+.portfolio-modal .close-modal {
     position: absolute;
     top: 25px;
     right: 25px;
@@ -447,13 +447,13 @@ footer .footer-below ***REMOVED***
     height: 75px;
     background-color: transparent;
     cursor: pointer;
-***REMOVED***
+}
 
-.portfolio-modal .close-modal:hover ***REMOVED***
+.portfolio-modal .close-modal:hover {
     opacity: .3;
-***REMOVED***
+}
 
-.portfolio-modal .close-modal .lr ***REMOVED***
+.portfolio-modal .close-modal .lr {
     z-index: 1051;
     width: 2px;
     height: 75px;
@@ -462,9 +462,9 @@ footer .footer-below ***REMOVED***
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-***REMOVED***
+}
 
-.portfolio-modal .close-modal .lr .rl ***REMOVED***
+.portfolio-modal .close-modal .lr .rl {
     z-index: 1052;
     width: 2px;
     height: 75px;
@@ -472,8 +472,8 @@ footer .footer-below ***REMOVED***
     -webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
-***REMOVED***
+}
 
-.logo-sponsor ***REMOVED***
+.logo-sponsor {
     margin: 10px;
-***REMOVED***
+}

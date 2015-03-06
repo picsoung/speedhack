@@ -10,7 +10,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="***REMOVED******REMOVED***pathFor 'home'***REMOVED******REMOVED***#top">SpeedHack.io</a>
+              <a class="navbar-brand" href="{{pathFor 'home'}}#top">SpeedHack.io</a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -19,12 +19,12 @@
                   <li class="hidden">
                       <a href="#page-top"></a>
                   </li>
-                  ***REMOVED******REMOVED***#if currentUser***REMOVED******REMOVED***
-                      ***REMOVED******REMOVED***> userMenu***REMOVED******REMOVED***
-                    ***REMOVED******REMOVED***else***REMOVED******REMOVED***
-                      ***REMOVED******REMOVED***>navMenu***REMOVED******REMOVED***
-                  ***REMOVED******REMOVED***/if***REMOVED******REMOVED***
-                  <li>***REMOVED******REMOVED***> loginButtons***REMOVED******REMOVED***</li>
+                  {{#if currentUser}}
+                      {{> userMenu}}
+                    {{else}}
+                      {{>navMenu}}
+                  {{/if}}
+                  <li>{{> loginButtons}}</li>
               </ul>
           </div>
           <!-- /.navbar-collapse -->
@@ -35,43 +35,43 @@
 
 <template name="navMenu">
     <li class="page-scroll">
-        <a href="***REMOVED******REMOVED***pathFor route='home'***REMOVED******REMOVED***#portfolio">Where</a>
+        <a href="{{pathFor route='home'}}#portfolio">Where</a>
     </li>
     <li class="page-scroll">
-        <a href="***REMOVED******REMOVED***pathFor route='home'***REMOVED******REMOVED***#about">About</a>
+        <a href="{{pathFor route='home'}}#about">About</a>
     </li>
     <li class="page-scroll">
-        <a href="***REMOVED******REMOVED***pathFor route='home'***REMOVED******REMOVED***#partners">Partners</a>
+        <a href="{{pathFor route='home'}}#partners">Partners</a>
     </li>
     <li class="page-scroll">
-        <a href="***REMOVED******REMOVED***pathFor route='sponsorshipDetails'***REMOVED******REMOVED***">Sponsorship</a>
+        <a href="{{pathFor route='sponsorshipDetails'}}">Sponsorship</a>
     </li>
     <li class="page-scroll">
-        <a href="***REMOVED******REMOVED***pathFor route='home'***REMOVED******REMOVED***#faq">FAQ</a>
+        <a href="{{pathFor route='home'}}#faq">FAQ</a>
     </li>
     <li class="page-scroll">
-        <a href="***REMOVED******REMOVED***pathFor route='home'***REMOVED******REMOVED***#contact">Contact</a>
+        <a href="{{pathFor route='home'}}#contact">Contact</a>
     </li>
 </template>
 
 <template name="userMenu">
     <li class="page-scroll">
-        <a href="***REMOVED******REMOVED***pathFor 'team.create'***REMOVED******REMOVED***">Create Team</a>
+        <a href="{{pathFor 'team.create'}}">Create Team</a>
     </li>
     <li class="page-scroll">
-        <a href="***REMOVED******REMOVED***pathFor 'solutions.new'***REMOVED******REMOVED***">New Solution</a>
+        <a href="{{pathFor 'solutions.new'}}">New Solution</a>
     </li>
 
-    ***REMOVED******REMOVED***#if isAJudge ***REMOVED******REMOVED***
+    {{#if isAJudge }}
        <li class="page-scroll">
-           <a href="***REMOVED******REMOVED***pathFor route='judge.show' slug=currentJudgeSponsor***REMOVED******REMOVED***">Judge</a>
+           <a href="{{pathFor route='judge.show' slug=currentJudgeSponsor}}">Judge</a>
        </li>
-    ***REMOVED******REMOVED***/if***REMOVED******REMOVED***
-    ***REMOVED******REMOVED***#if isInRole 'admin'***REMOVED******REMOVED***
+    {{/if}}
+    {{#if isInRole 'admin'}}
        <li class="page-scroll">
-           <a href="***REMOVED******REMOVED***pathFor route='backend.main' ***REMOVED******REMOVED***">Admin</a>
+           <a href="{{pathFor route='backend.main' }}">Admin</a>
        </li>
-    ***REMOVED******REMOVED***/if***REMOVED******REMOVED***
+    {{/if}}
 
     <!-- <li class="page-scroll">
         <a href="#contact">My Profile</a>

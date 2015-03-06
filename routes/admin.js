@@ -1,17 +1,17 @@
-Router.route('/backend/dashboard', ***REMOVED***
+Router.route('/backend/dashboard', {
     name: "backend.main",
     template: 'backendMain',
-    waitOn: function () ***REMOVED***
+    waitOn: function () {
         return [Meteor.subscribe('events'),Meteor.subscribe('users'),Meteor.subscribe('teams'),Meteor.subscribe('solutions')];
-***REMOVED***
-    onBeforeAction:function()***REMOVED***
-        if (!Meteor.userId())***REMOVED***
+    },
+    onBeforeAction:function(){
+        if (!Meteor.userId()){
             Router.go('home');
-***REMOVED***else if(Roles.userIsInRole(Meteor.user(), ["admin"]))***REMOVED***
+        }else if(Roles.userIsInRole(Meteor.user(), ["admin"])){
             GAnalytics.pageview();
             this.next();
-***REMOVED***else***REMOVED***
+        }else{
             Router.go('home');
-***REMOVED***
-***REMOVED***
-***REMOVED***);
+        }
+    },
+});

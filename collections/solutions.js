@@ -1,77 +1,77 @@
 Solutions = new Mongo.Collection("solutions");
 
-var Schemas = ***REMOVED******REMOVED***;
+var Schemas = {};
 
-Schemas.Solution = new SimpleSchema(***REMOVED***
-    team_name:***REMOVED***
+Schemas.Solution = new SimpleSchema({
+    team_name:{
         type:String,
         label:"Team Name",
         optional:true
-***REMOVED***
-    event_slug:***REMOVED***
+    },
+    event_slug:{
         type: String,
         label: "Event"
-***REMOVED***
-    sponsor:***REMOVED***
+    },
+    sponsor:{
         type:String,
         label: "Sponsor"
-***REMOVED***
-    passed:***REMOVED***
+    },
+    passed:{
         type: Boolean,
         label: "Passed",
         optional:true,
         defaultValue: null
-***REMOVED***
-    judged:***REMOVED***
+    },
+    judged:{
         type: Boolean,
         label: "Judged",
         optional:true,
         defaultValue: false
-***REMOVED***
-    submitted_by:***REMOVED***
+    },
+    submitted_by:{
         type:String,
         label: "submitted by",
         optional:true
-***REMOVED***
-    judged_on:***REMOVED***
+    },
+    judged_on:{
         type:Date,
         label:"judged on",
         optional:true
-***REMOVED***
-    extra_points:***REMOVED***
+    },
+    extra_points:{
         type: Number,
         label: "Extra points",
         optional:true
-***REMOVED***
-    table_number:***REMOVED***
+    },
+    table_number:{
         type: Number,
         label: "Table number",
         optional:true
-***REMOVED***
-    createdAt: ***REMOVED***
+    },
+    createdAt: {
         type: Date,
-          autoValue: function() ***REMOVED***
-            if (this.isInsert) ***REMOVED***
+          autoValue: function() {
+            if (this.isInsert) {
               return new Date;
-    ***REMOVED*** else if (this.isUpsert) ***REMOVED***
-              return ***REMOVED***$setOnInsert: new Date***REMOVED***;
-    ***REMOVED*** else ***REMOVED***
+            } else if (this.isUpsert) {
+              return {$setOnInsert: new Date};
+            } else {
               this.unset();
-    ***REMOVED***
-  ***REMOVED***
-  ***REMOVED***
+            }
+          }
+      },
       // Force value to be current date (on server) upon update
       // and don't allow it to be set upon insert.
-      updatedAt: ***REMOVED***
+      updatedAt: {
         type: Date,
-        autoValue: function() ***REMOVED***
-          if (this.isUpdate) ***REMOVED***
+        autoValue: function() {
+          if (this.isUpdate) {
             return new Date();
-  ***REMOVED***
-***REMOVED***,
+          }
+        },
         denyInsert: true,
         optional: true
-  ***REMOVED***
-***REMOVED***)
+      }
+})
 
 Solutions.attachSchema(Schemas.Solution);

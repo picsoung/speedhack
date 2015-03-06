@@ -25,18 +25,18 @@
                 </div>
             </div>
             <div class="row">
-                ***REMOVED******REMOVED***#each speedhackEvents***REMOVED******REMOVED***
+                {{#each speedhackEvents}}
                     <div class="col-sm-4 portfolio-item">
-                        <a href="***REMOVED******REMOVED***pathFor 'event.show' slug ***REMOVED******REMOVED***" class="portfolio-link" data-toggle="modal">
+                        <a href="{{pathFor 'event.show' slug }}" class="portfolio-link" data-toggle="modal">
                             <div class="caption">
                                 <div class="caption-content">
                                     <i class="fa fa-search-plus fa-3x"></i>
                                 </div>
                             </div>
-                            <img src="***REMOVED******REMOVED***image***REMOVED******REMOVED***" class="img-responsive" alt=""/>
+                            <img src="{{image}}" class="img-responsive" alt=""/>
                         </a>
                     </div>
-                ***REMOVED******REMOVED***/each***REMOVED******REMOVED***
+                {{/each}}
                 <div class="col-sm-4 portfolio-item">
                     <a href="#yourCityModal" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
@@ -100,8 +100,8 @@
             </div>
             <div class="row">
                 <div class="col-lg-12" style="text-align: center;">
-                    ***REMOVED******REMOVED***> partnersLogo***REMOVED******REMOVED***
-                    ***REMOVED******REMOVED***>sponsorButton***REMOVED******REMOVED***
+                    {{> partnersLogo}}
+                    {{>sponsorButton}}
                 </div>
             </div>
         </div>
@@ -117,7 +117,7 @@
                 </div>
 
                 <div class="col-lg-12 text-center">
-                    ***REMOVED******REMOVED***> faqDetails***REMOVED******REMOVED***
+                    {{> faqDetails}}
                 </div>
             </div>
         </div>
@@ -136,7 +136,7 @@
                 <div class="col-lg-2 col-lg-offset-5">
                     <a class="typeform-share btn btn-lg btn-outline_green" href="https://picsoung.typeform.com/to/EkPqrX" data-mode="2" target="_blank"><i class="fa fa-envelope-o"></i> Tell us more!</a>
                     <script>
-                    (function()***REMOVED***var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id))***REMOVED***js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)***REMOVED***id=id+'_';if(!gi.call(d,id))***REMOVED***qs=ce.call(d,'link');qs.rel='stylesheet';qs.id=id;qs.href=b+'share-button.css';s=gt.call(d,'head')[0];s.appendChild(qs,s)***REMOVED******REMOVED***)()
+                    (function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}id=id+'_';if(!gi.call(d,id)){qs=ce.call(d,'link');qs.rel='stylesheet';qs.id=id;qs.href=b+'share-button.css';s=gt.call(d,'head')[0];s.appendChild(qs,s)}})()
                     </script>
                 </div>
             </div>
@@ -264,7 +264,7 @@
                           <p>You want to organize a SpeedHack in your city or for your event?. We can help you with our experience, bringing the concept. Just fill the contact form below and give us details about your project.</p>
                           <a class="typeform-share btn btn-lg btn-outline_green" href="https://picsoung.typeform.com/to/EkPqrX" data-mode="2" target="_blank"><i class="fa fa-envelope-o"></i> Contact us</a>
                           <script>
-                          (function()***REMOVED***var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id))***REMOVED***js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)***REMOVED***id=id+'_';if(!gi.call(d,id))***REMOVED***qs=ce.call(d,'link');qs.rel='stylesheet';qs.id=id;qs.href=b+'share-button.css';s=gt.call(d,'head')[0];s.appendChild(qs,s)***REMOVED******REMOVED***)()
+                          (function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}id=id+'_';if(!gi.call(d,id)){qs=ce.call(d,'link');qs.rel='stylesheet';qs.id=id;qs.href=b+'share-button.css';s=gt.call(d,'head')[0];s.appendChild(qs,s)}})()
                           </script>
                           <br />  <br />
                           <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>

@@ -1,12 +1,12 @@
-AutoForm.hooks(***REMOVED***
-  updateEventForm: ***REMOVED***
-    onSubmit: function (doc) ***REMOVED***
+AutoForm.hooks({
+  updateEventForm: {
+    onSubmit: function (doc) {
       schemas.Event.clean(doc);
       this.done();
       return false;
-***REMOVED***
-    onSuccess:function(operation, result, template)***REMOVED***
-        Router.go('event.show',***REMOVED***slug:template.data.doc.slug***REMOVED***);
-***REMOVED***
-  ***REMOVED***
-***REMOVED***);
+    },
+    onSuccess:function(operation, result, template){
+        Router.go('event.show',{slug:template.data.doc.slug});
+    }
+  }
+});

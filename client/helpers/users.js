@@ -1,7 +1,7 @@
-UI.registerHelper('profileBelongsCurrentUser',function(username)***REMOVED***
-    if(Meteor.user())***REMOVED***
+UI.registerHelper('profileBelongsCurrentUser',function(username){
+    if(Meteor.user()){
         var user = Meteor.user();
         return user.username == username
-***REMOVED***
+    }
     return false;
-***REMOVED***)
+})

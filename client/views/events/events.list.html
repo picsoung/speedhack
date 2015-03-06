@@ -5,13 +5,13 @@
             <div class="col-lg-12">
                 <h1>SpeedHack events</h1>
                 <h2>Upcoming:</h2>
-                    ***REMOVED******REMOVED***#each upcomingEvents***REMOVED******REMOVED***
-                        ***REMOVED******REMOVED***> eventDetail***REMOVED******REMOVED***
-                    ***REMOVED******REMOVED***/each***REMOVED******REMOVED***
+                    {{#each upcomingEvents}}
+                        {{> eventDetail}}
+                    {{/each}}
                 <h2>Past:</h2>
-                ***REMOVED******REMOVED***#each pastEvents***REMOVED******REMOVED***
-                    ***REMOVED******REMOVED***> eventDetail***REMOVED******REMOVED***
-                ***REMOVED******REMOVED***/each***REMOVED******REMOVED***
+                {{#each pastEvents}}
+                    {{> eventDetail}}
+                {{/each}}
            </div>
        </div>
     </div>
@@ -19,5 +19,5 @@
 </template>
 
 <template name="eventDetail">
-    <a href="***REMOVED******REMOVED***pathFor route='event.show'***REMOVED******REMOVED***">***REMOVED******REMOVED***name***REMOVED******REMOVED***</a>
+    <a href="{{pathFor route='event.show'}}">{{name}}</a>
 </template>

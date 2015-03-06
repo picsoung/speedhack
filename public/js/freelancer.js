@@ -5,33 +5,33 @@
  */
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
-$(function() ***REMOVED***
-    $('.page-scroll a').bind('click', function(event) ***REMOVED***
+$(function() {
+    $('.page-scroll a').bind('click', function(event) {
         var $anchor = $(this);
-        $('html, body').stop().animate(***REMOVED***
+        $('html, body').stop().animate({
             scrollTop: $($anchor.attr('href')).offset().top
-***REMOVED***, 1500, 'easeInOutExpo');
+        }, 1500, 'easeInOutExpo');
         event.preventDefault();
-***REMOVED***);
-***REMOVED***);
+    });
+});
 
 // Floating label headings for the contact form
-$(function() ***REMOVED***
-    $("body").on("input propertychange", ".floating-label-form-group", function(e) ***REMOVED***
+$(function() {
+    $("body").on("input propertychange", ".floating-label-form-group", function(e) {
         $(this).toggleClass("floating-label-form-group-with-value", !! $(e.target).val());
-***REMOVED***).on("focus", ".floating-label-form-group", function() ***REMOVED***
+    }).on("focus", ".floating-label-form-group", function() {
         $(this).addClass("floating-label-form-group-with-focus");
-***REMOVED***).on("blur", ".floating-label-form-group", function() ***REMOVED***
+    }).on("blur", ".floating-label-form-group", function() {
         $(this).removeClass("floating-label-form-group-with-focus");
-***REMOVED***);
-***REMOVED***);
+    });
+});
 
 // Highlight the top nav as scrolling occurs
-$('body').scrollspy(***REMOVED***
+$('body').scrollspy({
     target: '.navbar-fixed-top'
-***REMOVED***)
+})
 
 // Closes the Responsive Menu on Menu Item Click
-$('.navbar-collapse ul li a').click(function() ***REMOVED***
+$('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
-***REMOVED***);
+});

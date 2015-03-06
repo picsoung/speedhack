@@ -1,8 +1,8 @@
-Template.whereWhen.helpers(***REMOVED***
-    displayDay:function(date)***REMOVED***
+Template.whereWhen.helpers({
+    displayDay:function(date){
         return moment(date).format('LL');
-***REMOVED***
-    displayHours:function(date)***REMOVED***
+    },
+    displayHours:function(date){
         return moment(date).format('hh:mm a')
-***REMOVED***
-***REMOVED***)
+    }
+})

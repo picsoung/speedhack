@@ -1,62 +1,62 @@
-Template.newSolutionForm.events(***REMOVED***
-    "change #event_select":function(e)***REMOVED***
+Template.newSolutionForm.events({
+    "change #event_select":function(e){
         getSponsorsFromEvent($("#event_select").val())
-***REMOVED***
-***REMOVED***);
+    }
+});
 
 
 
-Template.newSolutionForm.rendered = function()***REMOVED***
+Template.newSolutionForm.rendered = function(){
     getSponsorsFromEvent($("#event_select").val())
-***REMOVED***
+}
 
-Template.newSolutionForm.helpers(***REMOVED***
-    sponsorOptions:function()***REMOVED***
+Template.newSolutionForm.helpers({
+    sponsorOptions:function(){
         return Session.get('currentEventSponsors')
-***REMOVED***
-***REMOVED***)
+    }
+})
 
-getSponsorsFromEvent = function(eventSlug)***REMOVED***
-    if(eventSlug)***REMOVED***
-        var event = Events.findOne(***REMOVED***slug:eventSlug***REMOVED***,***REMOVED***fields:***REMOVED***sponsors:1***REMOVED******REMOVED***);
+getSponsorsFromEvent = function(eventSlug){
+    if(eventSlug){
+        var event = Events.findOne({slug:eventSlug},{fields:{sponsors:1}});
         var sponsors=[]
-        _.each(event.sponsors, function(e) ***REMOVED***
-            sponsors.push(***REMOVED***label:e.name,value:e.name***REMOVED***)
-***REMOVED***);
+        _.each(event.sponsors, function(e) {
+            sponsors.push({label:e.name,value:e.name})
+        });
         Session.set('currentEventSponsors',sponsors)
-***REMOVED***
-***REMOVED***
+    }
+}
 
-AutoForm.hooks(***REMOVED***
-    insertSolutionForm: ***REMOVED***
-        before:***REMOVED***
-            insert: function(doc, template) ***REMOVED***
+AutoForm.hooks({
+    insertSolutionForm: {
+        before:{
+            insert: function(doc, template) {
                 doc.passed = null
                 doc.judged = null
                 var username = Meteor.user().username
                 doc.submitted_by = username
                 var team = Teams.findOne(
-                    ***REMOVED***
+                    {
                         $and:[
-                            ***REMOVED***$or:[***REMOVED***owner:username***REMOVED***,***REMOVED***teammate_1:username***REMOVED***,***REMOVED***teammate_2:username***REMOVED***]***REMOVED***,
-                            ***REMOVED***event_slug:doc.event_slug***REMOVED***
+                            {$or:[{owner:username},{teammate_1:username},{teammate_2:username}]},
+                            {event_slug:doc.event_slug}
                         ]
-            ***REMOVED***)
+                    })
                 doc.table_number = team.table_number
                 doc.team_name = team.name
                 return doc
-    ***REMOVED***
- ***REMOVED***,
-        onSubmit: function (doc) ***REMOVED***
+            }
+         },
+        onSubmit: function (doc) {
           schemas.Solution.clean(doc);
           console.log("@@@@@@@@",doc)
         //   console.log("People doc with auto values", doc);
           this.done();
           return false;
-  ***REMOVED***
-      onSuccess:function(operation, result, template)***REMOVED***
+      },
+      onSuccess:function(operation, result, template){
             Notifications.success('Success', 'Solution posted, wait to be judged');
             Router.go('home');
-  ***REMOVED***
-***REMOVED***
-***REMOVED***)
+      },
+    }
+})

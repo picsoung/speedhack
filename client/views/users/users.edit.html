@@ -1,11 +1,11 @@
 <template name="usersEdit">
-    ***REMOVED******REMOVED***#autoForm collection="Meteor.users"  doc=this id="updateUserForm" type="update"***REMOVED******REMOVED***
+    {{#autoForm collection="Meteor.users"  doc=this id="updateUserForm" type="update"}}
     <fieldset>
         <legend>Modify profile</legend>
-        ***REMOVED******REMOVED***> afQuickField name='username'***REMOVED******REMOVED***
-        ***REMOVED******REMOVED***> afQuickField name='emails.0.address'***REMOVED******REMOVED***
-        ***REMOVED******REMOVED***> afQuickField name='profile.bio' rows=6***REMOVED******REMOVED***
+        {{> afQuickField name='username'}}
+        {{> afQuickField name='emails.0.address'}}
+        {{> afQuickField name='profile.bio' rows=6}}
     </fieldset>
     <button type="submit" class="btn btn-primary">Update</button>
-    ***REMOVED******REMOVED***/autoForm***REMOVED******REMOVED***
+    {{/autoForm}}
 </template>

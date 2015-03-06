@@ -1,90 +1,90 @@
-Schema = ***REMOVED******REMOVED***;
+Schema = {};
 
-Schema.UserCountry = new SimpleSchema(***REMOVED***
-    name: ***REMOVED***
+Schema.UserCountry = new SimpleSchema({
+    name: {
         type: String
-***REMOVED***
-    code: ***REMOVED***
+    },
+    code: {
         type: String,
-        regEx: /^[A-Z]***REMOVED***2***REMOVED***$/
-***REMOVED***
-***REMOVED***);
+        regEx: /^[A-Z]{2}$/
+    }
+});
 
-Schema.UserProfile = new SimpleSchema(***REMOVED***
-    gender: ***REMOVED***
+Schema.UserProfile = new SimpleSchema({
+    gender: {
         type: String,
         allowedValues: ['Male', 'Female'],
         optional: true
-***REMOVED***
-    organization : ***REMOVED***
+    },
+    organization : {
         type: String,
-        regEx: /^[a-z0-9A-z .]***REMOVED***3,30***REMOVED***$/,
+        regEx: /^[a-z0-9A-z .]{3,30}$/,
         optional: true
-***REMOVED***
-    website: ***REMOVED***
+    },
+    website: {
         type: String,
         regEx: SimpleSchema.RegEx.Url,
         optional: true
-***REMOVED***
-    bio: ***REMOVED***
+    },
+    bio: {
         type: String,
         optional: true
-***REMOVED***
-    country: ***REMOVED***
+    },
+    country: {
         type: Schema.UserCountry,
         optional: true
-***REMOVED***
-    profile_picture_url:***REMOVED***
+    },
+    profile_picture_url:{
         type:String,
         optional: true
-***REMOVED***
-***REMOVED***);
+    }
+});
 
-Schema.User = new SimpleSchema(***REMOVED***
-    username: ***REMOVED***
+Schema.User = new SimpleSchema({
+    username: {
         type: String,
-        regEx: /^[a-z0-9A-Z_@.]***REMOVED***3,30***REMOVED***$/
-***REMOVED***
-    emails: ***REMOVED***
+        regEx: /^[a-z0-9A-Z_@.]{3,30}$/
+    },
+    emails: {
         type: [Object],
         // this must be optional if you also use other login services like facebook,
         // but if you use only accounts-password, then it can be required
         optional: true
-***REMOVED***
-    "emails.$.address": ***REMOVED***
+    },
+    "emails.$.address": {
         type: String,
         regEx: SimpleSchema.RegEx.Email,
         label: "Email",
         // index: true,
         // unique: true
-***REMOVED***
-    "emails.$.verified": ***REMOVED***
+    },
+    "emails.$.verified": {
         type: Boolean,
         optional:true
-***REMOVED***
-    createdAt: ***REMOVED***
+    },
+    createdAt: {
         type: Date
-***REMOVED***
-    profile: ***REMOVED***
+    },
+    profile: {
         type: Schema.UserProfile,
         optional: true
-***REMOVED***
-    services: ***REMOVED***
+    },
+    services: {
         type: Object,
         optional: true,
         blackbox: true
-***REMOVED***
+    },
     // Add `roles` to your schema if you use the meteor-roles package.
     // Note that when using this package, you must also specify the
     // `Roles.GLOBAL_GROUP` group whenever you add a user to a role.
     // Roles.addUsersToRoles(userId, ["admin"], Roles.GLOBAL_GROUP);
     // You can't mix and match adding with and without a group since
     // you will fail validation in some cases.
-    roles: ***REMOVED***
+    roles: {
         type: Object,
         optional: true,
         blackbox: true
-***REMOVED***
-***REMOVED***);
+    }
+});
 
 Meteor.users.attachSchema(Schema.User);
