@@ -98,7 +98,11 @@ Schemas.Event = new SimpleSchema(***REMOVED***
 ***REMOVED***,
         denyInsert: true,
         optional: true
-  ***REMOVED***
+***REMOVED***
+    eventbrite_id:***REMOVED***
+        type:Number,
+        optional:true
+***REMOVED***
 ***REMOVED***)
 
 Events.attachSchema(Schemas.Event);
