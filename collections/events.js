@@ -98,7 +98,11 @@ Schemas.Event = new SimpleSchema({
         },
         denyInsert: true,
         optional: true
-      }
+    },
+    eventbrite_id:{
+        type:Number,
+        optional:true
+    }
 })
 
 Events.attachSchema(Schemas.Event);

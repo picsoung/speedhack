@@ -39,7 +39,7 @@ Router.route('/events/:slug/edit',{
             Router.go('event.show',{slug:this.params.slug});
         }
     },
-     waitOn: function () {
+    waitOn: function () {
         return [Meteor.subscribe('event',this.params.slug)];
     },
     data:function(){
