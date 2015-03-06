@@ -1,25 +1,25 @@
 <template name="eventShow">
     <div class="col-md-8">
-        {{#if isInRole 'admin'}}
-           <a class="btn btn-primary" href="{{pathFor route='event.edit'}}"><i class="fa fa-pencil"></i> edit</a>
-        {{/if}}
-        <h1>{{name}} </h1>
+        <h1>{{name}}</h1>
         <hr class="star-primary">
-        <img src="{{image}}" alt="{{name}} logo" width="200px"/>
+        <div class="event_actions">
+            <img src="{{image}}" alt="{{name}} logo" width="200px"/>
+            {{#if isInRole 'admin'}}
+               <a class="btn btn-primary" href="{{pathFor route='event.edit'}}"><i class="fa fa-pencil"></i> Edit</a>
+            {{/if}}
+            <a class="btn btn-primary" href="{{pathFor route='event.leaderboard'}}"><i class="glyphicon glyphicon-tower"></i> Leaderboard</a>
+        </div>
         <p>
+
+        </p>
+
+        <p class="description_speedHack">
             {{{brief}}}
         </p>
-        <p>
-            <a class="btn btn-primary" href="{{pathFor route='event.leaderboard'}}"><i class="glyphicon glyphicon-tower"></i> Leaderboard</a>
-        </p>
         {{> whereWhen}}
-        {{> sponsorsSection}}
     </div>
     <div class="col-md-4">
-        {{#if mySolutions}}
-        <h2>My solutions</h2>
-        {{> mySolutions}}
-        {{/if}}
+        {{> sponsorsSection}}
     </div>
 </template>
 
@@ -30,13 +30,16 @@
                {{> addSponsorMenu}}
             {{/if}}
         </h2>
-
+        <ul class="ul_sponsors">
          {{#each sponsors}}
-            <a href="{{url}}" target="_blank"><img src="{{logo}}" alt="{{name}} sponsor logo" width="100px"/></a>
+            <li>
+                <a href="{{url}}" target="_blank"><img src="{{logo}}" alt="{{name}} sponsor logo" width="100%"/></a>
+            </li>
             {{#if isInRole 'admin'}}
                {{> removeSponsorMenu}}
             {{/if}}
          {{/each}}
+     </ul>
     </div>
 </template>
 
