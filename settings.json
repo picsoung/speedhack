@@ -1,11 +1,11 @@
 {
     "public" : {
         "ga": {
-            "account":"UA-58897347-1"
+            "account":"YOUR_GOOGLE_ANALYTICS"
         }
     },
     "sendgrid":{
-        "login":"nicolas@3scale.net",
-        "pass":""
+        "login":"YOUR_SENDGRID_LOGIN",
+        "pass":"YOUR_SENDGRID_PASS"
     }
 }
